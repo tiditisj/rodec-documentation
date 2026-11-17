@@ -195,6 +195,32 @@ def toc(body):
     return f'<aside class="toc"><div class="side-label">On this page</div><ul>{"".join(rows)}</ul></aside>'
 
 
+
+# Line icons for cards without a picture, picked by keywords in the card title.
+# 64 x 64, ink lines with one orange accent, like the rest of the house style.
+_I = 'viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"'
+CARD_ICONS = [
+    (("safety",), f'''<svg {_I}><path d="M32 9 L57 53 H7 Z" stroke="#111214"/>
+<path d="M32 25 V39" stroke="#FF5C00" stroke-width="3"/><circle cx="32" cy="46" r="1.8" fill="#FF5C00" stroke="none"/></svg>'''),
+    (("troubleshoot",), f'''<svg {_I}><circle cx="27" cy="27" r="16" stroke="#111214"/><path d="M39 39 L54 54" stroke="#111214" stroke-width="4"/>
+<path d="M16 28 H20 L23 21 L27 34 L31 24 L33 28 H38" stroke="#FF5C00"/></svg>'''),
+    (("dimension",), f'''<svg {_I}><rect x="12" y="20" width="40" height="26" rx="2" stroke="#111214"/>
+<path d="M17 27 H47 M17 33 H35" stroke="#111214" stroke-width="1.5" opacity=".45"/>
+<path d="M12 54 H52 M12 51 V57 M52 51 V57" stroke="#FF5C00"/><path d="M58 20 V46 M55 20 H61 M55 46 H61" stroke="#FF5C00"/></svg>'''),
+    (("performance", "specification"), f'''<svg {_I}><path d="M10 10 V54 H56" stroke="#111214"/>
+<path d="M10 22 H56 M10 34 H56 M10 46 H56" stroke="#111214" stroke-width="1" opacity=".25"/>
+<path d="M12 44 C16 30 20 28 26 28 H44 C49 28 52 31 55 40" stroke="#FF5C00" stroke-width="2.5"/></svg>'''),
+]
+
+
+def card_icon(title):
+    t = title.lower()
+    for keys, svg in CARD_ICONS:
+        if any(k in t for k in keys):
+            return svg
+    return None
+
+
 def children_grid(path, thumbs=None, texts=None):
     """Cards for the subpages; with thumbnails (href -> image url) the cards
     get a picture, with texts (href -> line) a short description."""
@@ -208,7 +234,9 @@ def children_grid(path, thumbs=None, texts=None):
     cards = []
     for i, k in enumerate(kids, 1):
         img = thumbs.get(k["path"])
+        icon = card_icon(k["title"]) if rich and not img else None
         pic = (f'<span class="card-img"><img src="{img}" alt="" loading="lazy"></span>' if img
+               else f'<span class="card-img icon">{icon}</span>' if icon
                else '<span class="card-img empty"></span>') if rich else ""
         txt = f'<span class="d">{texts[k["path"]]}</span>' if texts.get(k["path"]) else ""
         cards.append(f'<a class="card{" rich" if rich else ""}" href="{k["path"]}">{pic}<span class="idx">{i:02d}</span>'

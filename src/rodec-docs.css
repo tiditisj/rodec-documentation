@@ -446,6 +446,9 @@ figure[data-embed-type="google-document"] figcaption {
 .card.rich:hover .card-img img { transform: scale(1.04); }
 .card.rich .card-img.empty { background: linear-gradient(135deg, var(--rdc-paper), #ebe9e7); }
 .card.rich .card-img.empty::after { content: ""; width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 2px solid var(--rdc-orange); opacity: .5; }
+.card.rich .card-img.icon { background: var(--rdc-paper); }
+.card.rich .card-img.icon svg { width: 34%; height: auto; transition: transform .4s ease; }
+.card.rich:hover .card-img.icon svg { transform: scale(1.06); }
 .card .d { display: block; font-size: .85rem; font-weight: 300; color: var(--rdc-muted); margin-top: .25rem; line-height: 1.45; }
 
 /* Previous / next */
