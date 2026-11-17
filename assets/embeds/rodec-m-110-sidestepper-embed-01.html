@@ -1,0 +1,53 @@
+<!-- Import IBM Plex Sans from Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  .custom-table {
+    font-family: 'IBM Plex Sans', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+    color: #161616;
+  }
+
+  .custom-table th {
+    font-weight: 600;
+    padding: 12px 16px;
+    border-bottom: 2px solid #161616;
+    background-color: transparent;
+  }
+
+  .custom-table td {
+    font-weight: 400;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+  }
+</style>
+
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Function / Description</th>
+      <th>Options / Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Version</td><td>Displays the current installed firmware version.</td><td>Read-only</td></tr>
+    <tr><td>Step Edit</td><td>Sets channel routing behavior for step creation.</td><td><strong>Stereo</strong> (L+R, L, R, Off) / <strong>Mono</strong> (On/Off linked)</td></tr>
+    <tr><td>Gate Tone</td><td>Sets the pitch of the pulse tone sent to the sidechain.</td><td>Pitch values</td></tr>
+    <tr><td>MIDI Bar Length</td><td>Sets the number of quarter notes before a newly selected sequence triggers.</td><td>Numerical bar length</td></tr>
+    <tr><td>MIDI Channel</td><td>Sets the MIDI channel the unit listens to for sync and trigger commands.</td><td>Channel 1–16</td></tr>
+    <tr><td>Audio Sensitivity</td><td>Adjusts input trigger sensitivity when Play Mode is set to Audio TRG / Audio TRG Once.</td><td>Sensitivity level</td></tr>
+    <tr><td>Sync PPQN</td><td>Sets Pulses Per Quarter Note resolution when Sync Mode is set to CV Sync.</td><td>1, 2, 4, 8, 16, 24</td></tr>
+    <tr><td>Clock Div</td><td>Sets the clock division for playback.</td><td>1/4 to 1/32</td></tr>
+    <tr><td>Loop Mode</td><td>Controls step playback behavior upon pattern loop/restart.</td><td>Start / Random</td></tr>
+    <tr><td>Play Mode</td><td>Defines how the sequencer start/stop transport is triggered.</td><td>Play/Stop / MIDI Note / MIDI Note Once / Audio TRG / Audio TRG Once / Continuous</td></tr>
+    <tr><td>Sync Mode</td><td>Chooses the primary clock synchronization source.</td><td>BPM / MIDI / CV Sync</td></tr>
+    <tr><td>BPM</td><td>Sets tempo when using the internal clock (Sync Mode = BPM).</td><td>Numerical BPM</td></tr>
+  </tbody>
+</table>

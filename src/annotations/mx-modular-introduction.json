@@ -1,0 +1,165 @@
+{
+  "path": "/rodec-mx-modular/introduction",
+  "title": "The MX Modular.",
+  "title_em": "At a glance.",
+  "hero_image": "src/img/renders/mx-modular-front-85mm.webp",
+  "hero_style": "dark",
+  "lead": "An analog mixing console with 16 channels: channels 1–8 with 500 series slots and input selection, channels 9–16 as four stereo pairs, two stereo AUX sends and two stereo busses, two FX engines, a programmable mute controller and an 18 in / 18 out USB interface.",
+  "specs": [
+    [
+      "Channels",
+      "8 with 500 series slots, 4 stereo pairs"
+    ],
+    [
+      "Routing",
+      "Master, 2 stereo busses, 2 stereo AUX"
+    ],
+    [
+      "FX",
+      "Two engines on AUX 1 and AUX 2"
+    ],
+    [
+      "USB",
+      "18 in / 18 out, class compliant"
+    ]
+  ],
+  "panels": [
+    {
+      "image": "src/img/renders/mx-modular-top.webp",
+      "heading": "Find your way around the console",
+      "alt": "MX Modular seen from above",
+      "items": [
+        {
+          "name": "Channel control",
+          "label": "MX-F-101 / 102",
+          "at": [
+            560,
+            760
+          ],
+          "rect": [
+            583,
+            713,
+            1125,
+            1200
+          ],
+          "link": "/rodec-mx-f-101-102-channel-control",
+          "text": "ON, SOLO, pan, AUX sends, routing buttons, crossfader assign and fader for channels 1–8."
+        },
+        {
+          "name": "500 series slots",
+          "at": [
+            560,
+            480
+          ],
+          "rect": [
+            570,
+            460,
+            1270,
+            650
+          ],
+          "link": "/rodec-mx-modular/input-selection-and-channel-insert",
+          "text": "Slots for 500 series modules on channels 1–8, with a bypass per slot."
+        },
+        {
+          "name": "Input selection and insert",
+          "at": [
+            560,
+            422
+          ],
+          "rect": [
+            565,
+            400,
+            1145,
+            452
+          ],
+          "link": "/rodec-mx-modular/input-selection-and-channel-insert",
+          "text": "Input selectors, USB post fader and channel inserts for channels 1–8."
+        },
+        {
+          "name": "FX module",
+          "at": [
+            1345,
+            740
+          ],
+          "rect": [
+            1125,
+            705,
+            1317,
+            775
+          ],
+          "link": "/rodec-mx-modular/fx-module",
+          "text": "Two independent effect engines, pre-routed to AUX 1 and AUX 2."
+        },
+        {
+          "name": "Inputs 9–16 and digital master",
+          "at": [
+            1345,
+            870
+          ],
+          "rect": [
+            1125,
+            808,
+            1317,
+            932
+          ],
+          "link": "/rodec-mx-modular/control-section/input-9-16-and-usb-master",
+          "text": "Four stereo pairs and the USB digital master return."
+        },
+        {
+          "name": "AUX and BUS",
+          "at": [
+            1345,
+            962
+          ],
+          "rect": [
+            1125,
+            932,
+            1325,
+            1000
+          ],
+          "link": "/rodec-mx-modular/control-section/aux-en-bus-control",
+          "text": "Send and return levels for the stereo AUXes and busses."
+        },
+        {
+          "name": "Monitor section",
+          "at": [
+            1188,
+            1190
+          ],
+          "rect": [
+            1125,
+            1000,
+            1252,
+            1172
+          ],
+          "link": "/rodec-mx-modular/control-section/monitor-section",
+          "text": "Master fader, monitor level, headphones and external input."
+        },
+        {
+          "name": "Mute controller",
+          "at": [
+            1345,
+            1085
+          ],
+          "rect": [
+            1255,
+            1005,
+            1327,
+            1168
+          ],
+          "link": "/rodec-mx-modular/control-section/mute-controller",
+          "text": "9 banks of 4 mute groups for all 16 channels."
+        }
+      ],
+      "crop": [
+        520,
+        180,
+        1390,
+        1300
+      ]
+    }
+  ],
+  "blocks": [
+    "mx-gallery.html"
+  ]
+}

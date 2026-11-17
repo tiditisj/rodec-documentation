@@ -1,0 +1,235 @@
+{
+  "path": "/rodec-m-501-micline-pre",
+  "title": "M-501 Mic / Line Preamp.",
+  "title_em": "Discrete preamp with EQ.",
+  "corrections": [
+    [
+      "<strong>EQ ON</strong>",
+      "<strong>EQ IN</strong>"
+    ]
+  ],
+  "panels": [
+    {
+      "image": "assets/images/rodec-m-501-micline-pre-01.png",
+      "alt": "Rodec M-501 Mic / Line Preamp faceplate",
+      "items": [
+        {
+          "name": "Input gain",
+          "label": "GAIN",
+          "at": [
+            13,
+            154
+          ],
+          "rect": [
+            32,
+            71,
+            196,
+            225
+          ],
+          "text": "Sets the amount of amplification at the input stage, the preamp's primary gain level, with up to <strong>70dB of gain</strong>.",
+          "ref": {
+            "strong": "Input Gain"
+          }
+        },
+        {
+          "name": "Output gain",
+          "label": "OUT",
+          "at": [
+            13,
+            289
+          ],
+          "rect": [
+            32,
+            236,
+            196,
+            368
+          ],
+          "text": "Fine-tunes the level sent to the next stage of your audio chain.",
+          "ref": {
+            "strong": "Output Gain"
+          }
+        },
+        {
+          "name": "High EQ",
+          "label": "HI",
+          "at": [
+            13,
+            439
+          ],
+          "rect": [
+            32,
+            375,
+            196,
+            514
+          ],
+          "text": "Cuts or boosts the high frequencies: <strong>+/- 15dB @ 10kHz</strong>.",
+          "ref": {
+            "strong": "High and Low EQ Knobs"
+          }
+        },
+        {
+          "name": "Mid EQ",
+          "label": "MID",
+          "at": [
+            13,
+            586
+          ],
+          "rect": [
+            32,
+            522,
+            196,
+            661
+          ],
+          "text": "Cuts or boosts the midrange, <strong>+/- 15dB</strong> at the chosen frequency.",
+          "ref": {
+            "strong": "Mid Knob"
+          }
+        },
+        {
+          "name": "Mid frequency",
+          "label": "FREQ",
+          "at": [
+            13,
+            739
+          ],
+          "rect": [
+            32,
+            672,
+            196,
+            818
+          ],
+          "text": "Selects the frequency affected by the mid adjustment.",
+          "ref": {
+            "strong": "Frequency Knob"
+          }
+        },
+        {
+          "name": "Low EQ",
+          "label": "LOW",
+          "at": [
+            13,
+            886
+          ],
+          "rect": [
+            32,
+            822,
+            196,
+            968
+          ],
+          "text": "Cuts or boosts the low frequencies: <strong>+/- 15dB @ 100Hz</strong>.",
+          "ref": {
+            "strong": "High and Low EQ Knobs"
+          }
+        },
+        {
+          "name": "Phantom power",
+          "label": "48V",
+          "at": [
+            286,
+            428
+          ],
+          "rect": [
+            194,
+            394,
+            263,
+            462
+          ],
+          "text": "Supplies <strong>phantom power</strong> for condenser microphones.",
+          "ref": {
+            "strong": "48V (Phantom Power)"
+          }
+        },
+        {
+          "name": "High impedance",
+          "label": "HI Z",
+          "at": [
+            286,
+            511
+          ],
+          "rect": [
+            194,
+            478,
+            263,
+            545
+          ],
+          "text": "Engaged: a modern, open sound with more top-end detail. Off: a warmer character with high roll-off and low-mid boost.",
+          "ref": {
+            "strong": "Hi-Z (High Impedance)"
+          }
+        },
+        {
+          "name": "Pad",
+          "label": "PAD",
+          "at": [
+            286,
+            612
+          ],
+          "rect": [
+            194,
+            578,
+            263,
+            647
+          ],
+          "text": "Reduces the input gain by <strong>20dB</strong> for very loud signals.",
+          "ref": {
+            "strong": "Pad (-20dB)"
+          }
+        },
+        {
+          "name": "Phase",
+          "label": "PHASE",
+          "at": [
+            286,
+            706
+          ],
+          "rect": [
+            194,
+            672,
+            263,
+            740
+          ],
+          "text": "Reverses the signal phase, to correct phase issues between microphones.",
+          "ref": {
+            "strong": "Phase"
+          }
+        },
+        {
+          "name": "Narrow Q",
+          "label": "NARROW Q",
+          "at": [
+            286,
+            802
+          ],
+          "rect": [
+            194,
+            768,
+            263,
+            836
+          ],
+          "text": "Toggles the mid band between <strong>wide Q</strong> for broad, natural shaping and <strong>narrow Q</strong> for precise, focused adjustments.",
+          "ref": {
+            "strong": "Narrow Q Button"
+          }
+        },
+        {
+          "name": "EQ in",
+          "label": "EQ IN",
+          "at": [
+            286,
+            893
+          ],
+          "rect": [
+            194,
+            860,
+            263,
+            928
+          ],
+          "text": "Engages the EQ section; when off, the signal bypasses the EQ entirely.",
+          "ref": {
+            "strong": "EQ IN"
+          }
+        }
+      ]
+    }
+  ]
+}

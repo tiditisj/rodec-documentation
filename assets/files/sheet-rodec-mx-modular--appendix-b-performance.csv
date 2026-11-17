@@ -1,0 +1,12 @@
+Rodec D-102 Digital audio interface ,,
+Measurements taken at 48 kHz,AP SYS-2722,
+DAC Type,ESS SABRE® ES9027SPRO ,
+ADC Type ,AKM AK5578EN,
+,,
+Measurement,Conditions,Value
+Alignment Level  ,0 dBFS,20 dBu
+Frequency response,20 Hz - 20 kHz,+/-0.1 dB
+THD+Noise ,"DAC -4 dBFS @ 1 kHz (filter 22 Hz to 20 kHz, A-weighted)",0.0005 % (-106 dB)
+,"ADC -4 dBFS @ 1 kHz (filter 22 Hz to 20 kHz, A-weighted)",0.0003 % (-110 dB)
+Dynamic Range ,"DAC (filter 22 Hz to 20 kHz, A-weighted)",116 dB
+,"ADC (filter 22 Hz to 20 kHz, A-weighted)",115 dB

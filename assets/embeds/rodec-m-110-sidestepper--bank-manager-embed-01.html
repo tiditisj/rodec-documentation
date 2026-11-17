@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidestepper Bank Manager</title>
+    <meta name="description" content="Upload and download pattern banks to the Sidestepper sequencer over USB serial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0b0808;
+            --bg-secondary: #120d0c;
+            --bg-card: rgba(27, 19, 21, 0.82);
+            --bg-card-solid: #1b1315;
+            --border-subtle: rgba(255, 92, 0, 0.16);
+            --border-hover: rgba(255, 92, 0, 0.38);
+
+            --text-primary: #f6f1ec;
+            --text-secondary: #ab998f;
+            --text-muted: #6e5f58;
+            --lcd-blue: #ff5c00;
+            --lcd-blue-bright: #ff8a4c;
+
+            --accent-cyan: #ff5c00;
+            --accent-purple: #d9a15c;
+            --accent-pink: #e0785a;
+            --accent-orange: #ff7a2e;
+            --accent-green: #3fae72;
+            --accent-red: #e5484d;
+
+            --knob-red: #d63838;
+            --knob-green: #2d8659;
+
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background orbs */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::before {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-cyan);
+            top: -180px;
+            left: -120px;
+            transform: translate(35px, 25px) scale(1.06);
+            /* Set to an intermediate static position */
+        }
+
+        body::after {
+            width: 420px;
+            height: 420px;
+            background: var(--accent-purple);
+            bottom: -180px;
+            right: -120px;
+            transform: translate(-25px, -20px) scale(1.04);
+            /* Set to an intermediate static position */
+        }
+
+        /* Layout */
+        .app-container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px 48px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 36px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .header .logo-img {
+            height: 26px;
+            filter: invert(1);
+            mix-blend-mode: screen;
+            flex-shrink: 0;
+        }
+
+        .header-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .header-spacer {
+            flex: 1;
+        }
+
+        .connection-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .connection-badge.connected {
+            border-color: rgba(45, 212, 160, 0.3);
+            color: var(--accent-green);
+            background: rgba(45, 212, 160, 0.06);
+        }
+
+        .connection-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            transition: background 0.3s ease;
+        }
+
+        .connection-badge.connected .connection-dot {
+            background: var(--accent-green);
+            box-shadow: 0 0 8px rgba(45, 212, 160, 0.5);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Panel Cards */
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: 28px 32px;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            margin-bottom: 20px;
+            transition: border-color 0.2s ease;
+        }
+
+        .panel:hover {
+            border-color: var(--border-hover);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .panel-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .panel-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .panel-icon.file {
+            background: linear-gradient(135deg, rgba(77, 158, 255, 0.15), rgba(138, 107, 179, 0.15));
+            border: 1px solid rgba(77, 158, 255, 0.2);
+        }
+
+        .panel-icon.file svg {
+            fill: var(--accent-cyan);
+        }
+
+        .panel-icon.upload {
+            background: linear-gradient(135deg, rgba(230, 115, 57, 0.15), rgba(214, 90, 138, 0.15));
+            border: 1px solid rgba(230, 115, 57, 0.2);
+        }
+
+        .panel-icon.upload svg {
+            fill: var(--accent-orange);
+        }
+
+        .panel-icon.download {
+            background: linear-gradient(135deg, rgba(45, 212, 160, 0.15), rgba(74, 123, 167, 0.15));
+            border: 1px solid rgba(45, 212, 160, 0.2);
+        }
+
+        .panel-icon.download svg {
+            fill: var(--accent-green);
+        }
+
+        .panel-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .panel-subtitle {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            border: 1.5px solid var(--border-subtle);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            transition: all 0.2s ease;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, rgba(77, 158, 255, 0.18), rgba(107, 179, 255, 0.18));
+            border-color: rgba(77, 158, 255, 0.3);
+            color: var(--lcd-blue-bright);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, rgba(77, 158, 255, 0.28), rgba(107, 179, 255, 0.28));
+            border-color: rgba(77, 158, 255, 0.5);
+            box-shadow: 0 4px 20px rgba(77, 158, 255, 0.2);
+        }
+
+        .btn-upload {
+            background: linear-gradient(135deg, rgba(230, 115, 57, 0.15), rgba(214, 90, 138, 0.15));
+            border-color: rgba(230, 115, 57, 0.25);
+            color: var(--accent-orange);
+        }
+
+        .btn-upload:hover {
+            background: linear-gradient(135deg, rgba(230, 115, 57, 0.25), rgba(214, 90, 138, 0.25));
+            border-color: rgba(230, 115, 57, 0.4);
+            box-shadow: 0 4px 20px rgba(230, 115, 57, 0.15);
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, rgba(45, 212, 160, 0.15), rgba(74, 123, 167, 0.15));
+            border-color: rgba(45, 212, 160, 0.25);
+            color: var(--accent-green);
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(135deg, rgba(45, 212, 160, 0.25), rgba(74, 123, 167, 0.25));
+            border-color: rgba(45, 212, 160, 0.4);
+            box-shadow: 0 4px 20px rgba(45, 212, 160, 0.15);
+        }
+
+        /* Inputs */
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .input-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .input-number,
+        .input-select {
+            height: 38px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .input-number {
+            width: 72px;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        .input-select {
+            width: 85px;
+            cursor: pointer;
+        }
+
+        .input-select option {
+            background-color: var(--bg-card-solid);
+            color: var(--text-primary);
+        }
+
+        .input-number::-webkit-outer-spin-button,
+        .input-number::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .input-number:focus,
+        .input-select:focus {
+            border-color: rgba(77, 158, 255, 0.4);
+            background: rgba(77, 158, 255, 0.06);
+            box-shadow: 0 0 8px rgba(77, 158, 255, 0.1);
+        }
+
+        /* Bank summary */
+        .bank-summary {
+            display: none;
+            margin-top: 18px;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .bank-summary.visible {
+            display: block;
+            animation: fadeSlideIn 0.3s ease;
+        }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bank-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .bank-stat:last-child {
+            margin-bottom: 0;
+        }
+
+        .bank-stat-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--lcd-blue-bright);
+        }
+
+        .bank-stat-label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+
+        .pattern-list-preview {
+            margin-top: 12px;
+            max-height: 180px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+        }
+
+        .pattern-list-preview::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .pattern-list-preview::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .pattern-list-preview::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        .pattern-preview-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 0;
+            font-size: 0.72rem;
+        }
+
+        .pattern-preview-num {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--text-muted);
+            min-width: 24px;
+        }
+
+        .pattern-preview-name {
+            color: var(--text-secondary);
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .pattern-preview-name.has-data {
+            color: var(--text-primary);
+        }
+
+        .pattern-preview-steps {
+            display: flex;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+
+        .mini-step {
+            width: 4px;
+            height: 10px;
+            border-radius: 1px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .mini-step.on {
+            background: var(--lcd-blue);
+        }
+
+        .mini-step.left {
+            background: var(--knob-red);
+        }
+
+        .mini-step.right {
+            background: var(--knob-green);
+        }
+
+        /* Progress */
+        .progress-section {
+            display: none;
+            margin-top: 18px;
+        }
+
+        .progress-section.visible {
+            display: block;
+            animation: fadeSlideIn 0.3s ease;
+        }
+
+        .progress-bar-track {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        .progress-bar-fill.upload {
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink));
+        }
+
+        .progress-bar-fill.download {
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+        }
+
+        .progress-text {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Log */
+        .log-container {
+            margin-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 16px;
+        }
+
+        .log-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .log-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .log-clear {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+            transition: color 0.15s;
+        }
+
+        .log-clear:hover {
+            color: var(--text-secondary);
+        }
+
+        .log-output {
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.68rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+        }
+
+        .log-output::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .log-output::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .log-output::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        .log-line {
+            padding: 1px 0;
+        }
+
+        .log-line.info {
+            color: var(--lcd-blue);
+        }
+
+        .log-line.success {
+            color: var(--accent-green);
+        }
+
+        .log-line.warn {
+            color: var(--accent-orange);
+        }
+
+        .log-line.error {
+            color: var(--accent-red);
+        }
+
+        /* File drop zone */
+        .file-zone {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .file-name {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .file-name.loaded {
+            color: var(--text-primary);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* WebSerial warning */
+        .webserial-warning {
+            display: none;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            background: rgba(229, 72, 77, 0.08);
+            border: 1px solid rgba(229, 72, 77, 0.2);
+            color: rgba(229, 72, 77, 0.9);
+            font-size: 0.78rem;
+            margin-bottom: 20px;
+        }
+
+        .webserial-warning.visible {
+            display: block;
+        }
+
+        /* Actions row */
+        .actions-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* Slot display */
+        .slot-display {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        .slot-range {
+            color: var(--lcd-blue);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .app-container {
+                padding: 20px 16px 36px;
+            }
+
+            .panel {
+                padding: 20px 18px;
+            }
+
+            .header-title {
+                font-size: 0.75rem;
+            }
+
+            .actions-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .slot-display {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header" id="appHeader">
+            <img src="https://lh3.googleusercontent.com/d/1VVUsN13u6YJR4RcCv-YRL4TmY3710caR" alt="Sidestepper" class="logo-img">
+            <span class="header-title">Bank Manager</span>
+            <div class="header-spacer"></div>
+            <div class="connection-badge" id="connectionBadge">
+                <span class="connection-dot"></span>
+                <span id="connectionText">Disconnected</span>
+            </div>
+        </header>
+
+        <!-- WebSerial Warning -->
+        <div class="webserial-warning" id="webserialWarning">
+            ⚠ WebSerial API is not supported in this browser. Please use Chrome or Edge (version 89+) to connect to the
+            device.
+        </div>
+
+        <!-- Panel 1: Open Bank File -->
+        <section class="panel" id="panelFile">
+            <div class="panel-header">
+                <div class="panel-icon file">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 3.5L18.5 8H14V3.5zM6 20V4h7v5h5v11H6z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="panel-title">Open Bank File</div>
+                    <div class="panel-subtitle">Load a JSON pattern bank for transfer</div>
+                </div>
+            </div>
+
+            <div class="file-zone">
+                <button class="btn btn-primary" id="btnOpenFile">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z" />
+                    </svg>
+                    Choose File
+                </button>
+                <span class="file-name" id="fileName">No file selected</span>
+                <input type="file" id="fileInput" style="display:none" accept=".json">
+            </div>
+
+            <div class="bank-summary" id="bankSummary">
+                <div class="bank-stat">
+                    <span class="bank-stat-value" id="patternCount">0</span>
+                    <span class="bank-stat-label">patterns loaded</span>
+                </div>
+                <div class="pattern-list-preview" id="patternListPreview"></div>
+            </div>
+        </section>
+
+        <!-- Panel 2: Upload to Device -->
+        <section class="panel" id="panelUpload">
+            <div class="panel-header">
+                <div class="panel-icon upload">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="panel-title">Upload to Device</div>
+                    <div class="panel-subtitle">Send loaded bank patterns to the sequencer</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <span class="input-label">First pattern slot:</span>
+                <select class="input-select" id="uploadStartSlot"></select>
+                <div class="slot-display" id="slotDisplay">
+                    Patterns will be placed at <span class="slot-range" id="slotRange">—</span>
+                </div>
+            </div>
+
+            <div class="actions-row" style="margin-top: 16px;">
+                <button class="btn btn-upload" id="btnUpload" disabled>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z" />
+                    </svg>
+                    Connect &amp; Upload
+                </button>
+            </div>
+
+            <div class="progress-section" id="uploadProgress">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill upload" id="uploadProgressBar"></div>
+                </div>
+                <span class="progress-text" id="uploadProgressText">0 / 0</span>
+            </div>
+        </section>
+
+        <!-- Panel 3: Download from Device -->
+        <section class="panel" id="panelDownload">
+            <div class="panel-header">
+                <div class="panel-icon download">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="panel-title">Download from Device</div>
+                    <div class="panel-subtitle">Read all patterns and save as a bank file</div>
+                </div>
+            </div>
+
+            <div class="actions-row">
+                <button class="btn btn-download" id="btnDownload">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                    </svg>
+                    Connect &amp; Download
+                </button>
+                <button class="btn btn-primary" id="btnSaveAs" style="display:none;">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z" />
+                    </svg>
+                    Save As…
+                </button>
+            </div>
+
+            <div class="progress-section" id="downloadProgress">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill download" id="downloadProgressBar"></div>
+                </div>
+                <span class="progress-text" id="downloadProgressText">0 / 80</span>
+            </div>
+        </section>
+
+        <!-- Panel 4: Erase Device -->
+        <section class="panel" id="panelErase" style="border-color: rgba(229, 72, 77, 0.3);">
+            <div class="panel-header">
+                <div class="panel-icon"
+                    style="background: linear-gradient(135deg, rgba(229, 72, 77, 0.15), rgba(214, 90, 138, 0.15)); border: 1px solid rgba(229, 72, 77, 0.2);">
+                    <svg viewBox="0 0 24 24" style="fill: var(--accent-red);">
+                        <path
+                            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="panel-title" style="color: var(--accent-red);">Total Erase</div>
+                    <div class="panel-subtitle">Permanently delete all patterns and settings from the sequencer</div>
+                </div>
+            </div>
+
+            <div class="actions-row">
+                <button class="btn" id="btnErase"
+                    style="background: linear-gradient(135deg, rgba(229, 72, 77, 0.15), rgba(214, 90, 138, 0.15)); border-color: rgba(229, 72, 77, 0.25); color: var(--accent-red);">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M15 16h4v2h-4zm0-8h7v2h-7zm0 4h6v2h-6zM3 18c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V8H3v10zM14 5h-3l-1-1H6L5 5H2v2h12z" />
+                    </svg>
+                    Connect &amp; Erase All
+                </button>
+            </div>
+        </section>
+
+        <!-- Log -->
+        <div class="log-container" id="logContainer">
+            <div class="log-header">
+                <span class="log-title">Activity Log</span>
+                <button class="log-clear" id="btnClearLog">Clear</button>
+            </div>
+            <div class="log-output" id="logOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        // ══════════════════════════════════════════════════════════════
+        // Constants
+        // ══════════════════════════════════════════════════════════════
+        const NUM_STEPS = 16;
+        const NUM_PATTERNS = 80;
+        const DEFAULT_STEP_COUNT = 8;
+        const STEP_OFF = 0;
+
+        // USB message types (from firmware)
+        const USB_MSG_REQUEST_PRESET = 0x01;
+        const USB_MSG_NO_PRESET = 0x10;
+        const USB_MSG_PRESET_DATA = 0x11;
+
+        // ══════════════════════════════════════════════════════════════
+        // State
+        // ══════════════════════════════════════════════════════════════
+        let loadedPatterns = null;   // Array of pattern objects from loaded file
+        let serialPort = null;
+        let serialReader = null;
+        let serialWriter = null;
+
+        // ══════════════════════════════════════════════════════════════
+        // DOM refs
+        // ══════════════════════════════════════════════════════════════
+        const fileInput = document.getElementById('fileInput');
+        const btnOpenFile = document.getElementById('btnOpenFile');
+        const fileName = document.getElementById('fileName');
+        const bankSummary = document.getElementById('bankSummary');
+        const patternCount = document.getElementById('patternCount');
+        const patternListPreview = document.getElementById('patternListPreview');
+
+        const uploadStartSlot = document.getElementById('uploadStartSlot');
+        const slotRange = document.getElementById('slotRange');
+        const btnUpload = document.getElementById('btnUpload');
+        const uploadProgressSection = document.getElementById('uploadProgress');
+        const uploadProgressBar = document.getElementById('uploadProgressBar');
+        const uploadProgressText = document.getElementById('uploadProgressText');
+
+        const btnDownload = document.getElementById('btnDownload');
+        const downloadProgressSection = document.getElementById('downloadProgress');
+        const downloadProgressBar = document.getElementById('downloadProgressBar');
+        const downloadProgressText = document.getElementById('downloadProgressText');
+
+        const btnErase = document.getElementById('btnErase');
+
+        const connectionBadge = document.getElementById('connectionBadge');
+        const connectionText = document.getElementById('connectionText');
+        const logOutput = document.getElementById('logOutput');
+
+        // ══════════════════════════════════════════════════════════════
+        // Logging
+        // ══════════════════════════════════════════════════════════════
+        function log(msg, level = '') {
+            const line = document.createElement('div');
+            line.className = 'log-line' + (level ? ` ${level}` : '');
+            const ts = new Date().toLocaleTimeString('en-US', { hour12: false });
+            line.textContent = `[${ts}] ${msg}`;
+            logOutput.appendChild(line);
+            logOutput.scrollTop = logOutput.scrollHeight;
+        }
+
+        document.getElementById('btnClearLog').addEventListener('click', () => {
+            logOutput.innerHTML = '';
+        });
+
+        // ══════════════════════════════════════════════════════════════
+        // CRC32 — matching firmware crc32.h
+        //
+        // Firmware: crc32(msg, size, init_crc_value)
+        //   -> crc32_start()           (seed=0, state = ~0 = 0xFFFFFFFF)
+        //   -> crc32_process(&init_crc_value, 4)   (feeds 4 bytes of init_crc_value)
+        //   -> crc32_process(msg, size)
+        //   -> crc32_finish()          (return ~state)
+        //
+        // The firmware also pads each crc32_process call to 4-byte boundary.
+        // ══════════════════════════════════════════════════════════════
+        const CRC32_TABLE = new Uint32Array([
+            0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA, 0x076DC419, 0x706AF48F, 0xE963A535, 0x9E6495A3,
+            0x0EDB8832, 0x79DCB8A4, 0xE0D5E91E, 0x97D2D988, 0x09B64C2B, 0x7EB17CBD, 0xE7B82D07, 0x90BF1D91,
+            0x1DB71064, 0x6AB020F2, 0xF3B97148, 0x84BE41DE, 0x1ADAD47D, 0x6DDDE4EB, 0xF4D4B551, 0x83D385C7,
+            0x136C9856, 0x646BA8C0, 0xFD62F97A, 0x8A65C9EC, 0x14015C4F, 0x63066CD9, 0xFA0F3D63, 0x8D080DF5,
+            0x3B6E20C8, 0x4C69105E, 0xD56041E4, 0xA2677172, 0x3C03E4D1, 0x4B04D447, 0xD20D85FD, 0xA50AB56B,
+            0x35B5A8FA, 0x42B2986C, 0xDBBBC9D6, 0xACBCF940, 0x32D86CE3, 0x45DF5C75, 0xDCD60DCF, 0xABD13D59,
+            0x26D930AC, 0x51DE003A, 0xC8D75180, 0xBFD06116, 0x21B4F4B5, 0x56B3C423, 0xCFBA9599, 0xB8BDA50F,
+            0x2802B89E, 0x5F058808, 0xC60CD9B2, 0xB10BE924, 0x2F6F7C87, 0x58684C11, 0xC1611DAB, 0xB6662D3D,
+            0x76DC4190, 0x01DB7106, 0x98D220BC, 0xEFD5102A, 0x71B18589, 0x06B6B51F, 0x9FBFE4A5, 0xE8B8D433,
+            0x7807C9A2, 0x0F00F934, 0x9609A88E, 0xE10E9818, 0x7F6A0DBB, 0x086D3D2D, 0x91646C97, 0xE6635C01,
+            0x6B6B51F4, 0x1C6C6162, 0x856530D8, 0xF262004E, 0x6C0695ED, 0x1B01A57B, 0x8208F4C1, 0xF50FC457,
+            0x65B0D9C6, 0x12B7E950, 0x8BBEB8EA, 0xFCB9887C, 0x62DD1DDF, 0x15DA2D49, 0x8CD37CF3, 0xFBD44C65,
+            0x4DB26158, 0x3AB551CE, 0xA3BC0074, 0xD4BB30E2, 0x4ADFA541, 0x3DD895D7, 0xA4D1C46D, 0xD3D6F4FB,
+            0x4369E96A, 0x346ED9FC, 0xAD678846, 0xDA60B8D0, 0x44042D73, 0x33031DE5, 0xAA0A4C5F, 0xDD0D7CC9,
+            0x5005713C, 0x270241AA, 0xBE0B1010, 0xC90C2086, 0x5768B525, 0x206F85B3, 0xB966D409, 0xCE61E49F,
+            0x5EDEF90E, 0x29D9C998, 0xB0D09822, 0xC7D7A8B4, 0x59B33D17, 0x2EB40D81, 0xB7BD5C3B, 0xC0BA6CAD,
+            0xEDB88320, 0x9ABFB3B6, 0x03B6E20C, 0x74B1D29A, 0xEAD54739, 0x9DD277AF, 0x04DB2615, 0x73DC1683,
+            0xE3630B12, 0x94643B84, 0x0D6D6A3E, 0x7A6A5AA8, 0xE40ECF0B, 0x9309FF9D, 0x0A00AE27, 0x7D079EB1,
+            0xF00F9344, 0x8708A3D2, 0x1E01F268, 0x6906C2FE, 0xF762575D, 0x806567CB, 0x196C3671, 0x6E6B06E7,
+            0xFED41B76, 0x89D32BE0, 0x10DA7A5A, 0x67DD4ACC, 0xF9B9DF6F, 0x8EBEEFF9, 0x17B7BE43, 0x60B08ED5,
+            0xD6D6A3E8, 0xA1D1937E, 0x38D8C2C4, 0x4FDFF252, 0xD1BB67F1, 0xA6BC5767, 0x3FB506DD, 0x48B2364B,
+            0xD80D2BDA, 0xAF0A1B4C, 0x36034AF6, 0x41047A60, 0xDF60EFC3, 0xA867DF55, 0x316E8EEF, 0x4669BE79,
+            0xCB61B38C, 0xBC66831A, 0x256FD2A0, 0x5268E236, 0xCC0C7795, 0xBB0B4703, 0x220216B9, 0x5505262F,
+            0xC5BA3BBE, 0xB2BD0B28, 0x2BB45A92, 0x5CB36A04, 0xC2D7FFA7, 0xB5D0CF31, 0x2CD99E8B, 0x5BDEAE1D,
+            0x9B64C2B0, 0xEC63F226, 0x756AA39C, 0x026D930A, 0x9C0906A9, 0xEB0E363F, 0x72076785, 0x05005713,
+            0x95BF4A82, 0xE2B87A14, 0x7BB12BAE, 0x0CB61B38, 0x92D28E9B, 0xE5D5BE0D, 0x7CDCEFB7, 0x0BDBDF21,
+            0x86D3D2D4, 0xF1D4E242, 0x68DDB3F8, 0x1FDA836E, 0x81BE16CD, 0xF6B9265B, 0x6FB077E1, 0x18B74777,
+            0x88085AE6, 0xFF0F6A70, 0x66063BCA, 0x11010B5C, 0x8F659EFF, 0xF862AE69, 0x616BFFD3, 0x166CCF45,
+            0xA00AE278, 0xD70DD2EE, 0x4E048354, 0x3903B3C2, 0xA7672661, 0xD06016F7, 0x4969474D, 0x3E6E77DB,
+            0xAED16A4A, 0xD9D65ADC, 0x40DF0B66, 0x37D83BF0, 0xA9BCAE53, 0xDEBB9EC5, 0x47B2CF7F, 0x30B5FFE9,
+            0xBDBDF21C, 0xCABAC28A, 0x53B39330, 0x24B4A3A6, 0xBAD03605, 0xCDD70693, 0x54DE5729, 0x23D967BF,
+            0xB3667A2E, 0xC4614AB8, 0x5D681B02, 0x2A6F2B94, 0xB40BBE37, 0xC30C8EA1, 0x5A05DF1B, 0x2D02EF8D,
+        ]);
+
+        // Process bytes into CRC state (with padding to 4-byte boundary)
+        function crc32Process(state, data) {
+            for (let i = 0; i < data.length; i++) {
+                state = (state >>> 8) ^ CRC32_TABLE[(state & 0xFF) ^ data[i]];
+            }
+            // Pad to 4-byte boundary
+            const padSize = ((data.length + 3) & ~3) - data.length;
+            for (let i = 0; i < padSize; i++) {
+                state = (state >>> 8) ^ CRC32_TABLE[(state & 0xFF) ^ 0];
+            }
+            return state;
+        }
+
+        // Compute CRC32 matching firmware: crc32(bytes, size, init_crc_value)
+        // init_crc_value is fed as 4 little-endian bytes before the data
+        function computeUsbCrc32(data, initCrcValue) {
+            let state = 0xFFFFFFFF; // ~seed where seed=0
+            // Feed init_crc_value as 4 little-endian bytes
+            const initBytes = new Uint8Array(4);
+            initBytes[0] = initCrcValue & 0xFF;
+            initBytes[1] = (initCrcValue >>> 8) & 0xFF;
+            initBytes[2] = (initCrcValue >>> 16) & 0xFF;
+            initBytes[3] = (initCrcValue >>> 24) & 0xFF;
+            state = crc32Process(state, initBytes);
+            // Feed message data
+            state = crc32Process(state, data);
+            return (~state) >>> 0;
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // Pattern helpers (from editor)
+        // ══════════════════════════════════════════════════════════════
+        function makeStep(state = STEP_OFF, nudge = 0, length = 16) {
+            return { state, nudge, length };
+        }
+
+        function makeStepsArray() {
+            return Array.from({ length: NUM_STEPS }, () => makeStep());
+        }
+
+        function isEmptyPattern(p) {
+            for (let i = 0; i < (p.stepCount || p.steps.length); i++) {
+                if (p.steps[i] && p.steps[i].state !== STEP_OFF) return false;
+            }
+            return true;
+        }
+
+        function patternSlotName(i) {
+            return "ABCDEFGH"[Math.floor(i / 10)] + (i % 10);
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // Bank file loading
+        // ══════════════════════════════════════════════════════════════
+        btnOpenFile.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    const data = JSON.parse(ev.target.result);
+                    if (!Array.isArray(data) || data.length < 1) {
+                        throw new Error('Invalid bank file: expected a JSON array');
+                    }
+
+                    // Parse (same migration logic as editor)
+                    if (Array.isArray(data[0])) {
+                        loadedPatterns = data.map(steps => ({
+                            name: '',
+                            steps: steps,
+                            stepCount: NUM_STEPS,
+                            stepLengthAdjust: 0,
+                            shuffleAmount: 0
+                        }));
+                    } else {
+                        loadedPatterns = data.map(p => ({
+                            name: p.name || '',
+                            steps: p.steps || makeStepsArray(),
+                            stepCount: p.stepCount || NUM_STEPS,
+                            stepLengthAdjust: p.stepLengthAdjust || 0,
+                            shuffleAmount: p.shuffleAmount || 0
+                        }));
+                    }
+
+                    // Ignore empty patterns entirely
+                    loadedPatterns = loadedPatterns.filter(p => !isEmptyPattern(p));
+
+                    fileName.textContent = file.name;
+                    fileName.classList.add('loaded');
+
+                    // Show summary
+                    patternCount.textContent = loadedPatterns.length;
+                    renderPatternPreview();
+                    bankSummary.classList.add('visible');
+                    updateSlotRange();
+                    btnUpload.disabled = false;
+
+                    log(`Loaded ${file.name}: ${loadedPatterns.length} patterns`, 'success');
+                } catch (err) {
+                    log(`Error loading file: ${err.message}`, 'error');
+                    alert('Error loading file: ' + err.message);
+                }
+            };
+            reader.readAsText(file);
+            fileInput.value = '';
+        });
+
+        function renderPatternPreview() {
+            patternListPreview.innerHTML = '';
+            if (!loadedPatterns) return;
+
+            for (let i = 0; i < loadedPatterns.length; i++) {
+                const p = loadedPatterns[i];
+                const hasData = !isEmptyPattern(p);
+                const item = document.createElement('div');
+                item.className = 'pattern-preview-item';
+
+                const num = document.createElement('span');
+                num.className = 'pattern-preview-num';
+                num.textContent = (i + 1).toString().padStart(2, '0');
+
+                const name = document.createElement('span');
+                name.className = 'pattern-preview-name' + (hasData ? ' has-data' : '');
+                name.textContent = p.name || (hasData ? '(unnamed)' : '—');
+
+                const stepsViz = document.createElement('span');
+                stepsViz.className = 'pattern-preview-steps';
+                const sc = p.stepCount || NUM_STEPS;
+                for (let j = 0; j < sc; j++) {
+                    const dot = document.createElement('span');
+                    const st = p.steps[j] ? p.steps[j].state : 0;
+                    dot.className = 'mini-step' + (st === 1 ? ' on' : st === 2 ? ' left' : st === 3 ? ' right' : '');
+                    stepsViz.appendChild(dot);
+                }
+
+                item.appendChild(num);
+                item.appendChild(name);
+                item.appendChild(stepsViz);
+                patternListPreview.appendChild(item);
+            }
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // Slot range display
+        // ══════════════════════════════════════════════════════════════
+        function updateSlotRange() {
+            if (!loadedPatterns) {
+                slotRange.textContent = '—';
+                return;
+            }
+            const start = parseInt(uploadStartSlot.value, 10) || 0;
+            const end = Math.min(start + loadedPatterns.length - 1, NUM_PATTERNS - 1);
+            const count = end - start + 1;
+            slotRange.textContent = `${patternSlotName(start)} – ${patternSlotName(end)} (${count} patterns)`;
+
+            if (start + loadedPatterns.length > NUM_PATTERNS) {
+                slotRange.style.color = 'var(--accent-orange)';
+            } else {
+                slotRange.style.color = '';
+            }
+        }
+
+        uploadStartSlot.addEventListener('input', updateSlotRange);
+
+        // ══════════════════════════════════════════════════════════════
+        // WebSerial helpers
+        // ══════════════════════════════════════════════════════════════
+        function setConnected(connected) {
+            connectionBadge.classList.toggle('connected', connected);
+            connectionText.textContent = connected ? 'Connected' : 'Disconnected';
+        }
+
+        async function connectSerial() {
+            if (serialPort && serialPort.readable) {
+                return serialPort; // Already connected
+            }
+
+            try {
+                serialPort = await navigator.serial.requestPort();
+                await serialPort.open({ baudRate: 115200 });
+                setConnected(true);
+                log('Serial port opened', 'success');
+                return serialPort;
+            } catch (err) {
+                log(`Serial connection failed: ${err.message}`, 'error');
+                throw err;
+            }
+        }
+
+        async function disconnectSerial() {
+            try {
+                if (serialReader) {
+                    await serialReader.cancel();
+                    serialReader.releaseLock();
+                    serialReader = null;
+                }
+                if (serialWriter) {
+                    serialWriter.releaseLock();
+                    serialWriter = null;
+                }
+                if (serialPort) {
+                    await serialPort.close();
+                    serialPort = null;
+                }
+            } catch (err) {
+                // Ignore close errors
+            }
+            setConnected(false);
+            log('Serial port closed', 'info');
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // USB Protocol — Message framing
+        // ══════════════════════════════════════════════════════════════
+
+        // Build a framed message: [size][payload...][crc32]
+        // size = 1 (size byte) + payload.length + 4 (CRC)
+        function frameMessage(payload) {
+            const size = 1 + payload.length + 4;
+            const msg = new Uint8Array(size);
+            msg[0] = size;
+            msg.set(payload, 1);
+
+            // CRC over the message bytes (without CRC field)
+            const crcData = msg.subarray(0, size - 4);
+            const crc = computeUsbCrc32(crcData, 0xFFFFFFFF);
+
+            msg[size - 4] = crc & 0xFF;
+            msg[size - 3] = (crc >>> 8) & 0xFF;
+            msg[size - 2] = (crc >>> 16) & 0xFF;
+            msg[size - 1] = (crc >>> 24) & 0xFF;
+
+            return msg;
+        }
+
+        // Send a reset sequence (256x 0xFF) to clear device RX state
+        async function sendReset(writer) {
+            const resetSeq = new Uint8Array(256).fill(0xFF);
+            await writer.write(resetSeq);
+        }
+
+        // Send a framed message
+        async function sendMessage(writer, payload) {
+            const msg = frameMessage(payload);
+            await writer.write(msg);
+        }
+
+        // Build a "request preset" payload
+        function makeRequestPresetPayload(presetId) {
+            return new Uint8Array([USB_MSG_REQUEST_PRESET, presetId]);
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // USB Protocol — Response reading
+        // ══════════════════════════════════════════════════════════════
+
+        // Buffered reader that accumulates incoming bytes and extracts
+        // complete messages based on the size byte framing.
+        class MessageReader {
+            constructor(port) {
+                this.port = port;
+                this.buffer = new Uint8Array(0);
+                this.reader = null;
+                this._cancelled = false;
+            }
+
+            async start() {
+                this.reader = this.port.readable.getReader();
+            }
+
+            async readMessage(timeoutMs = 5000) {
+                const deadline = Date.now() + timeoutMs;
+                let pendingRead = null;
+
+                while (Date.now() < deadline) {
+                    // Check if we have a complete message in the buffer
+                    if (this.buffer.length >= 5) {
+                        const msgSize = this.buffer[0];
+
+                        if (msgSize >= 5 && this.buffer.length >= msgSize) {
+                            // Extract the message
+                            const msg = this.buffer.slice(0, msgSize);
+                            this.buffer = this.buffer.slice(msgSize);
+
+                            // Verify CRC
+                            const crcData = msg.subarray(0, msgSize - 4);
+                            const expectedCrc = computeUsbCrc32(crcData, 0xFFFFFFFF);
+                            const receivedCrc =
+                                msg[msgSize - 4] |
+                                (msg[msgSize - 3] << 8) |
+                                (msg[msgSize - 2] << 16) |
+                                (msg[msgSize - 1] << 24);
+
+                            if ((expectedCrc >>> 0) !== (receivedCrc >>> 0)) {
+                                console.warn(`CRC mismatch: expected 0x${expectedCrc.toString(16)}, got 0x${(receivedCrc >>> 0).toString(16)}`);
+                                // Skip this message and try again
+                                continue;
+                            }
+
+                            return msg;
+                        }
+                    }
+
+                    // Read more data from the serial port
+                    const remaining = deadline - Date.now();
+                    if (remaining <= 0) break;
+
+                    try {
+                        // Reuse the pending read promise if one is already in flight,
+                        // since ReadableStreamDefaultReader doesn't allow concurrent reads.
+                        if (!pendingRead) {
+                            pendingRead = this.reader.read();
+                        }
+
+                        const timeoutPromise = new Promise((_, reject) =>
+                            setTimeout(() => reject(new Error('Read timeout')), Math.min(remaining, 1000))
+                        );
+
+                        const result = await Promise.race([pendingRead, timeoutPromise]);
+
+                        // read() won the race — clear it so a new one starts next iteration
+                        pendingRead = null;
+
+                        if (result.done) {
+                            throw new Error('Serial port closed');
+                        }
+
+                        // Append to buffer
+                        const newBuf = new Uint8Array(this.buffer.length + result.value.length);
+                        newBuf.set(this.buffer);
+                        newBuf.set(result.value, this.buffer.length);
+                        this.buffer = newBuf;
+                    } catch (err) {
+                        if (err.message === 'Read timeout') {
+                            // The pending read is still in flight — keep it for the next iteration
+                            continue;
+                        }
+                        throw err;
+                    }
+                }
+
+                throw new Error('Timeout waiting for device response');
+            }
+
+            async stop() {
+                if (this.reader) {
+                    try {
+                        await this.reader.cancel();
+                    } catch (e) { /* ignore */ }
+                    try {
+                        this.reader.releaseLock();
+                    } catch (e) { /* ignore */ }
+                    this.reader = null;
+                }
+            }
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // Parse preset data from USB response
+        // ══════════════════════════════════════════════════════════════
+        function parsePresetFromMessage(msg) {
+            // msg layout: [size][0x11][presetId][64 bytes page0][64 bytes page1][crc32]
+            // Payload starts at index 1, data starts at index 3
+            const presetId = msg[2];
+            const page0Start = 3;
+
+            // Parse page0 data (same layout as preset_data.h)
+            // The page0 from USB is raw page.data[64], containing:
+            //   [0..3]   hdr (4 bytes)    — we skip this for parsing
+            //   [4..7]   checksum (4 bytes) — we skip this for parsing
+            //   [8..23]  title (16 bytes)
+            //   [24..27] step states (4 bytes, 2 bits per step)
+            //   [28..43] step_length (16 bytes)
+            //   [44..59] step_nudge (16 signed bytes)
+            //   [60]     pattern_length
+            //   [61]     pattern_shuffle (signed)
+            //   [62]     pattern_extra_step_length (signed)
+
+            // Title
+            const titleBytes = msg.subarray(page0Start + 8, page0Start + 24);
+            let title = new TextDecoder().decode(titleBytes).replace(/\0+$/, '').trim();
+
+            // Step states
+            const stepStates = [];
+            for (let s = 0; s < 16; s++) {
+                const byteIndex = Math.floor(s / 4);
+                const bitOffset = (s % 4) * 2;
+                const state = (msg[page0Start + 24 + byteIndex] >> bitOffset) & 0x03;
+                stepStates.push(state);
+            }
+
+            // Step lengths
+            const stepLengths = Array.from(msg.subarray(page0Start + 28, page0Start + 44));
+
+            // Step nudge (signed)
+            const stepNudge = Array.from(msg.subarray(page0Start + 44, page0Start + 60)).map(v =>
+                v > 127 ? v - 256 : v
+            );
+
+            // Pattern params
+            const patternLength = msg[page0Start + 60];
+            let patternShuffle = msg[page0Start + 61];
+            patternShuffle = patternShuffle > 127 ? patternShuffle - 256 : patternShuffle;
+            let patternExtraStepLength = msg[page0Start + 62];
+            patternExtraStepLength = patternExtraStepLength > 127 ? patternExtraStepLength - 256 : patternExtraStepLength;
+
+            // Build steps
+            const steps = [];
+            for (let s = 0; s < 16; s++) {
+                steps.push({
+                    state: stepStates[s],
+                    nudge: stepNudge[s],
+                    length: stepLengths[s]
+                });
+            }
+
+            return {
+                name: title,
+                steps: steps,
+                stepCount: Math.min(16, Math.max(1, patternLength)),
+                stepLengthAdjust: patternExtraStepLength,
+                shuffleAmount: patternShuffle
+            };
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // Download from device
+        // ══════════════════════════════════════════════════════════════
+        btnDownload.addEventListener('click', async () => {
+            btnDownload.disabled = true;
+            downloadProgressSection.classList.add('visible');
+
+            let msgReader = null;
+            let writer = null;
+
+            try {
+                const port = await connectSerial();
+                msgReader = new MessageReader(port);
+                await msgReader.start();
+                writer = port.writable.getWriter();
+
+                // Send reset sequence
+                log('Sending reset sequence...', 'info');
+                await sendReset(writer);
+                await new Promise(r => setTimeout(r, 200));
+
+                // Flush any pending data by draining the buffer
+                msgReader.buffer = new Uint8Array(0);
+
+                const downloadedPatterns = [];
+                let validCount = 0;
+
+                for (let i = 0; i < NUM_PATTERNS; i++) {
+                    downloadProgressBar.style.width = `${((i + 1) / NUM_PATTERNS) * 100}%`;
+                    downloadProgressText.textContent = `${i + 1} / ${NUM_PATTERNS}`;
+
+                    // Send request
+                    await sendMessage(writer, makeRequestPresetPayload(i));
+
+                    try {
+                        const response = await msgReader.readMessage(3000);
+                        const msgType = response[1];
+
+                        if (msgType === USB_MSG_PRESET_DATA) {
+                            const pattern = parsePresetFromMessage(response);
+                            downloadedPatterns.push(pattern);
+                            if (!isEmptyPattern(pattern)) {
+                                validCount++;
+                                log(`Pattern ${patternSlotName(i)}: "${pattern.name}" (${pattern.stepCount} steps)`, 'info');
+                            }
+                        } else if (msgType === USB_MSG_NO_PRESET) {
+                            downloadedPatterns.push({
+                                name: '',
+                                steps: makeStepsArray(),
+                                stepCount: DEFAULT_STEP_COUNT,
+                                stepLengthAdjust: 0,
+                                shuffleAmount: 0
+                            });
+                            log(`Pattern ${patternSlotName(i)}: empty`, '');
+                        } else {
+                            // Pong or unknown, treat as empty
+                            downloadedPatterns.push({
+                                name: '',
+                                steps: makeStepsArray(),
+                                stepCount: DEFAULT_STEP_COUNT,
+                                stepLengthAdjust: 0,
+                                shuffleAmount: 0
+                            });
+                        }
+                    } catch (err) {
+                        log(`Pattern ${patternSlotName(i)}: timeout/error — ${err.message}`, 'warn');
+                        downloadedPatterns.push({
+                            name: '',
+                            steps: makeStepsArray(),
+                            stepCount: DEFAULT_STEP_COUNT,
+                            stepLengthAdjust: 0,
+                            shuffleAmount: 0
+                        });
+                        log('Sending reset sequence due to timeout...', 'info');
+                        await sendReset(writer);
+                        await new Promise(r => setTimeout(r, 200));
+                        msgReader.buffer = new Uint8Array(0);
+                    }
+
+                    // Small delay between requests
+                    await new Promise(r => setTimeout(r, 30));
+                }
+
+                log(`Download complete: ${validCount} valid patterns out of ${NUM_PATTERNS}`, 'success');
+
+                // Store data for the Save As button (needs a fresh user gesture)
+                pendingDownloadData = JSON.stringify(downloadedPatterns, null, 2);
+                pendingDownloadName = `sequencer_bank_${new Date().toISOString().slice(0, 10)}.json`;
+                btnSaveAs.style.display = '';
+                log('Click "Save As…" to choose where to save the file', 'info');
+            } catch (err) {
+                log(`Download failed: ${err.message}`, 'error');
+            } finally {
+                if (writer) {
+                    try { writer.releaseLock(); } catch (e) { /* ignore */ }
+                }
+                if (msgReader) {
+                    await msgReader.stop();
+                }
+                await disconnectSerial();
+                btnDownload.disabled = false;
+            }
+        });
+
+        // "Save As" button — triggered by a fresh user click for showSaveFilePicker
+        const btnSaveAs = document.getElementById('btnSaveAs');
+        let pendingDownloadData = null;
+        let pendingDownloadName = '';
+
+        btnSaveAs.addEventListener('click', async () => {
+            if (!pendingDownloadData) return;
+
+            if (window.showSaveFilePicker) {
+                try {
+                    const handle = await window.showSaveFilePicker({
+                        suggestedName: pendingDownloadName,
+                        types: [{
+                            description: 'JSON Bank File',
+                            accept: { 'application/json': ['.json'] }
+                        }]
+                    });
+                    const writable = await handle.createWritable();
+                    await writable.write(pendingDownloadData);
+                    await writable.close();
+                    log(`Saved to: ${handle.name}`, 'success');
+                } catch (saveErr) {
+                    if (saveErr.name === 'AbortError') {
+                        log('Save cancelled by user', 'warn');
+                        return;
+                    }
+                    log(`Save dialog error: ${saveErr.message}, using fallback download`, 'warn');
+                    triggerFallbackDownload();
+                }
+            } else {
+                triggerFallbackDownload();
+            }
+
+            pendingDownloadData = null;
+            btnSaveAs.style.display = 'none';
+
+            function triggerFallbackDownload() {
+                const blob = new Blob([pendingDownloadData], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = pendingDownloadName;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        });
+
+        // ══════════════════════════════════════════════════════════════
+        // Upload to device (STUBBED)
+        // ══════════════════════════════════════════════════════════════
+        btnUpload.addEventListener('click', async () => {
+            if (!loadedPatterns) {
+                log('No bank file loaded', 'warn');
+                return;
+            }
+
+            const startSlot = Math.max(0, Math.min(79, parseInt(uploadStartSlot.value, 10) || 0));
+            const count = Math.min(loadedPatterns.length, NUM_PATTERNS - startSlot);
+
+            if (count <= 0) {
+                log('No patterns to upload (start slot out of range)', 'warn');
+                return;
+            }
+
+            btnUpload.disabled = true;
+            uploadProgressSection.classList.add('visible');
+
+            log(`Upload: ${count} patterns starting at slot ${patternSlotName(startSlot)}`, 'info');
+
+            let msgReader = null;
+            let writer = null;
+
+            try {
+                const port = await connectSerial();
+                msgReader = new MessageReader(port);
+                await msgReader.start();
+                writer = port.writable.getWriter();
+
+                log('Sending reset sequence...', 'info');
+                await sendReset(writer);
+                await new Promise(r => setTimeout(r, 200));
+
+                msgReader.buffer = new Uint8Array(0);
+
+                let successCount = 0;
+
+                for (let i = 0; i < count; i++) {
+                    const targetSlot = startSlot + i;
+                    const pattern = loadedPatterns[i];
+
+                    uploadProgressBar.style.width = `${((i + 1) / count) * 100}%`;
+                    uploadProgressText.textContent = `${i + 1} / ${count}`;
+
+                    if (isEmptyPattern(pattern)) {
+                        log(`  Slot ${patternSlotName(targetSlot)}: Skipped (empty pattern)`, 'info');
+                        continue;
+                    }
+
+                    const binary = encodePatternToBinary(pattern);
+                    const writePayload = new Uint8Array(2 + binary.byteLength);
+                    writePayload[0] = 0x05; // USB_MSG_RECEIVE_PRESET
+                    writePayload[1] = targetSlot;
+                    writePayload.set(new Uint8Array(binary), 2);
+
+                    const framedMsg = frameMessage(writePayload);
+
+                    await sendMessage(writer, writePayload);
+
+                    try {
+                        const response = await msgReader.readMessage(3000);
+                        const msgType = response[1];
+
+                        if (msgType === 0x20 && response[2] === targetSlot) { // USB_MSG_TRANSMIT_OK
+                            log(`  Slot ${patternSlotName(targetSlot)}: "${pattern.name || '(unnamed)'}" uploaded successfully`, 'info');
+                            successCount++;
+                        } else {
+                            log(`  Slot ${patternSlotName(targetSlot)}: Unexpected response 0x${msgType.toString(16)}`, 'warn');
+                        }
+                    } catch (err) {
+                        log(`  Slot ${patternSlotName(targetSlot)}: timeout/error — ${err.message}`, 'error');
+                        log('Sending reset sequence due to timeout...', 'info');
+                        await sendReset(writer);
+                        await new Promise(r => setTimeout(r, 200));
+                        msgReader.buffer = new Uint8Array(0);
+                    }
+
+                    await new Promise(r => setTimeout(r, 30));
+                }
+
+                log(`Upload complete: ${successCount} out of ${count} patterns uploaded successfully`, 'success');
+
+            } catch (err) {
+                log(`Upload failed: ${err.message}`, 'error');
+            } finally {
+                if (writer) {
+                    try { writer.releaseLock(); } catch (e) { /* ignore */ }
+                }
+                if (msgReader) {
+                    await msgReader.stop();
+                }
+                await disconnectSerial();
+                btnUpload.disabled = false;
+            }
+        });
+
+        // ══════════════════════════════════════════════════════════════
+        // Total Erase
+        // ══════════════════════════════════════════════════════════════
+        btnErase.addEventListener('click', async () => {
+            if (!confirm('Are you absolutely sure you want to erase ALL patterns on the sequencer? This cannot be undone.')) {
+                return;
+            }
+
+            btnErase.disabled = true;
+            log('Starting total erase...', 'warn');
+
+            let msgReader = null;
+            let writer = null;
+
+            try {
+                const port = await connectSerial();
+                msgReader = new MessageReader(port);
+                await msgReader.start();
+                writer = port.writable.getWriter();
+
+                log('Sending reset sequence...', 'info');
+                await sendReset(writer);
+                await new Promise(r => setTimeout(r, 200));
+
+                msgReader.buffer = new Uint8Array(0);
+
+                // Send erase command
+                const erasePayload = new Uint8Array([0x30]);
+                await sendMessage(writer, erasePayload);
+                log('Erase command sent, waiting for completion (this may take a few seconds)...', 'info');
+
+                try {
+                    // Wait up to 10 seconds for erase to complete
+                    const response = await msgReader.readMessage(10000);
+                    const msgType = response[1];
+
+                    if (msgType === 0x20) { // USB_MSG_TRANSMIT_OK
+                        log('Total erase completed successfully', 'success');
+                    } else {
+                        log(`Unexpected response: 0x${msgType.toString(16)}`, 'warn');
+                    }
+                } catch (err) {
+                    log(`Total erase timeout/error — ${err.message}`, 'error');
+                }
+
+            } catch (err) {
+                log(`Total erase failed: ${err.message}`, 'error');
+            } finally {
+                if (writer) {
+                    try { writer.releaseLock(); } catch (e) { /* ignore */ }
+                }
+                if (msgReader) {
+                    await msgReader.stop();
+                }
+                await disconnectSerial();
+                btnErase.disabled = false;
+            }
+        });
+
+        // ══════════════════════════════════════════════════════════════
+        // Encode pattern to binary (from editor)
+        // ══════════════════════════════════════════════════════════════
+        // Standard CRC32 for preset data checksums (different from USB protocol CRC)
+        function calculatePresetCRC32(data, offset, length) {
+            let crc = 0xFFFFFFFF;
+            for (let i = 0; i < length; i++) {
+                const byte = data[offset + i];
+                crc = (crc >>> 8) ^ CRC32_TABLE[(crc ^ byte) & 0xFF];
+            }
+            return (crc ^ 0xFFFFFFFF) >>> 0;
+        }
+
+        function encodePatternToBinary(pattern) {
+            const PRESET_HEADER = 0x5474b4ce;
+            const PAGE_SIZE = 64;
+            const buffer = new ArrayBuffer(PAGE_SIZE * 2);
+            const view = new DataView(buffer);
+            const uint8 = new Uint8Array(buffer);
+
+            let offset = 0;
+
+            // Page 0: Header
+            view.setUint32(offset, PRESET_HEADER, true);
+            offset += 4;
+
+            // CRC placeholder
+            const crcOffset = offset;
+            view.setUint32(offset, 0, true);
+            offset += 4;
+
+            // Title (16 bytes)
+            const nameBytes = new TextEncoder().encode(pattern.name.substring(0, 16));
+            for (let i = 0; i < 16; i++) {
+                uint8[offset + i] = i < nameBytes.length ? nameBytes[i] : 0;
+            }
+            offset += 16;
+
+            // Step states (4 bytes, 2 bits per step)
+            for (let i = 0; i < 4; i++) {
+                let byte = 0;
+                for (let j = 0; j < 4; j++) {
+                    const stepIdx = i * 4 + j;
+                    const state = pattern.steps[stepIdx].state & 0x03;
+                    byte |= (state << (j * 2));
+                }
+                uint8[offset + i] = byte;
+            }
+            offset += 4;
+
+            // Step lengths (16 bytes)
+            for (let i = 0; i < 16; i++) {
+                uint8[offset + i] = pattern.steps[i].length & 0x7F;
+            }
+            offset += 16;
+
+            // Step nudge (16 signed bytes)
+            for (let i = 0; i < 16; i++) {
+                const nudge = pattern.steps[i].nudge;
+                uint8[offset + i] = nudge < 0 ? nudge + 256 : nudge;
+            }
+            offset += 16;
+
+            // Pattern length
+            uint8[offset++] = pattern.stepCount & 0xFF;
+
+            // Pattern shuffle (signed byte)
+            const shuffle = pattern.shuffleAmount || 0;
+            uint8[offset++] = shuffle < 0 ? shuffle + 256 : shuffle;
+
+            // Pattern extra step length (signed byte)
+            const extraLen = pattern.stepLengthAdjust || 0;
+            uint8[offset++] = extraLen < 0 ? extraLen + 256 : extraLen;
+
+            // Padding to 64 bytes
+            while (offset < PAGE_SIZE) {
+                uint8[offset++] = 0;
+            }
+
+            // CRC32 for page 0
+            const crcData = new Uint8Array(PAGE_SIZE - 4);
+            crcData.set([0xce, 0xb4, 0x74, 0xd4], 0);
+            crcData.set(uint8.subarray(8, PAGE_SIZE), 4);
+            const crc = calculatePresetCRC32(crcData, 0, PAGE_SIZE - 4);
+            view.setUint32(crcOffset, crc, true);
+
+            // Page 1 (header + CRC + zeros)
+            offset = PAGE_SIZE;
+            view.setUint32(offset, PRESET_HEADER, true);
+            offset += 4;
+            const page1CrcData = new Uint8Array(PAGE_SIZE - 4);
+            page1CrcData.set([0xce, 0xb4, 0x74, 0xd4], 0);
+            const page1Crc = calculatePresetCRC32(page1CrcData, 0, PAGE_SIZE - 4);
+            view.setUint32(offset, page1Crc, true);
+
+            return uint8;
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // WebSerial API check
+        // ══════════════════════════════════════════════════════════════
+        if (!('serial' in navigator)) {
+            document.getElementById('webserialWarning').classList.add('visible');
+            btnDownload.disabled = true;
+            log('WebSerial API not available in this browser', 'error');
+        }
+
+        // Initial state
+        for (let i = 0; i < NUM_PATTERNS; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.textContent = patternSlotName(i);
+            uploadStartSlot.appendChild(opt);
+        }
+        updateSlotRange();
+        log('Sidestepper Bank Manager ready', 'info');
+    </script>
+</body>
+
+</html>

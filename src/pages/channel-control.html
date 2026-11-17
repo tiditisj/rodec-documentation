@@ -1,0 +1,136 @@
+<div class="cc">
+
+<section class="cc-hero" style="--hero:url(/assets/pages/channel-control/mx-f-102-hero.webp)">
+  <div class="rdc-label light"><span class="idx">03</span><span class="rule"></span>Rodec MX-F-101 / 102</div>
+  <h1 class="rdc-title">Channel control. <em>Mono and stereo.</em></h1>
+  <p class="rdc-copy">The heart of the MX Modular mixer: precise control and versatile routing for each channel, designed with performance and flexibility in mind. Both versions are nearly identical, with slight variations for mono and stereo operation.</p>
+  <div class="rdc-specs">
+    <div><span>Core</span>THAT VCA, plop-free muting</div>
+    <div><span>Routing</span>Master, 2 busses, 2 AUX sends</div>
+    <div><span>Performance</span>Momentary mode, X-fader assign</div>
+    <div><span>Width</span>3.8 cm mono, 7.6 cm stereo</div>
+  </div>
+</section>
+
+<section class="cc-explore" id="explore">
+  <div class="cc-head">
+    <div>
+      <div class="rdc-label"><span class="idx">01</span><span class="rule"></span>Explore the panel</div>
+      <h2 class="rdc-title small">Press it. <em>Watch it light up.</em></h2>
+    </div>
+    <div class="cc-model" role="tablist" aria-label="Version">
+      <button role="tab" data-model="101" aria-selected="true">MX-F-101 <small>Mono</small></button>
+      <button role="tab" data-model="102" aria-selected="false">MX-F-102 <small>Stereo</small></button>
+    </div>
+  </div>
+
+  <div class="cc-grid">
+    <div class="cc-stagecol">
+      <div class="cc-stage" id="stage" aria-label="Interactive front panel">
+        <div class="cc-canvas" id="canvas">
+          <img class="cc-photo" id="photo" src="/assets/pages/channel-control/mx-f-101-base.webp" alt="MX-F-101 front panel" draggable="false">
+          <div class="cc-layer" id="layer"></div>
+        </div>
+      </div>
+      <div class="cc-transport">
+        <button class="cc-signal" id="signal" aria-pressed="false"><span class="dot"></span>Signal in</button>
+        <span class="cc-hint" id="hint">Press the buttons, turn the knobs, slide the fader.</span>
+      </div>
+      <div class="cc-route" aria-live="polite">
+        <div class="cc-route-title">Where the signal goes</div>
+        <div class="cc-route-row" id="route"></div>
+        <div class="cc-readout" id="readout"></div>
+        <p class="cc-route-note" id="routeNote"></p>
+      </div>
+    </div>
+
+    <ol class="cc-features" id="features">
+      <li data-f="on">
+        <button class="cc-fhead"><span class="t">ON button</span><span class="s">Turns the channel on or off. When off, the channel is muted.</span></button>
+        <div class="cc-fbody"><ul><li>Turns the channel <strong>ON</strong> or <strong>OFF</strong>.</li><li>When off, the channel is muted.</li></ul></div>
+      </li>
+      <li data-f="solo">
+        <button class="cc-fhead"><span class="t">SOLO button</span><span class="s">Solos the channel, muting all other channels.</span></button>
+        <div class="cc-fbody"><ul><li><strong>Solos the channel</strong> when pressed, muting all other channels for focused monitoring or interesting performances.</li></ul></div>
+      </li>
+      <li data-f="pan">
+        <button class="cc-fhead"><span class="t" data-mono="Pan control" data-stereo="Balance control">Pan control</span><span class="s">Position (mono) or relative L/R volume (stereo) on the master bus.</span></button>
+        <div class="cc-fbody"><ul><li><strong>Mono version</strong>: Pan knob controls the channel's <strong>L/R position</strong> on the master bus.</li><li><strong>Stereo version</strong>: Balance knob adjusts the <strong>relative L/R volume</strong> sent to the master bus.</li></ul></div>
+      </li>
+      <li data-f="aux">
+        <button class="cc-fhead"><span class="t">AUX 1/2 send knobs</span><span class="s">How much of this channel goes to AUX 1 and AUX 2, post-fader.</span></button>
+        <div class="cc-fbody"><ul><li>Control the amount of this channel sent to <strong>AUX 1</strong> and <strong>AUX 2</strong>.</li><li>The sends are <strong>post-fader</strong>, ensuring they follow the channel's volume adjustments.</li></ul></div>
+      </li>
+      <li data-f="fader">
+        <button class="cc-fhead"><span class="t">Fader</span><span class="s">Level to master, busses and auxes. Full up is 0 dB.</span></button>
+        <div class="cc-fbody"><ul><li>Controls the channel's level sent to the master, busses and auxes.</li><li><strong>Full up</strong> position corresponds to <strong>0 dB gain</strong>.</li></ul></div>
+      </li>
+      <li data-f="lit">
+        <button class="cc-fhead"><span class="t">Lit buttons on the right</span><span class="s">MOM, PFL, BUS 1, BUS 2 and MASTER.</span></button>
+        <div class="cc-fbody">
+          <p><strong>MOM (Momentary mode)</strong> switches the behaviour of the <strong>ON</strong> and <strong>SOLO</strong> buttons between <strong>latched mode</strong> (stays on or off when toggled) and <strong>momentary mode</strong> (only active while the button is held down). Ideal for live performance, allowing you to "play" a channel rhythmically by tapping the <strong>ON</strong> button like a synth trigger.</p>
+          <p><strong>PFL (Pre-Fader Listen)</strong> routes the channel to the <strong>PFL bus</strong> (pre-panning) for monitoring without affecting the main mix.</p>
+          <p><strong>BUS 1/2</strong> route the channel to <strong>BUS 1</strong> and/or <strong>BUS 2</strong>. Multiple routing options can be used simultaneously, enabling <strong>parallel processing</strong>.</p>
+          <p><strong>MASTER</strong> routes the channel to the <strong>master bus</strong>, and can be combined with the other routing buttons for parallel signal distribution.</p>
+        </div>
+      </li>
+      <li data-f="xf">
+        <button class="cc-fhead"><span class="t">X-fader switch</span><span class="s">Assign the channel to crossfader side X, Y or through.</span></button>
+        <div class="cc-fbody"><ul><li><strong>X</strong>: channel is only audible when the crossfader is in the <strong>X</strong> or <strong>middle</strong> position.</li><li><strong>Y</strong>: channel is only audible when the crossfader is in the <strong>Y</strong> or <strong>middle</strong> position.</li><li><strong>Through</strong>: crossfader position has <strong>no effect</strong> on the channel.</li></ul></div>
+      </li>
+      <li data-f="vu">
+        <button class="cc-fhead"><span class="t">VU meter</span><span class="s">The incoming signal level into the fader.</span></button>
+        <div class="cc-fbody"><ul><li>A dedicated VU meter for each channel allows you to monitor the incoming signal level into the fader.</li><li>Ensures precise gain staging and prevents clipping or weak signals.</li></ul></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="cc-high">
+  <div class="rdc-label"><span class="idx">02</span><span class="rule"></span>Key highlights</div>
+  <div class="cc-cards">
+    <div class="cc-card">
+      <span class="rdc-tag">Parallel routing</span>
+      <h3>Everything at once.</h3>
+      <p>The BUS 1/2, Master and AUX sends can all be used simultaneously, making the mixer highly versatile for parallel processing.</p>
+    </div>
+    <div class="cc-card">
+      <span class="rdc-tag">Momentary mode</span>
+      <h3>Play the channel.</h3>
+      <p>Momentary mode for live, rhythm-based channel toggling: tap ON like a synth trigger.</p>
+    </div>
+    <div class="cc-card">
+      <span class="rdc-tag">Crossfader</span>
+      <h3>X, Y or through.</h3>
+      <p>Smooth crossfader integration: channels can be dynamically assigned to crossfader X, Y, or bypassed completely.</p>
+    </div>
+    <div class="cc-card dark">
+      <span class="rdc-tag">Core technology</span>
+      <h3>THAT VCA.</h3>
+      <p>Ensures plop-free programmed muting, smooth fader control, and seamless integration with the crossfader.</p>
+    </div>
+  </div>
+  <p class="cc-closing">The Channel Control Modules provide a robust and intuitive interface for precise channel management, ensuring they are as suitable for studio production as they are for live performance scenarios. Whether using mono or stereo versions, these modules deliver professional-grade flexibility and control.</p>
+</section>
+
+<section class="cc-data">
+  <div class="rdc-head">
+    <div><div class="rdc-label"><span class="idx">03</span><span class="rule"></span>Data &amp; dimensions</div>
+    <h2 class="rdc-title small">Side by <em>side.</em></h2></div>
+    <a class="rdc-link" href="/rodec-mx-f-101-102-channel-control/data-dimensions">Full data sheet &rarr;</a>
+  </div>
+  <div class="table-wrap"><table class="cc-table">
+    <thead><tr><th></th><th>MX-F-101 <small>Mono</small></th><th>MX-F-102 <small>Stereo</small></th></tr></thead>
+    <tbody>
+      <tr><td>SKU</td><td>ROD-100035</td><td>ROD-100036</td></tr>
+      <tr><td>GTIN-13</td><td>5430003879139</td><td>5430003879146</td></tr>
+      <tr><td>Width</td><td>3.8 cm</td><td>7.6 cm</td></tr>
+      <tr><td>Length</td><td>23 cm</td><td>23 cm</td></tr>
+      <tr><td>Height</td><td>8.5 cm</td><td>8.5 cm</td></tr>
+      <tr><td>Weight</td><td>0.239 kg</td><td>0.323 kg</td></tr>
+      <tr><td>Box</td><td>29 x 18 x 14 cm, 0.439 kg</td><td>29 x 18 x 14 cm, 0.523 kg</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</div>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FX Presets with Algorithm</title>
+    <!-- Add IBM Plex Sans from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Table styling */
+        .table-styled {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        .table-styled th, .table-styled td {
+            border: 1px solid #000;
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        .table-styled th {
+            font-weight: bold;
+            font-size: 16px; /* Larger font for header */
+            background-color: #f2f2f2; /* Light grey background */
+            text-align: left;
+        }
+
+        .table-styled td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table class="table-styled">
+        <thead>
+            <tr>
+                <th>Preset Number</th>
+                <th>Name</th>
+                <th>Algorithm</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>Disabled</td>
+                <td>Disabled</td>
+                <td>Disabled</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Snare Slam</td>
+                <td>Reverb</td>
+                <td>A punchy and tight reverb designed to add power and character to claps and snares, perfect for creating impactful drum hits.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Synthwave Glow</td>
+                <td>Reverb</td>
+                <td>A lush, wide reverb tailored for synthesizers, wrapping your sound in a shimmering, dreamlike aura.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sub Sonic Depth</td>
+                <td>Reverb</td>
+                <td>A deep, controlled reverb crafted for bass, adding subtle resonance without muddying the low end.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Golden Stage</td>
+                <td>Reverb</td>
+                <td>Medium-length vocal reverb that strikes the perfect balance between presence and space, ideal for live and studio vocals.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ethereal Echo</td>
+                <td>Reverb</td>
+                <td>A long, expansive vocal reverb with cascading tails, perfect for ballads or creating atmospheric vocals.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Intimate Whisper</td>
+                <td>Reverb</td>
+                <td>A short vocal reverb with subtle reflections, ideal for close, intimate vocals that require clarity with just a touch of depth.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Event Horizon</td>
+                <td>Reverb</td>
+                <td>A dramatic long-tail reverb with built-in ducking, creating a massive black-hole effect that retreats gracefully during loud passages.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Velvet Strings</td>
+                <td>Reverb</td>
+                <td>A lush and warm reverb that complements delicate acoustic guitar picking, enhancing every note with smooth reflections.</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Pulse Room</td>
+                <td>Reverb</td>
+                <td>A short, vibrant reverb for acoustic guitar strumming, adding rhythmic energy without overwhelming the dry signal.</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Crystal Keys</td>
+                <td>Reverb</td>
+                <td>A staccato-style reverb perfect for piano chords, with sharp, clear reflections that enhance rhythmic play.</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Echo Chamber</td>
+                <td>Delay + Modulation</td>
+                <td>A mono vocal delay with a warm, smooth repeat, perfect for adding depth and presence to your voice.</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Lead Trail</td>
+                <td>Delay + Modulation</td>
+                <td>A mono delay designed for synth leads, with precise timing and clear articulation to enhance melodic solos.</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Retro Snap</td>
+                <td>Delay + Modulation</td>
+                <td>A classic slapback delay tailored for guitars, adding a vintage feel with quick, punchy repeats.</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Rolling Cascade</td>
+                <td>Delay + Modulation</td>
+                <td>A rhythmic ping-pong delay with flowing left-right movement, creating dynamic, swirling echoes.</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Hide & Seek</td>
+                <td>Delay + Modulation</td>
+                <td>A playful delay with abrupt stabs and muted tails, perfect for adding mystery and surprise to percussive elements.</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Starfall Arp</td>
+                <td>Delay + Modulation</td>
+                <td>A stereo delay tailored for arpeggios, with sparkling repeats that dance across the stereo field, creating a cosmic vibe.</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Echo Room</td>
+                <td>Delay + Reverb</td>
+                <td>A hybrid delay with short reverb tails, blending rhythmic precision with subtle spatial warmth.</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Infinite Horizon</td>
+                <td>Delay + Reverb</td>
+                <td>A delay with long reverb tails that stretch into the distance, perfect for creating vast, cinematic soundscapes.</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Scratchback</td>
+                <td>Delay + Modulation</td>
+                <td>A glitchy, unpredictable delay with modulated repeats, ideal for experimental textures and creative chaos.</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Chorus Strings</td>
+                <td>Delay + Modulation</td>
+                <td>A delay with subtle modulation and stereo spread, creating a lush, chorus-like effect for stringed instruments.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

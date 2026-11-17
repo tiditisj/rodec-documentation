@@ -1,0 +1,72 @@
+{
+  "path": "/rodec-k7-100-to-500-series-adapter",
+  "title": "500 to 100 series adapter.",
+  "title_em": "Your 100 series modules in any 500 rack.",
+  "hero_image": "src/img/panels-sharp/rodec-k7-100-to-500-series-adapter-01.webp",
+  "hero_style": "light",
+  "lead": "The K7 adapter lets Rodec 100 series modules run in any 500 series housing, so it is mainly meant for third-party 500 racks. It takes one stereo slot and holds up to 22HP of modules, such as the M-108, M-102 and M-104 shown here (6 + 6 + 10HP).",
+  "remove_images": [
+    "rodec-k7-100-to-500-series-adapter-01.jpg",
+    "rodec-k7-100-to-500-series-adapter-02.jpg"
+  ],
+  "blocks_before": [
+    "adapter-what.html"
+  ],
+  "panels": [
+    {
+      "image": "assets/images/rodec-k7-100-to-500-series-adapter-02.jpg",
+      "heading": "Inside the adapter",
+      "alt": "The K7 adapter board between its two 500 series slot positions",
+      "items": [
+        {
+          "name": "To the first module",
+          "label": "TO FIRST MINI MOD",
+          "at": [
+            760,
+            430
+          ],
+          "rect": [
+            560,
+            392,
+            740,
+            472
+          ],
+          "text": "Ribbon cable to the first 100 series module. The audio from the rack arrives here unbalanced."
+        },
+        {
+          "name": "Return from the last module",
+          "label": "RETURN FROM LAST",
+          "at": [
+            215,
+            430
+          ],
+          "rect": [
+            245,
+            392,
+            470,
+            472
+          ],
+          "text": "Ribbon cable back from the last module in the chain. The adapter balances it again for the rack."
+        },
+        {
+          "name": "Stereo slot",
+          "label": "LEFT SLOT · RIGHT SLOT",
+          "at": [
+            215,
+            1192
+          ],
+          "rect": [
+            240,
+            1170,
+            660,
+            1218
+          ],
+          "text": "The adapter takes two positions of the 500 series rack: one stereo slot."
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    "adapter-more.html"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "path": "/rodec-mx-modular/control-section/mute-controller",
+  "title": "Programmable mute controller.",
+  "title_em": "Store and recall mute groups.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-mx-modular--control-section--mute-controller-01.png",
+      "alt": "MX Modular programmable mute controller",
+      "items": [
+        {"name": "Bank select", "label": "BANK", "at": [12, 143], "rect": [25, 20, 78, 168],
+         "text": "Turn the rotary knob under the LCD to select one of the <strong>9 banks</strong> (1–9).",
+         "ref": {"strong": "Banks and Groups"}},
+        {"name": "Mute groups", "label": "A B C D", "at": [193, 188], "rect": [103, 13, 182, 363],
+         "text": "Press A, B, C or D to load a <strong>mute group</strong>; hold one for 3 seconds to store the current mutes.",
+         "ref": {"strong": "Loading a Mute Group"}},
+        {"name": "Preview", "label": "PREVIEW", "at": [7, 233], "rect": [12, 194, 90, 273],
+         "text": "Hold it and press A, B, C or D to see which channels that group mutes.",
+         "ref": {"strong": "Preview Function"}},
+        {"name": "Solo release", "label": "SOLO RELEASE", "at": [7, 323], "rect": [12, 284, 90, 363],
+         "text": "Removes all active <strong>solos</strong> across all channels in one step.",
+         "ref": {"strong": "Solo Release"}}
+      ]
+    }
+  ]
+}

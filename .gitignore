@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+.DS_Store
+.claude/
+docs/
+src/img/channel-control/*.png
+src/img/panels-sharp/*_master.png
+notes/

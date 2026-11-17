@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>converted from Google Doc 19kwjPZSFMgWiYLjbOIr7Uig1V3lByOBdw6qnzmAiuVM</title>
+</head>
+<body>
+<main data-path="/rodec-100-series" data-source="https://docs.google.com/document/d/19kwjPZSFMgWiYLjbOIr7Uig1V3lByOBdw6qnzmAiuVM">
+<section>
+<p><a class="button" href="/assets/files/Rodec-100-Series.pdf">Download as PDF</a></p>
+<p>Rodec, a pioneer in professional audio equipment, specializes in mixing consoles and signal processing modules. We are proud to introduce the "100 module format," a new industry standard that enables seamless integration of third-party modules into our modular consoles and future housings. This open standard invites collaboration and innovation, allowing manufacturers to design within a common specification that maintains compatibility, quality, and reliability across the board. With the "100 module format," we aim to cultivate a thriving ecosystem of creative tools for audio professionals.</p>
+<figure class="doc-fig"><a href="/assets/100-series/100-series-01.webp"><img src="/assets/100-series/100-series-01.webp" alt="" width="1674" height="1805"></a></figure>
+<p>The 100 module format is based on a system of horizontal modules that are arranged vertically, one above the other, and securely screwed into a custom housing. Each module functions as an individual processing unit, and they connect seamlessly in a daisy-chain configuration. This setup mirrors the structure of a channel strip in a digital audio workstation (DAW), allowing audio professionals to create flexible, customized signal chains in an analog format. By linking these modules in a series, users can build a fully personalized signal path, tailoring each channel’s characteristics to their unique creative needs.</p>
+<h2 id="frontpanel">Frontpanel</h2>
+<p>The 100 module format's front panel should be crafted from 2mm thick aluminum. The width of each module is standardized at 75.85mm, while the height varies based on horizontal pitch (HP)—a measure in multiples of 5.08mm (or 1/5"). At Rodec, we offer front panels in 6HP and 10HP heights, with a maximum of 22HP height capacity in our MX modular adapter, providing flexibility and customization options within a solid framework.</p>
+<h3 id="examples">Examples</h3>
+<p class="fig-title">M-102 (6HP)</p>
+<div class="doc-figs">
+<figure class="doc-fig"><a href="/assets/100-series/100-series-02.webp"><img src="/assets/100-series/100-series-02.webp" alt="" width="1800" height="1361"></a></figure>
+<figure class="doc-fig"><a href="/assets/100-series/100-series-03.webp"><img src="/assets/100-series/100-series-03.webp" alt="" width="1800" height="829"></a></figure>
+</div><p class="fig-title">M-104 (10HP)</p>
+<div class="doc-figs">
+<figure class="doc-fig"><a href="/assets/100-series/100-series-04.webp"><img src="/assets/100-series/100-series-04.webp" alt="" width="1800" height="1433"></a></figure>
+<figure class="doc-fig"><a href="/assets/100-series/100-series-05.webp"><img src="/assets/100-series/100-series-05.webp" alt="" width="1800" height="1257"></a></figure>
+</div><h3 id="tolerances">Tolerances</h3>
+<p>When designing custom heights for front panels within the 100 module format, it’s important to account for machining tolerances to ensure a precise fit within the housing. The height measurement should allow for a tolerance margin, as specified in the last column of the reference table. This tolerance helps accommodate slight variations in machining, ensuring that your module aligns accurately with neighboring modules and the housing framework. By following these guidelines, you’ll maintain the professional fit and finish that Rodec’s modular system is known for.</p>
+<table>
+<thead>
+<tr><th>Module height [HP]</th><th>Calculated module height [mm](= multiples of 5.08 mm)</th><th>Actual module height [mm]</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1</strong></td><td>5.08</td><td><strong>5</strong></td></tr>
+<tr><td><strong>1.5</strong></td><td>7.62</td><td><strong>7.5</strong></td></tr>
+<tr><td><strong>2</strong></td><td>10.16</td><td><strong>9.8</strong></td></tr>
+<tr><td><strong>4</strong></td><td>20.32</td><td><strong>20</strong></td></tr>
+<tr><td><strong>6</strong></td><td>30.48</td><td><strong>30</strong></td></tr>
+<tr><td><strong>8</strong></td><td>40.64</td><td><strong>40.3</strong></td></tr>
+<tr><td><strong>10</strong></td><td>50.8</td><td><strong>50.5</strong></td></tr>
+<tr><td><strong>12</strong></td><td>60.96</td><td><strong>60.6</strong></td></tr>
+<tr><td><strong>14</strong></td><td>71.12</td><td><strong>70.8</strong></td></tr>
+<tr><td><strong>16</strong></td><td>81.28</td><td><strong>80.9</strong></td></tr>
+<tr><td><strong>18</strong></td><td>91.44</td><td><strong>91.30</strong></td></tr>
+<tr><td><strong>20</strong></td><td>101.6</td><td><strong>101.3</strong></td></tr>
+<tr><td><strong>21</strong></td><td>106.68</td><td><strong>106.3</strong></td></tr>
+<tr><td><strong>22</strong></td><td>111.76</td><td><strong>111.4</strong></td></tr>
+</tbody>
+</table>
+<h2 id="board-layout">Board Layout</h2>
+<p>For the 100 module format, the PCB board must fit within specific dimensional limits to ensure compatibility with the module housing (see image below). Input and Output connectors, using 16-pin IDC box headers, should be positioned at one end of the board to maintain standardization and ease of daisy chaining the modules. It's crucial that no electronic components extend beyond the boundaries of the front panel, preserving the compact and uniform profile of the module. Stacked PCB designs are supported, allowing for more complex circuits, but any additional PCBs must include self-installed headers to facilitate board-to-board connections. This approach balances modularity with efficient use of space in our system.</p>
+<figure class="doc-fig"><a href="/assets/100-series/100-series-06.webp"><img src="/assets/100-series/100-series-06.webp" alt="" width="1800" height="1114"></a></figure>
+<h2 id="pin-layout">Pin Layout</h2>
+<p>In the 100 module format, the pin layout follows the standardized configuration illustrated in the images below. All audio signals are handled in an unbalanced format within the modules, keeping design straightforward and minimizing component complexity. For installations where balanced audio is required, the housing into which the modules are mounted will handle de-balancing and re-balancing, ensuring a clean and interference-free signal path.</p>
+<h3 id="sidechain-and-2x-cv">Sidechain and 2x CV</h3>
+<p>The 100 module format also supports Control Voltage and Sidechain functionality, enhancing creative possibilities for module design. Dedicated pins allow for 2x CV and Sidechain signals, which are passed through directly from the 3.5mm TS connector located on the back of our housings. This design enables modules to integrate dynamic control features, such as sidechaining for compressors or external modulation via CV, opening up opportunities for expressive sound shaping and advanced control in your signal chain.</p>
+<p>Remark: The MX Modular only has Sidechain and 1 CV input, the ONE has Sidechain and 2x CV input. We usually have dip switches on the boards to decide what CV 1 and 2 controls.</p>
+<figure class="doc-fig"><a href="/assets/100-series/100-series-07.webp"><img src="/assets/100-series/100-series-07.webp" alt="" width="469" height="501"></a></figure>
+<h2 id="housings">Housings</h2>
+<h3 id="500-series-adapter">500 Series adapter</h3>
+<p>The 500-to-100 Series Adapter allows Rodec’s 100 module format to be used seamlessly within any 500 Series housing. Occupying a stereo slot, this adapter provides ample room for up to 22HP of 100 modules, typically configured as two 6HP modules and one 12HP module. The adapter ensures that all incoming and outgoing audio signals are de-balanced and re-balanced within the housing, allowing the 100 modules to operate solely in an unbalanced domain. This integration preserves the unique functionality of Rodec’s modules while expanding compatibility with the widely-used 500 Series format.</p>
+<div class="doc-figs">
+<figure class="doc-fig"><a href="/assets/100-series/100-series-08.webp"><img src="/assets/100-series/100-series-08.webp" alt="" width="1145" height="1999"></a></figure>
+<figure class="doc-fig"><a href="/assets/100-series/100-series-09.webp"><img src="/assets/100-series/100-series-09.webp" alt="" width="1674" height="1805"></a></figure>
+</div><h3 id="rodec-one">Rodec ONE</h3>
+<p>The Rodec ONE is a compact modular chassis designed to host Rodec 100 series modules. It offers a flexible platform for creative processing, tracking, and performance. With 28HP of horizontal space, it can accommodate a wide range of module combinations — from compact 6HP preamps, to mid-sized 10HP dynamic filters, up to larger units like the 16HP MiniStyler.</p>
+<figure class="doc-fig"><a href="/assets/100-series/100-series-10.webp"><img src="/assets/100-series/100-series-10.webp" alt="" width="1800" height="1800"></a></figure>
+<p>The chassis provides ample and stable power, ensuring reliable operation even with the most demanding analog modules.</p>
+<p>See:</p>
+<ul>
+<li><a href="https://www.rodec.com/one">https://www.rodec.com/one</a></li>
+<li><a href="/rodec-one">documentation.rodec.com/rodec-one</a></li>
+</ul><p class="doc-meta">Rodec 100 Series Modules · V 1.0 · Nov 2024</p>
+</section>
+</main>
+</body>
+</html>

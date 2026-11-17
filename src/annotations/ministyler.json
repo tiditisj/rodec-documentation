@@ -1,0 +1,229 @@
+{
+  "path": "/rodec-sherman-ministyler",
+  "title": "Rodec + Sherman MiniStyler.",
+  "title_em": "Compact analog filter.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-sherman-ministyler-01.png",
+      "alt": "Rodec + Sherman MiniStyler front panel",
+      "items": [
+        {
+          "name": "Drive",
+          "label": "DRIVE",
+          "at": [
+            431,
+            417
+          ],
+          "rect": [
+            475,
+            263,
+            768,
+            570
+          ],
+          "text": "Controls the input level, with up to <strong>+30 dB gain</strong> when fully pushed.",
+          "ref": {
+            "strong": "Drive"
+          }
+        },
+        {
+          "name": "Make-up",
+          "label": "MAKE-UP",
+          "at": [
+            1243,
+            439
+          ],
+          "rect": [
+            905,
+            263,
+            1192,
+            570
+          ],
+          "text": "Sets the output level after the Drive stage, for precise volume matching.",
+          "ref": {
+            "strong": "Make-Up"
+          }
+        },
+        {
+          "name": "Dry/wet",
+          "label": "MIX",
+          "at": [
+            1659,
+            424
+          ],
+          "rect": [
+            1308,
+            263,
+            1630,
+            570
+          ],
+          "text": "Balances the unprocessed (dry) and processed (wet) signal.",
+          "ref": {
+            "strong": "Dry/Wet"
+          }
+        },
+        {
+          "name": "On",
+          "label": "ON",
+          "at": [
+            1345,
+            168
+          ],
+          "rect": [
+            1382,
+            99,
+            1550,
+            250
+          ],
+          "text": "Engages or bypasses the MiniStyler's effect section.",
+          "ref": {
+            "strong": "ON"
+          }
+        },
+        {
+          "name": "Modulation source",
+          "label": "SC / INT",
+          "at": [
+            841,
+            585
+          ],
+          "rect": [
+            782,
+            322,
+            899,
+            534
+          ],
+          "text": "Selects the modulation source: <strong>INT</strong> for the internal audio signal, <strong>SC</strong> for the external sidechain input.",
+          "ref": {
+            "strong": "INT/SC"
+          }
+        },
+        {
+          "name": "Frequency modulation",
+          "label": "MOD",
+          "at": [
+            439,
+            921
+          ],
+          "rect": [
+            482,
+            760,
+            775,
+            1089
+          ],
+          "text": "Modulates the filter frequency positively or negatively, with a fixed envelope from the selected source.",
+          "ref": {
+            "strong": "MOD (Freq)"
+          }
+        },
+        {
+          "name": "FM",
+          "label": "FM",
+          "at": [
+            848,
+            877
+          ],
+          "rect": [
+            899,
+            768,
+            1213,
+            1060
+          ],
+          "text": "Frequency modulation of the filter, based on the selected modulation source.",
+          "ref": {
+            "strong": "FM"
+          }
+        },
+        {
+          "name": "Type modulation",
+          "label": "MOD",
+          "at": [
+            1659,
+            921
+          ],
+          "rect": [
+            1323,
+            760,
+            1615,
+            1089
+          ],
+          "text": "Modulates the filter type (LP / BP / HP) positively or negatively, with a fixed envelope from the selected source.",
+          "ref": {
+            "strong": "MOD (Type)"
+          }
+        },
+        {
+          "name": "Frequency",
+          "label": "FREQ",
+          "at": [
+            439,
+            1243
+          ],
+          "rect": [
+            482,
+            1133,
+            775,
+            1440
+          ],
+          "text": "Sets the filter's cutoff frequency.",
+          "ref": {
+            "strong": "Frequency"
+          }
+        },
+        {
+          "name": "Resonance",
+          "label": "RES",
+          "at": [
+            1235,
+            1272
+          ],
+          "rect": [
+            921,
+            1133,
+            1199,
+            1440
+          ],
+          "text": "Boosts the resonance at the selected frequency, for more pronounced peaks and harmonics.",
+          "ref": {
+            "strong": "Resonance"
+          }
+        },
+        {
+          "name": "Filter type",
+          "label": "TYPE",
+          "at": [
+            1659,
+            1243
+          ],
+          "rect": [
+            1323,
+            1096,
+            1623,
+            1440
+          ],
+          "text": "Sweeps the filter smoothly from <strong>Low Pass</strong> to <strong>Band Pass</strong> to <strong>High Pass</strong>.",
+          "ref": {
+            "strong": "Type"
+          }
+        },
+        {
+          "name": "Filter slope",
+          "label": "24dB / 12dB",
+          "at": [
+            841,
+            1440
+          ],
+          "rect": [
+            782,
+            1206,
+            906,
+            1404
+          ],
+          "text": "Selects <strong>12 dB/octave</strong> for a gentler roll-off or <strong>24 dB/octave</strong> for a steeper cutoff.",
+          "ref": {
+            "strong": "24dB/12dB"
+          }
+        }
+      ]
+    }
+  ]
+}

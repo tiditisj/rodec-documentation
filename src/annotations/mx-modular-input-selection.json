@@ -1,0 +1,53 @@
+{
+  "path": "/rodec-mx-modular/input-selection-and-channel-insert",
+  "title": "Input selection and channel insert.",
+  "title_em": "USB, bypass and insert.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-mx-modular--input-selection-and-channel-insert-01.png",
+      "alt": "MX Modular button row with USB and BYPASS buttons for channels 1 to 8 and the 1-8 USB POST FADER button",
+      "heading": "Input selection and bypass",
+      "items": [
+        {
+          "name": "Input selector",
+          "label": "USB",
+          "at": [90, 62],
+          "rect": [71, 76, 109, 114],
+          "text": "One per channel 1–8. Unlit: audio comes from the <strong>analog DB25 connector</strong>. Lit: from the <strong>USB connection</strong>.",
+          "ref": {"id": "h.9irsr4vvn6h1"}
+        },
+        {
+          "name": "500 slot bypass",
+          "label": "BYPASS",
+          "at": [138, 62],
+          "rect": [119, 76, 157, 114],
+          "text": "Sends the <strong>unprocessed signal</strong> straight to the fader, past the 500 series module, or with no module inserted.",
+          "ref": {"id": "h.9nkz87e0c27m"}
+        },
+        {
+          "name": "USB post fader",
+          "label": "1-8 USB POST FADER",
+          "at": [1240, 62],
+          "rect": [1248, 76, 1286, 114],
+          "text": "Unlit: USB records channels 1–8 <strong>pre-fader</strong>, straight after the 500 slot. Lit: <strong>post-fader</strong>, with fader, crossfader and mute.",
+          "ref": {"id": "h.a2rqck8undvj"}
+        }
+      ]
+    },
+    {
+      "image": "assets/images/rodec-mx-modular--input-selection-and-channel-insert-02.png",
+      "alt": "MX Modular INSERT buttons for channels 1 to 8",
+      "heading": "Channel insert",
+      "items": [
+        {
+          "name": "Insert return",
+          "label": "INSERT",
+          "at": [70, 164],
+          "rect": [86, 145, 1182, 184],
+          "text": "Lit: the <strong>insert return</strong> from the back panel DB25 is active. The send is always active.",
+          "ref": {"id": "h.9d5ntgajn34o"}
+        }
+      ]
+    }
+  ]
+}

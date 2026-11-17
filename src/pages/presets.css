@@ -1,0 +1,45 @@
+/* SideStepper preset bank, rendered from the preset embed by tools/build.py */
+.presets { margin: 0 0 2rem; }
+/* pages with an app or a card grid use the full width (no table of contents) */
+.page:has(.presets), .page:has(.bm) { grid-template-columns: minmax(0, 68rem); }
+.pr-intro { font-size: 1.05rem; font-weight: 300; line-height: 1.7; max-width: 44rem; }
+.pr-legend {
+    display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; align-items: center;
+    padding: .9rem 0; margin: 0 0 1.5rem; border-top: 1px solid var(--rdc-line); border-bottom: 1px solid var(--rdc-line);
+    font-family: var(--rdc-mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rdc-muted);
+}
+.pr-legend span { display: inline-flex; align-items: center; gap: .5rem; }
+.pr-legend .note { margin-left: auto; text-transform: none; letter-spacing: .02em; }
+.pr-legend i.st { position: relative; display: inline-block; width: 1.1rem; height: 1.1rem; border-radius: 2px; background: #ecebea; }
+.pr-legend i.st::after { content: ""; position: absolute; left: 0; right: 0; background: var(--rdc-orange); border-radius: 1px; }
+.pr-legend i.st.center::after { top: 0; bottom: 0; }
+.pr-legend i.st.left::after { top: 0; height: 46%; }
+.pr-legend i.st.right::after { bottom: 0; height: 46%; }
+.pr-legend i.st.rest::after { display: none; }
+.pr-legend i.st.nudge { box-shadow: inset 3px 0 0 var(--rdc-ink); }
+
+.pr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+.pr-card { border: 1px solid var(--rdc-line); border-radius: 4px; padding: 1.1rem 1.2rem 1rem; background: #fff; display: flex; flex-direction: column; transition: border-color .2s ease; }
+.pr-card:hover { border-color: var(--rdc-ink); }
+.pr-card header { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.pr-card h3 { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 1.05rem !important; letter-spacing: -.01em; }
+.pr-kind { font-family: var(--rdc-mono); font-size: .62rem; font-weight: 500; letter-spacing: .12em; padding: .2rem .45rem; border-radius: 2px; border: 1px solid var(--rdc-line); color: var(--rdc-muted); }
+.pr-kind.gate { color: var(--rdc-orange); border-color: rgba(255, 92, 0, .35); }
+.pr-kind.duck { color: var(--rdc-ink); border-color: var(--rdc-ink); }
+.pr-card p { font-size: .88rem !important; font-weight: 300; line-height: 1.5; color: #444; margin: .45rem 0 .9rem !important; flex: 1; }
+
+/* One row of steps: width = gate length; left sits above the line, right
+   below, center spans both. */
+.pr-steps {
+    position: relative; display: flex; gap: 3px; height: 2.4rem; padding: 4px;
+    background: var(--rdc-ink); border-radius: 3px;
+}
+.pr-steps::before { content: ""; position: absolute; left: 4px; right: 4px; top: 50%; height: 1px; background: rgba(255, 255, 255, .14); }
+.pr-steps .st { position: relative; flex-basis: 0; min-width: 3px; border-radius: 1px; background: rgba(255, 255, 255, .06); }
+.pr-steps .st::after { content: ""; position: absolute; left: 0; right: 0; background: var(--rdc-orange); border-radius: 1px; }
+.pr-steps .st.center::after { top: 0; bottom: 0; }
+.pr-steps .st.left::after { top: 0; height: 46%; }
+.pr-steps .st.right::after { bottom: 0; height: 46%; }
+.pr-steps .st.rest::after { display: none; }
+.pr-steps .st.nudge::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: #fff; z-index: 1; border-radius: 1px; }
+.pr-meta { margin-top: .6rem; font-family: var(--rdc-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rdc-muted); }

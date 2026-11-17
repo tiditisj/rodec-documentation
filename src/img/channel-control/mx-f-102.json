@@ -1,0 +1,323 @@
+{
+ "module": "MX-F-102",
+ "image": {
+  "width": 847,
+  "height": 2400
+ },
+ "mm_per_px": 0.09904,
+ "note": "Orthographic front view, perpendicular to the panel. y grows downwards. Points are on the panel surface; knob and keycap tops are a few mm higher but an orthographic view has no parallax, so they line up.",
+ "leds": [
+  {
+   "column": "L",
+   "value": "+24",
+   "colour": "red",
+   "cx": 531.8,
+   "cy": 1598.8,
+   "r": 11.7
+  },
+  {
+   "column": "L",
+   "value": "+15",
+   "colour": "yellow",
+   "cx": 531.8,
+   "cy": 1633.9,
+   "r": 11.7
+  },
+  {
+   "column": "L",
+   "value": "+6",
+   "colour": "yellow",
+   "cx": 531.8,
+   "cy": 1669.5,
+   "r": 11.7
+  },
+  {
+   "column": "L",
+   "value": "0",
+   "colour": "green",
+   "cx": 531.8,
+   "cy": 1704.7,
+   "r": 11.7
+  },
+  {
+   "column": "L",
+   "value": "-6",
+   "colour": "green",
+   "cx": 531.8,
+   "cy": 1740.0,
+   "r": 11.7
+  },
+  {
+   "column": "L",
+   "value": "-15",
+   "colour": "green",
+   "cx": 531.8,
+   "cy": 1775.5,
+   "r": 11.7
+  },
+  {
+   "column": "L",
+   "value": "-21",
+   "colour": "green",
+   "cx": 531.8,
+   "cy": 1810.7,
+   "r": 11.7
+  },
+  {
+   "column": "R",
+   "value": "+24",
+   "colour": "red",
+   "cx": 602.7,
+   "cy": 1598.8,
+   "r": 11.7
+  },
+  {
+   "column": "R",
+   "value": "+15",
+   "colour": "yellow",
+   "cx": 602.7,
+   "cy": 1633.9,
+   "r": 11.7
+  },
+  {
+   "column": "R",
+   "value": "+6",
+   "colour": "yellow",
+   "cx": 602.7,
+   "cy": 1669.5,
+   "r": 11.7
+  },
+  {
+   "column": "R",
+   "value": "0",
+   "colour": "green",
+   "cx": 602.7,
+   "cy": 1704.7,
+   "r": 11.7
+  },
+  {
+   "column": "R",
+   "value": "-6",
+   "colour": "green",
+   "cx": 602.7,
+   "cy": 1740.0,
+   "r": 11.7
+  },
+  {
+   "column": "R",
+   "value": "-15",
+   "colour": "green",
+   "cx": 602.7,
+   "cy": 1775.5,
+   "r": 11.7
+  },
+  {
+   "column": "R",
+   "value": "-21",
+   "colour": "green",
+   "cx": 602.7,
+   "cy": 1810.7,
+   "r": 11.7
+  }
+ ],
+ "buttons": [
+  {
+   "name": "MOM",
+   "cx": 524.6,
+   "cy": 748.9,
+   "r": 42.8
+  },
+  {
+   "name": "PFL",
+   "cx": 524.6,
+   "cy": 869.7,
+   "r": 42.8
+  },
+  {
+   "name": "BUS 1",
+   "cx": 524.6,
+   "cy": 990.6,
+   "r": 42.8
+  },
+  {
+   "name": "BUS 2",
+   "cx": 524.6,
+   "cy": 1112.1,
+   "r": 42.8
+  },
+  {
+   "name": "MASTER",
+   "cx": 524.6,
+   "cy": 1233.2,
+   "r": 42.8
+  }
+ ],
+ "keycaps": {
+  "ON": {
+   "cx": 383.9,
+   "cy": 321.1,
+   "patch": [
+    280,
+    218,
+    487,
+    425
+   ]
+  },
+  "SOLO": {
+   "cx": 383.9,
+   "cy": 548.2,
+   "patch": [
+    280,
+    445,
+    487,
+    652
+   ]
+  }
+ },
+ "xfader_switch": {
+  "positions": {
+   "X": [
+    531.9,
+    1412.0
+   ],
+   "THRU": [
+    531.9,
+    1447.4
+   ],
+   "Y": [
+    531.9,
+    1482.8
+   ]
+  },
+  "thru_is_base": true,
+  "patch": [
+   507,
+   1373,
+   557,
+   1521
+  ],
+  "note": "switch-x / switch-thru / switch-y are opaque patches over the slot (rect = [x0,y0,x1,y1]); lever travel assumed end to end of the slot opening"
+ },
+ "knobs": {
+  "pan": {
+   "pivot": [
+    383.1,
+    779.8
+   ],
+   "label": "BAL",
+   "pointer_at": "12 o'clock"
+  },
+  "aux1": {
+   "pivot": [
+    383.1,
+    968.3
+   ],
+   "label": "AUX 1",
+   "pointer_at": "12 o'clock"
+  },
+  "aux2": {
+   "pivot": [
+    383.1,
+    1155.9
+   ],
+   "label": "AUX 2",
+   "pointer_at": "12 o'clock"
+  }
+ },
+ "fader": {
+  "cap_centre_top": [
+   379.0,
+   1411.9
+  ],
+  "cap_centre_bottom": [
+   379.0,
+   1999.3
+  ],
+  "travel_px": 587.4,
+  "note": "Travel defined as the cap marker line on the 10 and 0 ticks of the printed scale. The fader-cap layer is rendered at the top; move it down by (y - top) px.",
+  "slot_px": [
+   1347.4,
+   2062.3
+  ],
+  "scale": [
+   {
+    "value": 10,
+    "y": 1411.9,
+    "x": 365.3
+   },
+   {
+    "value": 9,
+    "y": 1470.6,
+    "x": 365.3
+   },
+   {
+    "value": 8,
+    "y": 1529.5,
+    "x": 365.3
+   },
+   {
+    "value": 7,
+    "y": 1588.2,
+    "x": 365.3
+   },
+   {
+    "value": 6,
+    "y": 1646.9,
+    "x": 365.3
+   },
+   {
+    "value": 5,
+    "y": 1705.7,
+    "x": 365.3
+   },
+   {
+    "value": 4,
+    "y": 1764.4,
+    "x": 365.3
+   },
+   {
+    "value": 3,
+    "y": 1823.1,
+    "x": 365.3
+   },
+   {
+    "value": 2,
+    "y": 1881.8,
+    "x": 365.3
+   },
+   {
+    "value": 1,
+    "y": 1940.5,
+    "x": 365.3
+   },
+   {
+    "value": 0,
+    "y": 1999.3,
+    "x": 365.3
+   }
+  ]
+ },
+ "layers": {
+  "stack_bottom_to_top": [
+   "base",
+   "switch-x | switch-thru | switch-y",
+   "on-down | on-lit | on-down-lit",
+   "solo-down | solo-lit | solo-down-lit",
+   "leds-on",
+   "buttons-lit",
+   "knob-pan",
+   "knob-aux1",
+   "knob-aux2",
+   "fader-cap"
+  ],
+  "base": "panel without fader cap and knobs; LEDs off, round buttons off (black), ON and SOLO up and unlit, switch on THRU",
+  "knob-*": "knob plus its soft shadow, pointer at 12 o'clock; rotate around knobs.<k>.pivot",
+  "fader-cap": "cap plus its shadow at the top of the travel; translate in y only",
+  "leds-on": "all LEDs lit with glow; mask per LED with leds[] (cx, cy, r)",
+  "buttons-lit": "MOM lit green; PFL, BUS 1, BUS 2, MASTER lit amber-yellow; mask per button with buttons[] (cx, cy, r)",
+  "on-down, solo-down": "keycap pressed 1.5 mm, unlit",
+  "on-lit, solo-lit": "keycap up, letters lit (ON green, SOLO orange); caps stay black / white, letters light grey when off",
+  "on-down-lit, solo-down-lit": "keycap pressed and lit",
+  "on-*, solo-*, switch-*": "opaque rectangular patches (keycaps.*.patch, xfader_switch.patch) that replace that area of base"
+ }
+}

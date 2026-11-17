@@ -1,0 +1,28 @@
+{
+  "path": "/rodec-mx-modular/control-section/aux-en-bus-control",
+  "title": "Stereo AUX and BUS.",
+  "title_em": "Sends, returns and inserts.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-mx-modular--control-section-03.png",
+      "alt": "MX Modular stereo AUX and BUS controls",
+      "items": [
+        {"name": "AUX send", "label": "SEND", "at": [14, 80], "rect": [24, 10, 95, 156],
+         "text": "Sets the level sent from AUX 1/2 to <strong>internal FX 1/2</strong> and to external devices.",
+         "ref": {"id": "h.k372285kkeke"}},
+        {"name": "AUX return", "label": "RETURN", "at": [104, 80], "rect": [113, 10, 184, 156],
+         "text": "Sets the level returned from internal FX 1/2 and an external device back into the console.",
+         "ref": {"id": "h.k372285kkeke"}},
+        {"name": "BUS send", "label": "SEND", "at": [196, 80], "rect": [204, 10, 276, 156],
+         "text": "Sets the signal level sent to the <strong>stereo bus output</strong>.",
+         "ref": {"id": "h.lc6i6ndmpg9w"}},
+        {"name": "BUS return", "label": "RETURN", "at": [377, 82], "rect": [386, 10, 459, 156],
+         "text": "Sets the signal level returned from external devices or routing paths.",
+         "ref": {"id": "h.lc6i6ndmpg9w"}},
+        {"name": "BUS insert", "label": "BUS INSERT EXT", "at": [362, 48], "rect": [306, 30, 357, 141],
+         "text": "Activates an insert, routing the bus through <strong>external processors</strong> or outboard gear.",
+         "ref": {"id": "h.lc6i6ndmpg9w"}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "path": "/rodec-mx-modular/control-section",
+  "title": "Control section.",
+  "title_em": "Four parts, one page each.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-mx-modular--control-section-01.png",
+      "alt": "MX Modular control section",
+      "items": [
+        {"name": "Inputs 9–16 and digital master", "at": [6, 30], "rect": [13, 27, 466, 309], "link": "/rodec-mx-modular/control-section/input-9-16-and-usb-master",
+         "text": "Four stereo pairs, their routing to USB, and the USB digital master return."},
+        {"name": "AUX and BUS", "at": [6, 322], "rect": [4, 318, 479, 466], "link": "/rodec-mx-modular/control-section/aux-en-bus-control",
+         "text": "Send and return levels for the stereo AUXes and busses, and the bus insert."},
+        {"name": "Monitor section", "at": [6, 474], "rect": [4, 470, 286, 842], "link": "/rodec-mx-modular/control-section/monitor-section",
+         "text": "Master fader, monitor level, headphones, external input and mono."},
+        {"name": "Mute controller", "at": [476, 478], "rect": [295, 474, 479, 842], "link": "/rodec-mx-modular/control-section/mute-controller",
+         "text": "Bank select, mute groups A–D, preview and solo release."}
+      ]
+    }
+  ]
+}

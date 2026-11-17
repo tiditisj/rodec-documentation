@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>USB Interface</title>
+<link rel="canonical" href="https://documentation.rodec.com/rodec-mx-modular/usb-interface">
+</head>
+<body>
+<main data-path="/rodec-mx-modular/usb-interface">
+<section>
+<h1 id="h.tan2t9aiwogn">Digital Audio Interface</h1>
+</section>
+<section>
+<img src="../../../assets/images/rodec-mx-modular--usb-interface-01.jpg" alt="">
+</section>
+<section>
+<h2 id="h.jwy5eteb1inp">Digital Interface (Soundcard)</h2>
+<p>The MX Modular features a <strong>state-of-the-art digital interface</strong> designed for seamless integration with your computer and high-fidelity audio processing. Here's a detailed overview of its features and functionality:</p>
+<p><strong>Key Features</strong></p>
+<ul>
+<li><strong>18 In / 18 Out</strong>: A high-performance <strong>class-compliant USB 2.0 interface with a USB-C connector </strong>at the back of the console, compatible with most modern operating systems.</li>
+<li><strong>Premium Converters</strong>:<ul>
+<li><strong>ESS DACs</strong> (Digital-to-Analog Converters) deliver pristine playback quality.</li>
+<li><strong>AKM ADCs</strong> (Analog-to-Digital Converters) ensure accurate and transparent recording.</li>
+</ul></li>
+<li><strong>High Sample Rate Support</strong>: Operates at sample rates from <strong>44.1 kHz to 192 kHz</strong>, catering to both standard and high-resolution audio workflows.</li>
+</ul>
+<p><strong>Channel Routing Overview</strong></p>
+<ol>
+<li><strong>Channels 1–</strong><strong>2</strong>:<ul>
+<li><strong>From Computer to Console</strong>:<ul>
+<li>1-2 output are reserved for the stereo computer output and routed directly to the digital master keyboard button and volume knob on the control section.</li>
+</ul></li>
+<li><strong>To Computer from Console</strong>:<ul>
+<li>1-2 input will record the stereo master from the console.</li>
+</ul></li>
+</ul></li>
+<li><strong>Channels 3–10</strong>:<ul>
+<li><strong>From Computer to Console</strong>:<ul>
+<li>Audio channels 3–10 from the computer are routed to the <strong>1–8 analog inputs</strong> on the MX Modular.</li>
+<li>For each channel, you can select the audio source using a <strong>toggle switch</strong>:<ul>
+<li><strong>USB</strong>: Routes audio from the computer via the USB interface.</li>
+<li><strong>Analog Input</strong>: Routes audio from the <strong>DB25 1-8 in connector</strong> on the back panel.</li>
+</ul></li>
+</ul></li>
+<li><strong>To Computer from Console</strong>:<ul>
+<li>Audio channels <strong>3–10 to the computer</strong> are taken directly from the <strong>500 series slot 1-8 outputs (after the insert point)</strong>.</li>
+<li>A <strong>pre/post fader switch</strong> at the top of the console allows you to select whether the audio is sent:<ul>
+<li><strong>Pre-Fader</strong>: Directly after the 500 module, unaffected by fader adjustments.</li>
+<li><strong>Post-Fader</strong>: Includes fader, x-fader and mute operations, useful for recording a performace in separate stems.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Channels 11–18</strong>:<ul>
+<li><strong>From Computer to Console</strong>:<ul>
+<li>Audio channels 11–18 from the computer are routed to the <strong>9–16 analog inputs</strong> on the MX Modular.</li>
+<li>Ensure the <strong>9–16 button</strong> is set to <strong>USB</strong> to route audio from the computer.</li>
+</ul></li>
+<li><strong>To Computer</strong>:<ul>
+<li>These channels route audio back into the computer from the corresponding 9-16 analog inputs or AUX/BUS sends or returns. See <a href="/rodec-mx-modular/control-section/input-9-16-and-usb-master">Input 9-16 and USB Master</a> to choose what to send to the computer.</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section>
+<h2 id="h.qeox0qy95kg5">Operating Systems Compatibility</h2>
+<p><strong>macOS</strong></p>
+<p>The Rodec digital interface is a <strong>class-compliant device</strong>, which works directly with <strong>macOS Core Audio</strong>. There is no need for a macOS driver. Simply connect the interface, select Rodec USB as your sound device in <strong>System Preferences</strong>, and you’re ready to go.</p>
+<ul>
+<li><strong>Recommended macOS Versions</strong>:<ul>
+<li>Rodec interfaces have been tested <strong>macOS 15.1 or higher</strong>.</li>
+<li>Versions <strong>below</strong> are untested. While operation may work, it is not guaranteed. Rodec recommends upgrading to the latest supported OS.</li>
+</ul></li>
+</ul>
+<p><strong>iOS and Android</strong></p>
+<ul>
+<li><strong>iOS</strong>:<ul>
+<li>The Rodec USB interface is <strong>not officially supported</strong> with iOS. However, as a class-compliant device, it can work with compatible iPads.</li>
+<li>To connect to a Lightning-based iPad, you may need:<ul>
+<li>A USB cable.</li>
+<li><strong>Apple Lightning to USB Camera Adapter</strong>.</li>
+</ul></li>
+<li>For <strong>USB-C iPads</strong>, you may not need the camera adapter, depending on your setup.</li>
+</ul></li>
+<li><strong>Connection Steps</strong>:<ul>
+<li>Connect the Rodec USB interface hub to the Apple camera adapter (if applicable).</li>
+<li>Plug iPad power into the camera adapter.</li>
+<li>Connect the camera adapter to the iPad.</li>
+</ul></li>
+<li><strong>Android</strong>:<ul>
+<li>The Rodec interface is <strong>not tested or officially supported</strong> with Android devices.</li>
+</ul></li>
+</ul>
+<p><strong>Linux</strong></p>
+<p>The Rodec digital interface is <strong>not officially supported</strong> on Linux. However, many Linux distributions and audio drivers support class-compliant devices. While it may work, Rodec does not officially test or recommend any specific Linux OS.</p>
+<p><strong>Windows</strong></p>
+<ul>
+<li><strong>ARM-Based Windows Systems</strong>: These are <strong>not supported</strong> and may not work.</li>
+<li><strong>ASIO Driver</strong>: The Rodec interface requires the <strong>ASIO4ALL ASIO driver</strong> (<a href="https://asio4all.org/">https://asio4all.org/</a>) to be installed for Windows systems.<ul>
+<li>You may have to tweak the ASIO settings depending on your hardware to get the best results</li>
+</ul></li>
+</ul>
+<p><strong>USB Interface Information</strong></p>
+<ul>
+<li>The Rodec interface uses a <strong>USB-C connector</strong> on the back.</li>
+<li><strong>USB Compatibility</strong>:<ul>
+<li>The Rodec interface is <strong>USB 2.0 compatible</strong></li>
+<li>Rodec recommends high quality USB cables up to 3 meters.</li>
+<li>USB to computer connections have many parameters that may cause grounding issues and noise, sometimes a good hub works better, sometimes direct connection to your computer works better. Test and see what works in your specific setup.</li>
+</ul></li>
+</ul>
+</section>
+</main>
+</body>
+</html>

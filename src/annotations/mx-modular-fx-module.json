@@ -1,0 +1,45 @@
+{
+  "path": "/rodec-mx-modular/fx-module",
+  "title": "FX module.",
+  "title_em": "Dual digital effects.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-mx-modular-03.png",
+      "alt": "MX Modular FX module with two rows of SELECT knob, preset display, SHIFT button and PARAM 1 to 3 knobs",
+      "caption": "Two independent FX engines, pre-routed to AUX 1 and AUX 2.",
+      "items": [
+        {
+          "name": "Preset select",
+          "label": "SELECT",
+          "at": [35, 44],
+          "rect": [44, 20, 94, 161],
+          "text": "Turn to scroll through the presets; hold for <strong>3 seconds</strong> to save, press briefly to confirm.",
+          "ref": {"strong": "Loading a Preset"}
+        },
+        {
+          "name": "Preset display",
+          "at": [143, 93],
+          "rect": [114, 20, 171, 159],
+          "text": "Shows the preset number; it blinks while you choose a <strong>user bank</strong> slot to save to.",
+          "ref": {"strong": "Saving a Preset"}
+        },
+        {
+          "name": "Shift",
+          "label": "SHIFT",
+          "at": [231, 44],
+          "rect": [183, 22, 223, 160],
+          "text": "Switches the knobs between three parameter rows: unlit <strong>Row 1</strong>, lit <strong>Row 2</strong>, blinking <strong>Row 3</strong>.",
+          "ref": {"strong": "Navigating Parameter Rows with the Shift Button"}
+        },
+        {
+          "name": "Parameter knobs",
+          "label": "PARAM 1–3",
+          "at": [241, 93],
+          "rect": [240, 9, 461, 166],
+          "text": "Fine-tune the effect, such as <strong>time, feedback, mix and damping</strong>.",
+          "ref": {"strong": "Advanced Parameter Control"}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "path": "/rodec-mx-modular",
+  "title": "Rodec MX Modular.",
+  "title_em": "Your console, your instrument.",
+  "hero_image": "src/img/renders/mx-modular-side-config.webp",
+  "hero_style": "dark",
+  "lead": "The user manual of the MX Modular: start with the introduction, or go straight to a section.",
+  "card_images": {
+    "/rodec-mx-modular/introduction": "src/img/renders/mx-modular-front-85mm.webp",
+    "/rodec-mx-modular/input-selection-and-channel-insert": "src/img/renders/mx-modular-detail-500-section.webp"
+  },
+  "card_texts": {
+    "/rodec-mx-modular/introduction": "The console at a glance.",
+    "/rodec-mx-modular/safety-instructions": "Read these before you set up and power the console.",
+    "/rodec-mx-modular/control-section": "Inputs 9–16, AUX and BUS, mute controller and monitor section.",
+    "/rodec-mx-modular/input-selection-and-channel-insert": "Input selectors, USB post fader, 500 series bypass and inserts.",
+    "/rodec-mx-modular/backpanel-connections": "Every connector on the back.",
+    "/rodec-mx-modular/fx-module": "Two FX engines on AUX 1 and AUX 2.",
+    "/rodec-mx-modular/usb-interface": "18 in / 18 out class compliant USB interface.",
+    "/rodec-mx-modular/troubleshooting": "Common problems and what to check.",
+    "/rodec-mx-modular/appendix-a-dimensions": "Data and dimensions of every configuration.",
+    "/rodec-mx-modular/appendix-b-performance": "Analog and digital performance."
+  },
+  "remove_images": ["rodec-mx-modular-01.png"]
+}

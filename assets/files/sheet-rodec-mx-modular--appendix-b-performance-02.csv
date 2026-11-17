@@ -1,0 +1,42 @@
+ Analog Signal Specifications,
+,
+Channel 1-8,
+THD+N,<0.03%
+Non-Clipping Maximum input,+26dBu
+Frequency response,10Hz-45kHz
+,
+Channel 9 - 16,
+THD+N,<0.03%
+Non-Clipping Maximum input,+26dBu
+Frequency response,10Hz-45kHz
+,
+Master Section,
+Aux/Bus sends,
+THD+N,<0.03%
+Non-Clipping Maximum input,+4dBu / +26dBu
+Frequency response,10Hz-45kHz
+Max Gain,+14dB
+output impedance,50 Ω
+,
+Aux/Bus returns,
+THD+N,<0.03%
+Non-Clipping Maximum input,+4dBu / +26dBu
+Frequency response,10Hz-45kHz
+Max Gain,+10dB
+input impedance,24kΩ
+,
+Master Bus,
+Non clipping max output,+4dBu / +28dBu
+Frequency response,10Hz-45kHz
+,
+External in,
+Non clipping max input,+26dBu
+Max Gain,+10dB
+Frequency response,10Hz-45kHz
+,
+Phones ,
+output impedance,40 Ω
+Max output,+22dBu
+,
+,
+"Signal applied to Line Input of a mono channel, and routed via the M-X-F-101 by shortest path. All controls set flat, out or at unity gain as appropriate. Pan set to full left or right.",

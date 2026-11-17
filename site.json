@@ -1,0 +1,2572 @@
+{
+  "source": "https://documentation.rodec.com",
+  "scraped_at": "2026-11-17T08:40:32Z",
+  "site_logo": "assets/images/site-logo-01.png",
+  "footer": {
+    "content": "content/_footer.html",
+    "links": [
+      {
+        "href": "http://www.rodec.com",
+        "text": "www.rodec.com",
+        "internal": false
+      }
+    ]
+  },
+  "navigation": [
+    {
+      "title": "Documentation Home",
+      "type": "page",
+      "path": "/documentation-home"
+    },
+    {
+      "title": "Untitled page",
+      "type": "page",
+      "path": "/untitled-page"
+    },
+    {
+      "title": "Back to Rodec.com",
+      "type": "external",
+      "url": "https://www.rodec.com/"
+    },
+    {
+      "title": "Rodec ONE",
+      "type": "page",
+      "path": "/rodec-one",
+      "children": [
+        {
+          "title": "Backpanel connections",
+          "type": "page",
+          "path": "/rodec-one/backpanel-connections"
+        },
+        {
+          "title": "Installing Modules",
+          "type": "page",
+          "path": "/rodec-one/installing-modules"
+        },
+        {
+          "title": "Designing modules",
+          "type": "page",
+          "path": "/rodec-one/rodec-100-series"
+        },
+        {
+          "title": "Safety instructions",
+          "type": "page",
+          "path": "/rodec-one/safety-instructions"
+        },
+        {
+          "title": "Rodec ONE USB board",
+          "type": "page",
+          "path": "/rodec-one/rodec-one-usb-board"
+        },
+        {
+          "title": "Appendix A: Dimensions",
+          "type": "page",
+          "path": "/rodec-one/appendix-a-dimensions"
+        },
+        {
+          "title": "Appendix B: Performance",
+          "type": "page",
+          "path": "/rodec-one/appendix-b-performance"
+        }
+      ]
+    },
+    {
+      "title": "Rodec MX Modular",
+      "type": "page",
+      "path": "/rodec-mx-modular",
+      "children": [
+        {
+          "title": "Introduction",
+          "type": "page",
+          "path": "/rodec-mx-modular/introduction"
+        },
+        {
+          "title": "Safety Instructions",
+          "type": "page",
+          "path": "/rodec-mx-modular/safety-instructions"
+        },
+        {
+          "title": "Control Section",
+          "type": "page",
+          "path": "/rodec-mx-modular/control-section",
+          "children": [
+            {
+              "title": "Input 9-16 and USB Master",
+              "type": "page",
+              "path": "/rodec-mx-modular/control-section/input-9-16-and-usb-master"
+            },
+            {
+              "title": "AUX en BUS control",
+              "type": "page",
+              "path": "/rodec-mx-modular/control-section/aux-en-bus-control"
+            },
+            {
+              "title": "Mute Controller",
+              "type": "page",
+              "path": "/rodec-mx-modular/control-section/mute-controller"
+            },
+            {
+              "title": "Monitor Section",
+              "type": "page",
+              "path": "/rodec-mx-modular/control-section/monitor-section"
+            }
+          ]
+        },
+        {
+          "title": "Input Selection and channel insert",
+          "type": "page",
+          "path": "/rodec-mx-modular/input-selection-and-channel-insert"
+        },
+        {
+          "title": "Backpanel connections",
+          "type": "page",
+          "path": "/rodec-mx-modular/backpanel-connections"
+        },
+        {
+          "title": "FX Module",
+          "type": "page",
+          "path": "/rodec-mx-modular/fx-module"
+        },
+        {
+          "title": "USB Interface",
+          "type": "page",
+          "path": "/rodec-mx-modular/usb-interface",
+          "children": [
+            {
+              "title": "Level Matching",
+              "type": "page",
+              "path": "/rodec-mx-modular/usb-interface/level-matching"
+            }
+          ]
+        },
+        {
+          "title": "Troubleshooting",
+          "type": "page",
+          "path": "/rodec-mx-modular/troubleshooting"
+        },
+        {
+          "title": "Appendix A: Dimensions",
+          "type": "page",
+          "path": "/rodec-mx-modular/appendix-a-dimensions"
+        },
+        {
+          "title": "Appendix B: Performance",
+          "type": "page",
+          "path": "/rodec-mx-modular/appendix-b-performance"
+        }
+      ]
+    },
+    {
+      "title": "Rodec MX-F-101 / 102 Channel control",
+      "type": "page",
+      "path": "/rodec-mx-f-101-102-channel-control",
+      "children": [
+        {
+          "title": "Data & Dimensions",
+          "type": "page",
+          "path": "/rodec-mx-f-101-102-channel-control/data-dimensions"
+        }
+      ]
+    },
+    {
+      "title": "Rodec M-501 Mic/Line pre",
+      "type": "page",
+      "path": "/rodec-m-501-micline-pre",
+      "children": [
+        {
+          "title": "Data & Dimensions",
+          "type": "page",
+          "path": "/rodec-m-501-micline-pre/data-dimensions"
+        }
+      ]
+    },
+    {
+      "title": "Rodec 100 Series",
+      "type": "page",
+      "path": "/rodec-100-series"
+    },
+    {
+      "title": "Rodec configurator",
+      "type": "external",
+      "url": "https://www.rodec.com/configurator"
+    },
+    {
+      "title": "Rodec K7 100 to 500 series adapter",
+      "type": "page",
+      "path": "/rodec-k7-100-to-500-series-adapter"
+    },
+    {
+      "title": "Rodec M-101",
+      "type": "page",
+      "path": "/rodec-m-101",
+      "children": [
+        {
+          "title": "Data & dimesions",
+          "type": "page",
+          "path": "/rodec-m-101/data-dimesions"
+        }
+      ]
+    },
+    {
+      "title": "Rodec M-102",
+      "type": "page",
+      "path": "/rodec-m-102",
+      "children": [
+        {
+          "title": "Data & dimemsions",
+          "type": "page",
+          "path": "/rodec-m-102/data-dimemsions"
+        }
+      ]
+    },
+    {
+      "title": "Rodec M-104",
+      "type": "page",
+      "path": "/rodec-m-104",
+      "children": [
+        {
+          "title": "Data & dimensions",
+          "type": "page",
+          "path": "/rodec-m-104/data-dimensions"
+        }
+      ]
+    },
+    {
+      "title": "Rodec M-108",
+      "type": "page",
+      "path": "/rodec-m-108",
+      "children": [
+        {
+          "title": "Data & Dimensions",
+          "type": "page",
+          "path": "/rodec-m-108/data-dimensions"
+        }
+      ]
+    },
+    {
+      "title": "Rodec + Sherman MiniStyler",
+      "type": "page",
+      "path": "/rodec-sherman-ministyler"
+    },
+    {
+      "title": "Rodec M-110 SideStepper",
+      "type": "page",
+      "path": "/rodec-m-110-sidestepper",
+      "children": [
+        {
+          "title": "Presets",
+          "type": "page",
+          "path": "/rodec-m-110-sidestepper/presets"
+        },
+        {
+          "title": "Bank Manager",
+          "type": "page",
+          "path": "/rodec-m-110-sidestepper/bank-manager"
+        },
+        {
+          "title": "Data and dimensions",
+          "type": "page",
+          "path": "/rodec-m-110-sidestepper/data-and-dimensions"
+        }
+      ]
+    }
+  ],
+  "hidden_pages": [
+    {
+      "path": "/",
+      "title": "Documentation Home",
+      "note": "site root, serves the same content as /documentation-home"
+    },
+    {
+      "path": "/rodec-100-series-configurator",
+      "title": "Rodec 100 Series configurator",
+      "note": "reachable but not in the menu"
+    }
+  ],
+  "linked_drive_files": [],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Documentation Home",
+      "status": 200,
+      "last_updated": "1769014403081",
+      "raw": "raw/index.html",
+      "content": "content/index.html",
+      "headings": [
+        {
+          "level": 2,
+          "text": "MX Modular",
+          "id": "h.6rnpuspij8g9"
+        },
+        {
+          "level": 2,
+          "text": "MX-F-10 1/102",
+          "id": "h.sr024wlcv766"
+        },
+        {
+          "level": 2,
+          "text": "M-501",
+          "id": "h.7k1xdni63swb"
+        },
+        {
+          "level": 2,
+          "text": "Rodec ONE",
+          "id": "h.52qmbc1gqt3r"
+        },
+        {
+          "level": 2,
+          "text": "M -101",
+          "id": "h.cju3gmozyo18"
+        },
+        {
+          "level": 2,
+          "text": "M-102",
+          "id": "h.ty4tmb82qaqc"
+        },
+        {
+          "level": 2,
+          "text": "M-10 8",
+          "id": "h.3v9c6janra7p"
+        },
+        {
+          "level": 2,
+          "text": "M-10 4",
+          "id": "h.a9za37rxvk6s"
+        },
+        {
+          "level": 2,
+          "text": "M iniStyler",
+          "id": "h.8xx585ce038h"
+        },
+        {
+          "level": 2,
+          "text": "M-110 SideStepper",
+          "id": "h.1a8hvetqy7yt"
+        },
+        {
+          "level": 2,
+          "text": "Disclaimer",
+          "id": "h.dorqmqf54xb7"
+        }
+      ],
+      "images": [
+        "assets/images/home-01.png",
+        "assets/images/home-01.jpg",
+        "assets/images/home-02.png",
+        "assets/images/home-03.png",
+        "assets/images/home-02.jpg",
+        "assets/images/home-03.jpg",
+        "assets/images/home-04.jpg",
+        "assets/images/home-05.jpg",
+        "assets/images/home-04.png",
+        "assets/images/home-06.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-mx-modular",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-f-101-102-channel-control",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-501-micline-pre",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-one",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-101",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-101",
+          "text": "M-101 Phono / Line Preamp",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-102",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-102",
+          "text": "M-102 Stereo EQ",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-108",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-108",
+          "text": "M-10 8 Stereo Line Pre",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-104",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-104",
+          "text": "M-102 Stereo Filter",
+          "internal": true
+        },
+        {
+          "href": "/rodec-sherman-ministyler",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-sherman-ministyler",
+          "text": "MiniStyler",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-110-sidestepper",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-110-sidestepper",
+          "text": "SideStepper",
+          "internal": true
+        }
+      ],
+      "nav_title": null,
+      "nav_parent": null,
+      "in_menu": false
+    },
+    {
+      "path": "/documentation-home",
+      "title": "Documentation Home",
+      "status": 200,
+      "last_updated": "1769014403081",
+      "raw": "raw/documentation-home/index.html",
+      "content": "content/documentation-home/index.html",
+      "headings": [
+        {
+          "level": 2,
+          "text": "MX Modular",
+          "id": "h.6rnpuspij8g9"
+        },
+        {
+          "level": 2,
+          "text": "MX-F-10 1/102",
+          "id": "h.sr024wlcv766"
+        },
+        {
+          "level": 2,
+          "text": "M-501",
+          "id": "h.7k1xdni63swb"
+        },
+        {
+          "level": 2,
+          "text": "Rodec ONE",
+          "id": "h.52qmbc1gqt3r"
+        },
+        {
+          "level": 2,
+          "text": "M -101",
+          "id": "h.cju3gmozyo18"
+        },
+        {
+          "level": 2,
+          "text": "M-102",
+          "id": "h.ty4tmb82qaqc"
+        },
+        {
+          "level": 2,
+          "text": "M-10 8",
+          "id": "h.3v9c6janra7p"
+        },
+        {
+          "level": 2,
+          "text": "M-10 4",
+          "id": "h.a9za37rxvk6s"
+        },
+        {
+          "level": 2,
+          "text": "M iniStyler",
+          "id": "h.8xx585ce038h"
+        },
+        {
+          "level": 2,
+          "text": "M-110 SideStepper",
+          "id": "h.1a8hvetqy7yt"
+        },
+        {
+          "level": 2,
+          "text": "Disclaimer",
+          "id": "h.dorqmqf54xb7"
+        }
+      ],
+      "images": [
+        "assets/images/home-01.png",
+        "assets/images/home-01.jpg",
+        "assets/images/home-02.png",
+        "assets/images/home-03.png",
+        "assets/images/home-02.jpg",
+        "assets/images/home-03.jpg",
+        "assets/images/home-04.jpg",
+        "assets/images/home-05.jpg",
+        "assets/images/home-04.png",
+        "assets/images/home-06.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-mx-modular",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-f-101-102-channel-control",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-501-micline-pre",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-one",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-101",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-101",
+          "text": "M-101 Phono / Line Preamp",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-102",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-102",
+          "text": "M-102 Stereo EQ",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-108",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-108",
+          "text": "M-10 8 Stereo Line Pre",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-104",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-104",
+          "text": "M-102 Stereo Filter",
+          "internal": true
+        },
+        {
+          "href": "/rodec-sherman-ministyler",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-sherman-ministyler",
+          "text": "MiniStyler",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-110-sidestepper",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-m-110-sidestepper",
+          "text": "SideStepper",
+          "internal": true
+        }
+      ],
+      "nav_title": "Documentation Home",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/untitled-page",
+      "title": "Untitled page",
+      "status": 200,
+      "last_updated": "1777050613044",
+      "raw": "raw/untitled-page/index.html",
+      "content": "content/untitled-page/index.html",
+      "headings": [],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Untitled page",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one",
+      "title": "Rodec ONE",
+      "status": 200,
+      "last_updated": "1757423532580",
+      "raw": "raw/rodec-one/index.html",
+      "content": "content/rodec-one/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Rodec ONE",
+          "id": "h.c8lcsxwtg7nu"
+        },
+        {
+          "level": 2,
+          "text": "The Backpanel",
+          "id": "h.ucdhsjjj976h"
+        },
+        {
+          "level": 2,
+          "text": "Installing modules",
+          "id": "h.nro1i9zevdqi"
+        },
+        {
+          "level": 2,
+          "text": "Designing Modules",
+          "id": "h.mddu6z35i4ur"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-one-01.png",
+        "assets/images/rodec-one-02.png",
+        "assets/images/rodec-one-01.jpg",
+        "assets/images/rodec-one-02.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-one/backpanel-connections",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-one/installing-modules",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-one/rodec-100-series",
+          "text": "",
+          "internal": true
+        }
+      ],
+      "nav_title": "Rodec ONE",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one/backpanel-connections",
+      "title": "Backpanel connections",
+      "status": 200,
+      "last_updated": "1757420557276",
+      "raw": "raw/rodec-one/backpanel-connections/index.html",
+      "content": "content/rodec-one/backpanel-connections/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Backpanel Connections",
+          "id": "h.8nl62yvv7ym8"
+        },
+        {
+          "level": 2,
+          "text": "Back Panel Connections",
+          "id": "h.1frrssivpcbs"
+        },
+        {
+          "level": 3,
+          "text": "Audio I/O",
+          "id": "h.6ws160jg02l5"
+        },
+        {
+          "level": 3,
+          "text": "Control & Sync",
+          "id": "h.qb0eaj8qbxur"
+        },
+        {
+          "level": 3,
+          "text": "Power",
+          "id": "h.fwrmj7z5vzc"
+        },
+        {
+          "level": 2,
+          "text": "Power Supply",
+          "id": "h.udh4u3cz1nrm"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-one--backpanel-connections-01.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Backpanel connections",
+      "nav_parent": "/rodec-one",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one/installing-modules",
+      "title": "Installing Modules",
+      "status": 200,
+      "last_updated": "1757420557276",
+      "raw": "raw/rodec-one/installing-modules/index.html",
+      "content": "content/rodec-one/installing-modules/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Installing Modules",
+          "id": "h.8t1cgx4n5h6s"
+        },
+        {
+          "level": 3,
+          "text": "Tools Required",
+          "id": "h.tf94h2ea88ds"
+        },
+        {
+          "level": 2,
+          "text": "Safety Instructions",
+          "id": "h.z4d6v585pa4v"
+        },
+        {
+          "level": 1,
+          "text": "Step 1 – Remove the Side Panel",
+          "id": "h.sjs9e0wt8jbx"
+        },
+        {
+          "level": 2,
+          "text": "Step 2 – Connect the Ribbon Cables",
+          "id": "h.muq8g4m3a9ot"
+        },
+        {
+          "level": 2,
+          "text": "Step 3 – Secure the Modules",
+          "id": "h.xc9m3q3h5qcx"
+        },
+        {
+          "level": 2,
+          "text": "Step 4 – Connect Additional Internal Cables",
+          "id": "h.975r00eyr7bu"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-one--installing-modules-01.jpg",
+        "assets/images/rodec-one--installing-modules-02.jpg",
+        "assets/images/rodec-one--installing-modules-03.jpg",
+        "assets/images/rodec-one--installing-modules-04.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Installing Modules",
+      "nav_parent": "/rodec-one",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one/rodec-100-series",
+      "title": "Designing modules",
+      "status": 200,
+      "last_updated": "1757421295158",
+      "raw": "raw/rodec-one/rodec-100-series/index.html",
+      "content": "content/rodec-one/rodec-100-series/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Designing 100-series modules",
+          "id": "h.kuqkd6g6mz3x"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-one--rodec-100-series-01.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-100-series",
+          "text": "https://documentation.rodec.com/rodec-100-series",
+          "internal": true
+        }
+      ],
+      "nav_title": "Designing modules",
+      "nav_parent": "/rodec-one",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one/safety-instructions",
+      "title": "Safety instructions",
+      "status": 200,
+      "last_updated": "1757420557276",
+      "raw": "raw/rodec-one/safety-instructions/index.html",
+      "content": "content/rodec-one/safety-instructions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "General Safety Instructions",
+          "id": "h.y1v2umyta6d0"
+        },
+        {
+          "level": 3,
+          "text": "Power & Environment",
+          "id": "h.vfnc8m2oq4x3"
+        },
+        {
+          "level": 3,
+          "text": "Ventilation & Heat",
+          "id": "h.sc342i3a9gvu"
+        },
+        {
+          "level": 3,
+          "text": "Stability & Handling",
+          "id": "h.ad0frojbf9gk"
+        },
+        {
+          "level": 3,
+          "text": "Maintenance",
+          "id": "h.am3kk7rasofi"
+        }
+      ],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Safety instructions",
+      "nav_parent": "/rodec-one",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one/rodec-one-usb-board",
+      "title": "Rodec ONE USB board",
+      "status": 200,
+      "last_updated": "1783265782685",
+      "raw": "raw/rodec-one/rodec-one-usb-board/index.html",
+      "content": "content/rodec-one/rodec-one-usb-board/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Rodec ONE USB Board",
+          "id": "h.innnkb8iw6hg"
+        },
+        {
+          "level": 3,
+          "text": "Installing the Rodec USB Board & REV2 Backplane",
+          "id": "h.fxzjtrsob19s"
+        },
+        {
+          "level": 3,
+          "text": "Step 1: Prepare the Chassis",
+          "id": "h.n917bk7xdrur"
+        },
+        {
+          "level": 3,
+          "text": "Step 2: Disconnect the Old Backplane",
+          "id": "h.crejm6d6sesv"
+        },
+        {
+          "level": 3,
+          "text": "Step 3: Remove the TRS Connectors",
+          "id": "h.j0enuakqx6xh"
+        },
+        {
+          "level": 3,
+          "text": "Step 4: Install the New REV2 Backplane",
+          "id": "h.xxojafjrnazu"
+        },
+        {
+          "level": 3,
+          "text": "Step 5: Install the USB Board",
+          "id": "h.a7rrvik2ts88"
+        },
+        {
+          "level": 3,
+          "text": "Step 6: Reconnect & Test",
+          "id": "h.vzqz1uq9xi2b"
+        },
+        {
+          "level": 3,
+          "text": "Step 7: Final Assembly",
+          "id": "h.d0jro5fc75u"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-one--rodec-one-usb-board-01.jpg",
+        "assets/images/rodec-one--rodec-one-usb-board-02.jpg",
+        "assets/images/rodec-one--rodec-one-usb-board-03.jpg",
+        "assets/images/rodec-one--rodec-one-usb-board-04.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Rodec ONE USB board",
+      "nav_parent": "/rodec-one",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one/appendix-a-dimensions",
+      "title": "Appendix A: Dimensions",
+      "status": 200,
+      "last_updated": "1757420557276",
+      "raw": "raw/rodec-one/appendix-a-dimensions/index.html",
+      "content": "content/rodec-one/appendix-a-dimensions/index.html",
+      "headings": [],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Appendix A: Dimensions",
+      "nav_parent": "/rodec-one",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-one/appendix-b-performance",
+      "title": "Appendix B: Performance",
+      "status": 200,
+      "last_updated": "1757420557276",
+      "raw": "raw/rodec-one/appendix-b-performance/index.html",
+      "content": "content/rodec-one/appendix-b-performance/index.html",
+      "headings": [],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Appendix B: Performance",
+      "nav_parent": "/rodec-one",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular",
+      "title": "Rodec MX Modular",
+      "status": 200,
+      "last_updated": "1733475371822",
+      "raw": "raw/rodec-mx-modular/index.html",
+      "content": "content/rodec-mx-modular/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Rodec MX Modular",
+          "id": "h.a3pd2w3au4u5"
+        },
+        {
+          "level": 3,
+          "text": "Thank you for choosing this console.",
+          "id": "h.dmm4ghrodl1g"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular-01.png",
+        "assets/images/rodec-mx-modular-02.png",
+        "assets/images/rodec-mx-modular-03.png",
+        "assets/images/rodec-mx-modular-01.jpg",
+        "assets/images/rodec-mx-modular-04.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-mx-modular/control-section",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/control-section",
+          "text": "Control section",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/fx-module",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/fx-module",
+          "text": "FX module",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/usb-interface",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/usb-interface",
+          "text": "USB Interface",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/backpanel-connections",
+          "text": "",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/backpanel-connections",
+          "text": "Backpanel",
+          "internal": true
+        }
+      ],
+      "nav_title": "Rodec MX Modular",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/introduction",
+      "title": "Introduction",
+      "status": 200,
+      "last_updated": "1732981919678",
+      "raw": "raw/rodec-mx-modular/introduction/index.html",
+      "content": "content/rodec-mx-modular/introduction/index.html",
+      "headings": [],
+      "images": [
+        "assets/images/rodec-mx-modular--introduction-01.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Introduction",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/safety-instructions",
+      "title": "Safety Instructions",
+      "status": 200,
+      "last_updated": "1732981919678",
+      "raw": "raw/rodec-mx-modular/safety-instructions/index.html",
+      "content": "content/rodec-mx-modular/safety-instructions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Safety Instructions",
+          "id": "h.bzfe20on2i9y"
+        },
+        {
+          "level": 3,
+          "text": "Read and Follow All Instructions",
+          "id": "h.q32kdd244b3"
+        },
+        {
+          "level": 3,
+          "text": "Water and Moisture",
+          "id": "h.otgb1axu5ydo"
+        },
+        {
+          "level": 3,
+          "text": "Ventilation",
+          "id": "h.i5z6j5byommh"
+        },
+        {
+          "level": 3,
+          "text": "Heat Sources",
+          "id": "h.8o3x4dl9dk2q"
+        },
+        {
+          "level": 3,
+          "text": "Power Source",
+          "id": "h.5a1iqlde2p4l"
+        },
+        {
+          "level": 3,
+          "text": "Electrical Safety",
+          "id": "h.mdaoht4owepk"
+        },
+        {
+          "level": 3,
+          "text": "Lightning and Power Surges",
+          "id": "h.363jyjqb6ll6"
+        },
+        {
+          "level": 3,
+          "text": "Cleaning",
+          "id": "h.ovngrjvsg1r0"
+        },
+        {
+          "level": 3,
+          "text": "Service and Repairs",
+          "id": "h.lmi2x64zlk4f"
+        },
+        {
+          "level": 3,
+          "text": "Accessories and Attachments",
+          "id": "h.1vym5zqvpjyj"
+        },
+        {
+          "level": 3,
+          "text": "Placement and Stability",
+          "id": "h.71oayh45oyue"
+        },
+        {
+          "level": 3,
+          "text": "Proper Use",
+          "id": "h.pvel1urbe1qu"
+        }
+      ],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Safety Instructions",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/control-section",
+      "title": "Control Section",
+      "status": 200,
+      "last_updated": "1732981919678",
+      "raw": "raw/rodec-mx-modular/control-section/index.html",
+      "content": "content/rodec-mx-modular/control-section/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Control Section",
+          "id": "h.q2exjyont65f"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--control-section-01.png",
+        "assets/images/rodec-mx-modular--control-section-02.png",
+        "assets/images/rodec-mx-modular--control-section-03.png",
+        "assets/images/rodec-mx-modular--control-section-04.png",
+        "assets/images/rodec-mx-modular--control-section-05.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-mx-modular/control-section/input-9-16-and-usb-master",
+          "text": "Inputs 9-16",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/control-section/aux-en-bus-control",
+          "text": "AUX and BUS Control",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/control-section/mute-controller",
+          "text": "Mute Controller",
+          "internal": true
+        },
+        {
+          "href": "/rodec-mx-modular/control-section/monitor-section",
+          "text": "Monitor Section",
+          "internal": true
+        }
+      ],
+      "nav_title": "Control Section",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/control-section/input-9-16-and-usb-master",
+      "title": "Input 9-16 and USB Master",
+      "status": 200,
+      "last_updated": "1732981919678",
+      "raw": "raw/rodec-mx-modular/control-section/input-9-16-and-usb-master/index.html",
+      "content": "content/rodec-mx-modular/control-section/input-9-16-and-usb-master/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Input 9-16 and Digital Master",
+          "id": "h.vkqpk2ayfwx0"
+        },
+        {
+          "level": 2,
+          "text": "Key Features:",
+          "id": "h.5vkhd49edoos"
+        },
+        {
+          "level": 2,
+          "text": "Expanded Routing Explanation for Channels 9–16",
+          "id": "h.b0aca76bbpxe"
+        },
+        {
+          "level": 3,
+          "text": "Unified Workflow:",
+          "id": "h.8veyxog56g95"
+        },
+        {
+          "level": 2,
+          "text": "Digital Master Section:",
+          "id": "h.f8dzte4j7ifz"
+        },
+        {
+          "level": 3,
+          "text": "Precision Integration of Analog and Digital Workflows",
+          "id": "h.nh6w2cx1uk1p"
+        },
+        {
+          "level": 3,
+          "text": "Use Case Example: Real-Time Mastering with Plugins",
+          "id": "h.8v3qi72j0fn2"
+        },
+        {
+          "level": 3,
+          "text": "Key Features Recap:",
+          "id": "h.y4y0tj45wvpk"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--control-section-02.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Input 9-16 and USB Master",
+      "nav_parent": "/rodec-mx-modular/control-section",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/control-section/aux-en-bus-control",
+      "title": "AUX en BUS control",
+      "status": 200,
+      "last_updated": "1739903366353",
+      "raw": "raw/rodec-mx-modular/control-section/aux-en-bus-control/index.html",
+      "content": "content/rodec-mx-modular/control-section/aux-en-bus-control/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Stereo AUX and BUS",
+          "id": "h.ebk5jk6bj80c"
+        },
+        {
+          "level": 3,
+          "text": "Stereo AUXes",
+          "id": "h.k372285kkeke"
+        },
+        {
+          "level": 3,
+          "text": "Stereo BUSses",
+          "id": "h.lc6i6ndmpg9w"
+        },
+        {
+          "level": 3,
+          "text": "Key Features Recap",
+          "id": "h.pb4glib9o3q2"
+        },
+        {
+          "level": 2,
+          "text": "Expanded Explanation: AUX Send and Return Functionality",
+          "id": "h.lwsbyhlz503g"
+        },
+        {
+          "level": 3,
+          "text": "Key Features Recap:",
+          "id": "h.tgsllynho9td"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--control-section-03.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "AUX en BUS control",
+      "nav_parent": "/rodec-mx-modular/control-section",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/control-section/mute-controller",
+      "title": "Mute Controller",
+      "status": 200,
+      "last_updated": "1732981919678",
+      "raw": "raw/rodec-mx-modular/control-section/mute-controller/index.html",
+      "content": "content/rodec-mx-modular/control-section/mute-controller/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Programmable Mute Controller",
+          "id": "h.4zdzmbs2mxlh"
+        },
+        {
+          "level": 3,
+          "text": "The programmable mute controller on the master section offers powerful and intuitive control over channel muting. With this feature, you can store mute groups for all 16 channels and switch between them effortlessly, enabling smooth transitions and dynamic workflow during live performances or in the studio.",
+          "id": "h.66z6sj4e0pjp"
+        },
+        {
+          "level": 2,
+          "text": "Detailed Description",
+          "id": "h.dgbx6eamhq3j"
+        },
+        {
+          "level": 3,
+          "text": "Summary",
+          "id": "h.sqkync9jt37i"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--control-section--mute-controller-01.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Mute Controller",
+      "nav_parent": "/rodec-mx-modular/control-section",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/control-section/monitor-section",
+      "title": "Monitor Section",
+      "status": 200,
+      "last_updated": "1732981919678",
+      "raw": "raw/rodec-mx-modular/control-section/monitor-section/index.html",
+      "content": "content/rodec-mx-modular/control-section/monitor-section/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Monitor section",
+          "id": "h.lkqj0euidldv"
+        },
+        {
+          "level": 3,
+          "text": "Summary",
+          "id": "h.wefrebcrgkbe"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--control-section--monitor-section-01.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Monitor Section",
+      "nav_parent": "/rodec-mx-modular/control-section",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/input-selection-and-channel-insert",
+      "title": "Input Selection and channel insert",
+      "status": 200,
+      "last_updated": "1733223281266",
+      "raw": "raw/rodec-mx-modular/input-selection-and-channel-insert/index.html",
+      "content": "content/rodec-mx-modular/input-selection-and-channel-insert/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Input Selection and channel insert",
+          "id": "h.6uhhrpaf42j7"
+        },
+        {
+          "level": 2,
+          "text": "Input Selector Buttons (Channels 1–8)",
+          "id": "h.9irsr4vvn6h1"
+        },
+        {
+          "level": 2,
+          "text": "USB Post Fader Button (Channels 1–8)",
+          "id": "h.a2rqck8undvj"
+        },
+        {
+          "level": 2,
+          "text": "Bypass Functionality for 500 Series Slots (1–8)",
+          "id": "h.9nkz87e0c27m"
+        },
+        {
+          "level": 2,
+          "text": "Channel Insert Functionality (Channels 1–8)",
+          "id": "h.9d5ntgajn34o"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--input-selection-and-channel-insert-01.png",
+        "assets/images/rodec-mx-modular--input-selection-and-channel-insert-02.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Input Selection and channel insert",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/backpanel-connections",
+      "title": "Backpanel connections",
+      "status": 200,
+      "last_updated": "1735056660544",
+      "raw": "raw/rodec-mx-modular/backpanel-connections/index.html",
+      "content": "content/rodec-mx-modular/backpanel-connections/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Backpanel connections",
+          "id": "h.f28oyubaqw2q"
+        },
+        {
+          "level": 2,
+          "text": "Master Outputs",
+          "id": "h.wrzyidomna2"
+        },
+        {
+          "level": 2,
+          "text": "Monitor Outputs",
+          "id": "h.t5emmf4z700h"
+        },
+        {
+          "level": 2,
+          "text": "TRS Connectors",
+          "id": "h.p1tjsnt2oli1"
+        },
+        {
+          "level": 2,
+          "text": "D-Sub Connectors",
+          "id": "h.uwjauv62dbpz"
+        },
+        {
+          "level": 3,
+          "text": "Inputs: Channels 1–8 and 9–16",
+          "id": "h.z54u0gvg5qg8"
+        },
+        {
+          "level": 3,
+          "text": "Direct Outputs: Channels 1–8 and 9–16",
+          "id": "h.uogwv1sk7g27"
+        },
+        {
+          "level": 3,
+          "text": "Insert Send and Return D-Sub Connectors",
+          "id": "h.odm6iax4lwuc"
+        },
+        {
+          "level": 2,
+          "text": "RCA Connectors for turntables and Ground Pin",
+          "id": "h.90gwdw9tp0yk"
+        },
+        {
+          "level": 3,
+          "text": "Usage Scenario",
+          "id": "h.zi2ge0hhdnwe"
+        },
+        {
+          "level": 2,
+          "text": "CV IN Section",
+          "id": "h.lcmo8ffadyd7"
+        },
+        {
+          "level": 3,
+          "text": "Summary",
+          "id": "h.4opljxpbfja3"
+        },
+        {
+          "level": 2,
+          "text": "Sidechain Input",
+          "id": "h.lpi3wqoaf57n"
+        },
+        {
+          "level": 3,
+          "text": "Summary",
+          "id": "h.cz8e7cozniav"
+        },
+        {
+          "level": 2,
+          "text": "Control Link In and Out",
+          "id": "h.1oc7gapzj0l9"
+        },
+        {
+          "level": 3,
+          "text": "Summary",
+          "id": "h.5fwq7jvm792m"
+        },
+        {
+          "level": 2,
+          "text": "Expander IN",
+          "id": "h.3kzvdha90hqc"
+        },
+        {
+          "level": 2,
+          "text": "PFL Link",
+          "id": "h.2uni518ei5vl"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--backpanel-connections-01.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Backpanel connections",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/fx-module",
+      "title": "FX Module",
+      "status": 200,
+      "last_updated": "1733419415345",
+      "raw": "raw/rodec-mx-modular/fx-module/index.html",
+      "content": "content/rodec-mx-modular/fx-module/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "FX Module",
+          "id": "h.yv7x1kh8997t"
+        },
+        {
+          "level": 3,
+          "text": "Summary",
+          "id": "h.bwpweyfb4wv1"
+        },
+        {
+          "level": 2,
+          "text": "Loading and Saving a Preset",
+          "id": "h.wkzm8d4424xk"
+        },
+        {
+          "level": 2,
+          "text": "Base Algorithms",
+          "id": "h.m7zrmj6fgdx7"
+        },
+        {
+          "level": 3,
+          "text": "Navigating Parameter Rows with the Shift Button",
+          "id": "h.wcqmixuu7xu0"
+        },
+        {
+          "level": 3,
+          "text": "The following tables provide a detailed overview of each effect:",
+          "id": "h.6h3j5cdok855"
+        },
+        {
+          "level": 3,
+          "text": "There are 15 preconfigured delay ratios behind Knob 2:",
+          "id": "h.a044bl7c9hvi"
+        },
+        {
+          "level": 2,
+          "text": "Factory Presets",
+          "id": "h.y6a1kg64bmf1"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular-03.png"
+      ],
+      "files": [],
+      "embeds": [
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-mx-modular--fx-module-embed-01.html",
+          "iframe_targets": [],
+          "converted_to": "table"
+        },
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-mx-modular--fx-module-embed-02.html",
+          "iframe_targets": [],
+          "converted_to": "table"
+        },
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-mx-modular--fx-module-embed-03.html",
+          "iframe_targets": [],
+          "converted_to": "table"
+        },
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-mx-modular--fx-module-embed-04.html",
+          "iframe_targets": [],
+          "converted_to": "table"
+        },
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-mx-modular--fx-module-embed-05.html",
+          "iframe_targets": [],
+          "converted_to": "table"
+        }
+      ],
+      "links": [],
+      "nav_title": "FX Module",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/usb-interface",
+      "title": "USB Interface",
+      "status": 200,
+      "last_updated": "1765270703318",
+      "raw": "raw/rodec-mx-modular/usb-interface/index.html",
+      "content": "content/rodec-mx-modular/usb-interface/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Digital Audio Interface",
+          "id": "h.tan2t9aiwogn"
+        },
+        {
+          "level": 2,
+          "text": "Digital Interface (Soundcard)",
+          "id": "h.jwy5eteb1inp"
+        },
+        {
+          "level": 2,
+          "text": "Operating Systems Compatibility",
+          "id": "h.qeox0qy95kg5"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-modular--usb-interface-01.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-mx-modular/control-section/input-9-16-and-usb-master",
+          "text": "Input 9-16 and USB Master",
+          "internal": true
+        },
+        {
+          "href": "https://asio4all.org/",
+          "text": "https://asio4all.org/",
+          "internal": false
+        }
+      ],
+      "nav_title": "USB Interface",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/usb-interface/level-matching",
+      "title": "Level Matching",
+      "status": 200,
+      "last_updated": "1732984187417",
+      "raw": "raw/rodec-mx-modular/usb-interface/level-matching/index.html",
+      "content": "content/rodec-mx-modular/usb-interface/level-matching/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Level matching",
+          "id": "h.whvq7u9dkffw"
+        },
+        {
+          "level": 3,
+          "text": "Introduction",
+          "id": "h.pnb4rybaup1i"
+        },
+        {
+          "level": 3,
+          "text": "Key Level Standards",
+          "id": "h.pzz1yhc9pzqt"
+        },
+        {
+          "level": 3,
+          "text": "Differences between dBu and dBFS",
+          "id": "h.bc0odewtl4f6"
+        },
+        {
+          "level": 3,
+          "text": "Reference Levels in the MX Modular",
+          "id": "h.kpsy4nhear3s"
+        },
+        {
+          "level": 3,
+          "text": "Practical Example with the 501",
+          "id": "h.8w5yz7gx7ivj"
+        },
+        {
+          "level": 3,
+          "text": "Conclusion",
+          "id": "h.um9b8epgzjp5"
+        }
+      ],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Level Matching",
+      "nav_parent": "/rodec-mx-modular/usb-interface",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/troubleshooting",
+      "title": "Troubleshooting",
+      "status": 200,
+      "last_updated": "1732981919678",
+      "raw": "raw/rodec-mx-modular/troubleshooting/index.html",
+      "content": "content/rodec-mx-modular/troubleshooting/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Troubleshooting",
+          "id": "h.qzmjbj6g4y1t"
+        },
+        {
+          "level": 3,
+          "text": "Troubleshooting",
+          "id": "h.3liej5tzgbz"
+        },
+        {
+          "level": 3,
+          "text": "Warranty",
+          "id": "h.50pgxeqb04vr"
+        }
+      ],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Troubleshooting",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/appendix-a-dimensions",
+      "title": "Appendix A: Dimensions",
+      "status": 200,
+      "last_updated": "1733431783592",
+      "raw": "raw/rodec-mx-modular/appendix-a-dimensions/index.html",
+      "content": "content/rodec-mx-modular/appendix-a-dimensions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Data & Dimesions",
+          "id": "h.4p6x8jpd25yu"
+        }
+      ],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-mx-modular--appendix-a-dimensions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1KyFpO6pl1mSkTkwWGPscN9zaSWzL8ipWjfqj4xLvXb4",
+          "title": "Dimensions",
+          "open_url": "https://drive.google.com/open?id=1KyFpO6pl1mSkTkwWGPscN9zaSWzL8ipWjfqj4xLvXb4",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1KyFpO6pl1mSkTkwWGPscN9zaSWzL8ipWjfqj4xLvXb4/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-mx-modular--appendix-a-dimensions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1KyFpO6pl1mSkTkwWGPscN9zaSWzL8ipWjfqj4xLvXb4"
+        }
+      ],
+      "links": [],
+      "nav_title": "Appendix A: Dimensions",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-modular/appendix-b-performance",
+      "title": "Appendix B: Performance",
+      "status": 200,
+      "last_updated": "1753094288960",
+      "raw": "raw/rodec-mx-modular/appendix-b-performance/index.html",
+      "content": "content/rodec-mx-modular/appendix-b-performance/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Performance",
+          "id": "h.3ldel3bi9fsx"
+        },
+        {
+          "level": 2,
+          "text": "Digital I/O",
+          "id": "h.6m8i9e5ox9lx"
+        },
+        {
+          "level": 2,
+          "text": "Analog Performance",
+          "id": "h.4hlydvh1ndim"
+        }
+      ],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-mx-modular--appendix-b-performance.csv",
+        "assets/files/sheet-rodec-mx-modular--appendix-b-performance-02.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1gTJYvY1benoVWDEYxxmGRreDVCPRpN5wVQau016j5lw",
+          "title": "D-102 Performance",
+          "open_url": "https://drive.google.com/open?id=1gTJYvY1benoVWDEYxxmGRreDVCPRpN5wVQau016j5lw",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1gTJYvY1benoVWDEYxxmGRreDVCPRpN5wVQau016j5lw/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-mx-modular--appendix-b-performance.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1gTJYvY1benoVWDEYxxmGRreDVCPRpN5wVQau016j5lw"
+        },
+        {
+          "type": "google-sheet",
+          "id": "1nSygipZpvHlOxnWMmJHvz146IB_PJPjNWdgifxs68JE",
+          "title": "MX Modular Analog Signal specs",
+          "open_url": "https://drive.google.com/open?id=1nSygipZpvHlOxnWMmJHvz146IB_PJPjNWdgifxs68JE",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1nSygipZpvHlOxnWMmJHvz146IB_PJPjNWdgifxs68JE/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-mx-modular--appendix-b-performance-02.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1nSygipZpvHlOxnWMmJHvz146IB_PJPjNWdgifxs68JE"
+        }
+      ],
+      "links": [],
+      "nav_title": "Appendix B: Performance",
+      "nav_parent": "/rodec-mx-modular",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-f-101-102-channel-control",
+      "title": "Rodec MX-F-101 / 102 Channel control",
+      "status": 200,
+      "last_updated": "1733227848996",
+      "raw": "raw/rodec-mx-f-101-102-channel-control/index.html",
+      "content": "content/rodec-mx-f-101-102-channel-control/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "MX-F-101 / 102 Channel control",
+          "id": "h.olzchiadh4ly"
+        },
+        {
+          "level": 2,
+          "text": "MX-F-101",
+          "id": "h.kwzp8ultdife"
+        },
+        {
+          "level": 2,
+          "text": "MX-F-10 2",
+          "id": "h.o100qv3wbj6x"
+        },
+        {
+          "level": 3,
+          "text": "Channel Control Modules: Mono and Stereo Faders",
+          "id": "h.tejkkuy6d43t"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-mx-f-101-102-channel-control-01.jpg",
+        "assets/images/rodec-mx-f-101-102-channel-control-02.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Rodec MX-F-101 / 102 Channel control",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-mx-f-101-102-channel-control/data-dimensions",
+      "title": "Data & Dimensions",
+      "status": 200,
+      "last_updated": "1733431768959",
+      "raw": "raw/rodec-mx-f-101-102-channel-control/data-dimensions/index.html",
+      "content": "content/rodec-mx-f-101-102-channel-control/data-dimensions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Data &Dimesions",
+          "id": "h.7ck11he49dus"
+        }
+      ],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-mx-f-101-102-channel-control--data-dimensions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1WUbqYKb1cFPRhcaIVvueYYKaMlvQk17vA5joSu8S5Pc",
+          "title": "MX-F-101/102",
+          "open_url": "https://drive.google.com/open?id=1WUbqYKb1cFPRhcaIVvueYYKaMlvQk17vA5joSu8S5Pc",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1WUbqYKb1cFPRhcaIVvueYYKaMlvQk17vA5joSu8S5Pc/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-mx-f-101-102-channel-control--data-dimensions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1WUbqYKb1cFPRhcaIVvueYYKaMlvQk17vA5joSu8S5Pc"
+        }
+      ],
+      "links": [],
+      "nav_title": "Data & Dimensions",
+      "nav_parent": "/rodec-mx-f-101-102-channel-control",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-501-micline-pre",
+      "title": "Rodec M-501 Mic/Line pre",
+      "status": 200,
+      "last_updated": "1755676826559",
+      "raw": "raw/rodec-m-501-micline-pre/index.html",
+      "content": "content/rodec-m-501-micline-pre/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "M-501 Mic / Line Preamp",
+          "id": "h.r37bmuqfj7d5"
+        },
+        {
+          "level": 2,
+          "text": "M-501 Preamp: Features and Controls",
+          "id": "h.ju4heqlsx1rh"
+        },
+        {
+          "level": 3,
+          "text": "Summary of Use",
+          "id": "h.ma3xgnrzudqh"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-m-501-micline-pre-01.png"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Rodec M-501 Mic/Line pre",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-501-micline-pre/data-dimensions",
+      "title": "Data & Dimensions",
+      "status": 200,
+      "last_updated": "1733431370665",
+      "raw": "raw/rodec-m-501-micline-pre/data-dimensions/index.html",
+      "content": "content/rodec-m-501-micline-pre/data-dimensions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Data &Dimesions",
+          "id": "h.ajp514e9hh7a"
+        }
+      ],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-m-501-micline-pre--data-dimensions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1-pIU0AFcW0G70J-DBUCE-7R6PVpNZDXhs1zFB1Y4VEU",
+          "title": "M 501 Data & Dimensions",
+          "open_url": "https://drive.google.com/open?id=1-pIU0AFcW0G70J-DBUCE-7R6PVpNZDXhs1zFB1Y4VEU",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1-pIU0AFcW0G70J-DBUCE-7R6PVpNZDXhs1zFB1Y4VEU/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-m-501-micline-pre--data-dimensions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1-pIU0AFcW0G70J-DBUCE-7R6PVpNZDXhs1zFB1Y4VEU"
+        }
+      ],
+      "links": [],
+      "nav_title": "Data & Dimensions",
+      "nav_parent": "/rodec-m-501-micline-pre",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-100-series",
+      "title": "Rodec 100 Series",
+      "status": 200,
+      "last_updated": "1733430622691",
+      "raw": "raw/rodec-100-series/index.html",
+      "content": "content/rodec-100-series/index.html",
+      "headings": [],
+      "images": [],
+      "files": [
+        "assets/files/Rodec-100-Series.pdf"
+      ],
+      "embeds": [
+        {
+          "type": "google-document",
+          "id": "19kwjPZSFMgWiYLjbOIr7Uig1V3lByOBdw6qnzmAiuVM",
+          "title": "Rodec 100 Series",
+          "open_url": "https://drive.google.com/open?id=19kwjPZSFMgWiYLjbOIr7Uig1V3lByOBdw6qnzmAiuVM",
+          "embed_url": "https://docs.google.com/document/d/19kwjPZSFMgWiYLjbOIr7Uig1V3lByOBdw6qnzmAiuVM/preview",
+          "file": "assets/files/Rodec-100-Series.pdf",
+          "downloaded": true
+        }
+      ],
+      "links": [],
+      "nav_title": "Rodec 100 Series",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-k7-100-to-500-series-adapter",
+      "title": "Rodec K7 100 to 500 series adapter",
+      "status": 200,
+      "last_updated": "1733433239825",
+      "raw": "raw/rodec-k7-100-to-500-series-adapter/index.html",
+      "content": "content/rodec-k7-100-to-500-series-adapter/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "K7 100 to 500 series adapter",
+          "id": "h.hmnpzvka86yb"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-k7-100-to-500-series-adapter-01.jpg",
+        "assets/images/rodec-k7-100-to-500-series-adapter-02.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Rodec K7 100 to 500 series adapter",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-101",
+      "title": "Rodec M-101",
+      "status": 200,
+      "last_updated": "1733430622691",
+      "raw": "raw/rodec-m-101/index.html",
+      "content": "content/rodec-m-101/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "M-101 Dual Discrete Phono / Line Preamp",
+          "id": "h.4gm0mqfskwil"
+        },
+        {
+          "level": 3,
+          "text": "Phono Socket fig 1",
+          "id": "h.ckgo37aj8zw5"
+        },
+        {
+          "level": 3,
+          "text": "Phono Socket fig 2",
+          "id": "h.a0fpwbd6ecxr"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-m-101-01.jpg",
+        "assets/images/rodec-m-101-02.jpg",
+        "assets/images/rodec-m-101-03.jpg",
+        "assets/images/rodec-m-101-04.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-100-series",
+          "text": "100 series specification",
+          "internal": true
+        }
+      ],
+      "nav_title": "Rodec M-101",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-101/data-dimesions",
+      "title": "Data & dimesions",
+      "status": 200,
+      "last_updated": "1733431231664",
+      "raw": "raw/rodec-m-101/data-dimesions/index.html",
+      "content": "content/rodec-m-101/data-dimesions/index.html",
+      "headings": [],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-m-101--data-dimesions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1c0vLXZHniwU2ctrY2-53dvH5Hi-EAx4_t6RY-ubN6uQ",
+          "title": "M-101 Data & Dimensions",
+          "open_url": "https://drive.google.com/open?id=1c0vLXZHniwU2ctrY2-53dvH5Hi-EAx4_t6RY-ubN6uQ",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1c0vLXZHniwU2ctrY2-53dvH5Hi-EAx4_t6RY-ubN6uQ/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-m-101--data-dimesions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1c0vLXZHniwU2ctrY2-53dvH5Hi-EAx4_t6RY-ubN6uQ"
+        },
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-m-101--data-dimesions-embed-02.html",
+          "iframe_targets": [],
+          "converted_to": "table"
+        }
+      ],
+      "links": [],
+      "nav_title": "Data & dimesions",
+      "nav_parent": "/rodec-m-101",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-102",
+      "title": "Rodec M-102",
+      "status": 200,
+      "last_updated": "1733430622691",
+      "raw": "raw/rodec-m-102/index.html",
+      "content": "content/rodec-m-102/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "M-102 Stereo Equalizer",
+          "id": "h.mt9dprad5w6s"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-m-102-01.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-k7-100-to-500-series-adapter",
+          "text": "Rodec K7",
+          "internal": true
+        },
+        {
+          "href": "/rodec-100-series",
+          "text": "Rodec 100 series",
+          "internal": true
+        }
+      ],
+      "nav_title": "Rodec M-102",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-102/data-dimemsions",
+      "title": "Data & dimemsions",
+      "status": 200,
+      "last_updated": "1733430929967",
+      "raw": "raw/rodec-m-102/data-dimemsions/index.html",
+      "content": "content/rodec-m-102/data-dimemsions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "M-102 Data & dimensions",
+          "id": "h.7e2dz1tc0dwl"
+        }
+      ],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-m-102--data-dimemsions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1gYhl_x4YZV0oDguQKNMlDRfO4TohR4TBX9EGxGR2u30",
+          "title": "M-102 Data & dimensions",
+          "open_url": "https://drive.google.com/open?id=1gYhl_x4YZV0oDguQKNMlDRfO4TohR4TBX9EGxGR2u30",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1gYhl_x4YZV0oDguQKNMlDRfO4TohR4TBX9EGxGR2u30/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-m-102--data-dimemsions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1gYhl_x4YZV0oDguQKNMlDRfO4TohR4TBX9EGxGR2u30"
+        }
+      ],
+      "links": [],
+      "nav_title": "Data & dimemsions",
+      "nav_parent": "/rodec-m-102",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-104",
+      "title": "Rodec M-104",
+      "status": 200,
+      "last_updated": "1733433001680",
+      "raw": "raw/rodec-m-104/index.html",
+      "content": "content/rodec-m-104/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "M-104 Stereo Filter",
+          "id": "h.p9pq1463q1v5"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-m-104-01.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "/rodec-100-series",
+          "text": "Rodec 100 series",
+          "internal": true
+        }
+      ],
+      "nav_title": "Rodec M-104",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-104/data-dimensions",
+      "title": "Data & dimensions",
+      "status": 200,
+      "last_updated": "1733565198111",
+      "raw": "raw/rodec-m-104/data-dimensions/index.html",
+      "content": "content/rodec-m-104/data-dimensions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "M-10 4 Data & dimensions",
+          "id": "h.rfwbnm6s15f7"
+        }
+      ],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-m-104--data-dimensions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1QbWN7obW-cE6cIy-Zw1PmP3epmqxWgxv3BtL7X6zDso",
+          "title": "M-104 Data & Dimensions",
+          "open_url": "https://drive.google.com/open?id=1QbWN7obW-cE6cIy-Zw1PmP3epmqxWgxv3BtL7X6zDso",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1QbWN7obW-cE6cIy-Zw1PmP3epmqxWgxv3BtL7X6zDso/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-m-104--data-dimensions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1QbWN7obW-cE6cIy-Zw1PmP3epmqxWgxv3BtL7X6zDso"
+        }
+      ],
+      "links": [],
+      "nav_title": "Data & dimensions",
+      "nav_parent": "/rodec-m-104",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-108",
+      "title": "Rodec M-108",
+      "status": 200,
+      "last_updated": "1733430622691",
+      "raw": "raw/rodec-m-108/index.html",
+      "content": "content/rodec-m-108/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Rodec M-108 Stereo Discrete Line Preamp",
+          "id": "h.26d9y4puq61o"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-m-108-01.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Rodec M-108",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-108/data-dimensions",
+      "title": "Data & Dimensions",
+      "status": 200,
+      "last_updated": "1733565198111",
+      "raw": "raw/rodec-m-108/data-dimensions/index.html",
+      "content": "content/rodec-m-108/data-dimensions/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "M-10 8 Data & dimensions",
+          "id": "h.7rcrww1z4u9y"
+        }
+      ],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-m-108--data-dimensions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "14GS159zV-CKTBtnIpaJuRucfqdij0o4HRNK5wVt4hV4",
+          "title": "M-108 Data & Dimensions",
+          "open_url": "https://drive.google.com/open?id=14GS159zV-CKTBtnIpaJuRucfqdij0o4HRNK5wVt4hV4",
+          "embed_url": "https://docs.google.com/spreadsheets/d/14GS159zV-CKTBtnIpaJuRucfqdij0o4HRNK5wVt4hV4/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-m-108--data-dimensions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/14GS159zV-CKTBtnIpaJuRucfqdij0o4HRNK5wVt4hV4"
+        }
+      ],
+      "links": [],
+      "nav_title": "Data & Dimensions",
+      "nav_parent": "/rodec-m-108",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-sherman-ministyler",
+      "title": "Rodec + Sherman MiniStyler",
+      "status": 200,
+      "last_updated": "1768321777276",
+      "raw": "raw/rodec-sherman-ministyler/index.html",
+      "content": "content/rodec-sherman-ministyler/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Rodec + Sherman MiniStyler",
+          "id": "h.jm035gexas9u"
+        },
+        {
+          "level": 3,
+          "text": "Top Row: Gain Staging",
+          "id": "h.nsovw9fogrox"
+        },
+        {
+          "level": 3,
+          "text": "Second Row: Modulators",
+          "id": "h.676wtpd1f9me"
+        },
+        {
+          "level": 3,
+          "text": "Third Row: Filter Section",
+          "id": "h.6gdrzpx2iq7s"
+        },
+        {
+          "level": 2,
+          "text": "CV",
+          "id": "h.baihjytrg1mg"
+        },
+        {
+          "level": 3,
+          "text": "FREQ CV",
+          "id": "h.uev1i3a6duu8"
+        },
+        {
+          "level": 3,
+          "text": "TYPE CV",
+          "id": "h.agth9he12l6x"
+        },
+        {
+          "level": 2,
+          "text": "Quick Start",
+          "id": "h.n0uni72r237b"
+        },
+        {
+          "level": 2,
+          "text": "Tips from the Makers",
+          "id": "h.jruh7t6o460u"
+        },
+        {
+          "level": 3,
+          "text": "1. Resonance & Self-Oscillation",
+          "id": "h.ncps3r4pa4iy"
+        },
+        {
+          "level": 3,
+          "text": "2. Gain Staging",
+          "id": "h.kr4rkd8p3fx7"
+        },
+        {
+          "level": 3,
+          "text": "3. Sidechaining",
+          "id": "h.qm7on94urk38"
+        },
+        {
+          "level": 3,
+          "text": "4. Modulation Sensitivity & Timing",
+          "id": "h.pxzhyvxjsw55"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-sherman-ministyler-01.png",
+        "assets/images/rodec-sherman-ministyler-01.jpg"
+      ],
+      "files": [],
+      "embeds": [],
+      "links": [],
+      "nav_title": "Rodec + Sherman MiniStyler",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-110-sidestepper",
+      "title": "Rodec M-110 SideStepper",
+      "status": 200,
+      "last_updated": "1787045304097",
+      "raw": "raw/rodec-m-110-sidestepper/index.html",
+      "content": "content/rodec-m-110-sidestepper/index.html",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Rodec M-110 SideStepper",
+          "id": "h.mmcqvae5jf2p"
+        },
+        {
+          "level": 1,
+          "text": "SideStepper Module Manual",
+          "id": "h.b9s4tnq4e6c5"
+        },
+        {
+          "level": 2,
+          "text": "1. General Specifications",
+          "id": "h.qhxv3p2x38ja"
+        },
+        {
+          "level": 2,
+          "text": "2. Step Sequencer Section",
+          "id": "h.mzzdidhfd89s"
+        },
+        {
+          "level": 3,
+          "text": "2.1 Home Screen & Main Navigation",
+          "id": "h.krfo9wapnc7u"
+        },
+        {
+          "level": 3,
+          "text": "2.2 Editing Patterns & Steps",
+          "id": "h.6mw36x82ol0p"
+        },
+        {
+          "level": 3,
+          "text": "2.3 Loading & Saving Patterns",
+          "id": "h.3r6vr8nvhctf"
+        },
+        {
+          "level": 3,
+          "text": "2.4 Menu & System Settings",
+          "id": "h.78wct79qyzlp"
+        },
+        {
+          "level": 2,
+          "text": "3. Gater / Ducker Section (Analog)",
+          "id": "h.abwqtakj0udw"
+        },
+        {
+          "level": 3,
+          "text": "3.1 Control Interface",
+          "id": "h.6x9durkek2rm"
+        },
+        {
+          "level": 3,
+          "text": "3.2 Logic & Routing (Pushbuttons)",
+          "id": "h.o06qbfah4lr9"
+        }
+      ],
+      "images": [
+        "assets/images/rodec-m-110-sidestepper-01.jpg",
+        "assets/images/rodec-m-110-sidestepper-01.png",
+        "assets/images/rodec-m-110-sidestepper-02.png",
+        "assets/images/rodec-m-110-sidestepper-03.png"
+      ],
+      "files": [],
+      "embeds": [
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-m-110-sidestepper-embed-01.html",
+          "iframe_targets": [],
+          "converted_to": "table"
+        }
+      ],
+      "links": [
+        {
+          "href": "/rodec-m-110-sidestepper/presets",
+          "text": "here",
+          "internal": true
+        }
+      ],
+      "nav_title": "Rodec M-110 SideStepper",
+      "nav_parent": null,
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-110-sidestepper/presets",
+      "title": "Presets",
+      "status": 200,
+      "last_updated": "1787045250225",
+      "raw": "raw/rodec-m-110-sidestepper/presets/index.html",
+      "content": "content/rodec-m-110-sidestepper/presets/index.html",
+      "headings": [],
+      "images": [],
+      "files": [],
+      "embeds": [
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-m-110-sidestepper--presets-embed-01.html",
+          "iframe_targets": [],
+          "converted_to": "iframe"
+        }
+      ],
+      "links": [],
+      "nav_title": "Presets",
+      "nav_parent": "/rodec-m-110-sidestepper",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-110-sidestepper/bank-manager",
+      "title": "Bank Manager",
+      "status": 200,
+      "last_updated": "1787048293051",
+      "raw": "raw/rodec-m-110-sidestepper/bank-manager/index.html",
+      "content": "content/rodec-m-110-sidestepper/bank-manager/index.html",
+      "headings": [],
+      "images": [],
+      "files": [],
+      "embeds": [
+        {
+          "type": "custom-html",
+          "code_file": "assets/embeds/rodec-m-110-sidestepper--bank-manager-embed-01.html",
+          "iframe_targets": [],
+          "converted_to": "iframe"
+        }
+      ],
+      "links": [],
+      "nav_title": "Bank Manager",
+      "nav_parent": "/rodec-m-110-sidestepper",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-m-110-sidestepper/data-and-dimensions",
+      "title": "Data and dimensions",
+      "status": 200,
+      "last_updated": "1769014040089",
+      "raw": "raw/rodec-m-110-sidestepper/data-and-dimensions/index.html",
+      "content": "content/rodec-m-110-sidestepper/data-and-dimensions/index.html",
+      "headings": [],
+      "images": [],
+      "files": [
+        "assets/files/sheet-rodec-m-110-sidestepper--data-and-dimensions.csv"
+      ],
+      "embeds": [
+        {
+          "type": "google-sheet",
+          "id": "1NEqWoTZUekbzwa9rGXu5DrbsqftFZKKEaCbIA_Ff22s",
+          "title": "SideStepper Data & Dimensions",
+          "open_url": "https://drive.google.com/open?id=1NEqWoTZUekbzwa9rGXu5DrbsqftFZKKEaCbIA_Ff22s",
+          "embed_url": "https://docs.google.com/spreadsheets/d/1NEqWoTZUekbzwa9rGXu5DrbsqftFZKKEaCbIA_Ff22s/htmlembed",
+          "converted_to": "table",
+          "csv": "assets/files/sheet-rodec-m-110-sidestepper--data-and-dimensions.csv",
+          "source": "https://docs.google.com/spreadsheets/d/1NEqWoTZUekbzwa9rGXu5DrbsqftFZKKEaCbIA_Ff22s"
+        }
+      ],
+      "links": [],
+      "nav_title": "Data and dimensions",
+      "nav_parent": "/rodec-m-110-sidestepper",
+      "in_menu": true
+    },
+    {
+      "path": "/rodec-100-series-configurator",
+      "title": "Rodec 100 Series configurator",
+      "status": 200,
+      "last_updated": "1794903810036",
+      "raw": "raw/rodec-100-series-configurator/index.html",
+      "content": "content/rodec-100-series-configurator/index.html",
+      "headings": [],
+      "images": [],
+      "files": [],
+      "embeds": [],
+      "links": [
+        {
+          "href": "https://www.rodec.com/configurator",
+          "text": "Open the Rodec configurator",
+          "internal": false
+        }
+      ],
+      "nav_title": null,
+      "nav_parent": null,
+      "in_menu": false
+    }
+  ]
+}

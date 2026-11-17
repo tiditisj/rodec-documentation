@@ -1,0 +1,83 @@
+{
+  "path": "/rodec-one/backpanel-connections",
+  "title": "Backpanel connections.",
+  "title_em": "Audio, control and power.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-one--backpanel-connections-01.png",
+      "alt": "Rodec ONE back panel",
+      "items": [
+        {
+          "name": "Stereo input",
+          "label": "IN",
+          "at": [275, 935],
+          "rect": [300, 750, 435, 1120],
+          "text": "Balanced <strong>6.3 mm TRS</strong> connectors, left and right.",
+          "ref": {"strong": "Stereo Input"}
+        },
+        {
+          "name": "Stereo output",
+          "label": "OUT",
+          "at": [775, 935],
+          "rect": [612, 750, 747, 1120],
+          "text": "Balanced <strong>6.3 mm TRS</strong> connectors, left and right.",
+          "ref": {"strong": "Stereo Output"}
+        },
+        {
+          "name": "Unbalanced inputs",
+          "label": "PHONO",
+          "at": [460, 1178],
+          "rect": [414, 1198, 506, 1406],
+          "text": "<strong>RCA</strong> connectors, for use with the <strong>M-101 Phono Preamp</strong>.",
+          "ref": {"strong": "Unbalanced Inputs"}
+        },
+        {
+          "name": "Grounding post",
+          "at": [320, 1178],
+          "rect": [258, 1196, 378, 1285],
+          "text": "Ground connection for the RCA inputs.",
+          "ref": {"strong": "Unbalanced Inputs"}
+        },
+        {
+          "name": "Sidechain input",
+          "label": "SIDECHAIN",
+          "at": [576, 1368],
+          "rect": [593, 1332, 670, 1404],
+          "text": "<strong>3.5 mm</strong> stereo.",
+          "ref": {"strong": "Sidechain Input"}
+        },
+        {
+          "name": "CV inputs",
+          "label": "CV 1 / SYNC, CV 2",
+          "at": [824, 1300],
+          "rect": [727, 1200, 805, 1405],
+          "text": "<strong>CV1</strong> and <strong>CV2</strong>, both mono; CV1 doubles as <strong>analog sync</strong> for compatible modules.",
+          "ref": {"strong": "CV Inputs"}
+        },
+        {
+          "name": "MIDI sync",
+          "label": "MIDI SYNC",
+          "at": [576, 1238],
+          "rect": [593, 1200, 670, 1274],
+          "text": "Dedicated <strong>3.5 mm</strong> connector for future module synchronization.",
+          "ref": {"strong": "MIDI Sync"}
+        },
+        {
+          "name": "DC input",
+          "label": "12V DC",
+          "at": [396, 1368],
+          "rect": [290, 1316, 375, 1418],
+          "text": "Center positive, <strong>12 V / 1 A</strong>.",
+          "ref": {"strong": "DC Input"}
+        },
+        {
+          "name": "Power switch",
+          "at": [253, 1325],
+          "rect": [229, 1350, 278, 1404],
+          "text": "On/off toggle.",
+          "ref": {"strong": "Power Switch"}
+        }
+      ]
+    }
+  ]
+}

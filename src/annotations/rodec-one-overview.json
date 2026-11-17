@@ -1,0 +1,20 @@
+{
+  "path": "/rodec-one",
+  "title": "Rodec ONE.",
+  "title_em": "Small box, big bang.",
+  "hero_image": "assets/images/rodec-one-01.png",
+  "hero_style": "light",
+  "remove_images": [
+    "rodec-one-01.png"
+  ],
+  "card_texts": {
+    "/rodec-one/backpanel-connections": "Audio I/O, sync, CV and power on the back.",
+    "/rodec-one/installing-modules": "Fit and connect your 100 series modules, step by step.",
+    "/rodec-one/rodec-100-series": "Pinout and specifications for your own 100 series modules.",
+    "/rodec-one/safety-instructions": "Read these before you set up and power the ONE.",
+    "/rodec-one/rodec-one-usb-board": "Installing the USB board and REV2 backplane."
+  },
+  "card_images": {
+    "/rodec-one/rodec-one-usb-board": "/assets/images/rodec-one--rodec-one-usb-board-04.jpg"
+  }
+}

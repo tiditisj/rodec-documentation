@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rodec SideStepper — Preset Bank</title>
+<style>
+  :root {
+    --bg: #14141a;
+    --card-bg: #1e1e26;
+    --border: #2c2c36;
+    --text: #e8e8ee;
+    --muted: #9696a6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 24px 60px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 28px;
+  }
+  .legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .card-head h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+  .badge.gate { background: rgba(94,200,242,0.15); color: #5ec8f2; }
+  .badge.duck { background: rgba(242,166,94,0.15); color: #f2a65e; }
+  .desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin: 0 0 14px;
+    line-height: 1.45;
+    min-height: 34px;
+  }
+  .steps {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    height: 32px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .midline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .step-cell {
+    position: relative;
+    flex-shrink: 1;
+    flex-grow: 0;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .step {
+    position: relative;
+    width: 100%;
+    border-radius: 3px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: rgba(0,0,0,0.55);
+    font-weight: 700;
+    overflow: hidden;
+  }
+  /* Left = sits above the midline, Right = sits below the midline,
+     Center = spans the full height through the midline, Empty = just a thin tick on the line */
+  .step.pos-left {
+    align-self: flex-start;
+    height: 50%;
+    margin-bottom: 1px;
+  }
+  .step.pos-right {
+    align-self: flex-end;
+    height: 50%;
+    margin-top: 1px;
+  }
+  .step.pos-center {
+    align-self: center;
+    height: 100%;
+  }
+  .step.empty {
+    align-self: center;
+    height: 2px;
+    background: var(--border) !important;
+  }
+  .meta {
+    font-size: 11px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <h1>Rodec SideStepper — Preset Bank</h1>
+  <p class="subtitle">22 patterns · each block is one step, sized by gate length · position shows L/R/center — left sits above the line, right sits below, center spans both</p>
+  <div class="legend">
+    <span><span class="dot" style="background:#5ec8f2"></span> Active step (position shows L/R/center)</span>
+    <span><span class="dot" style="background:#2c2c36"></span> Empty / rest</span>
+    <span>▸ nudged</span>
+  </div>
+  <div class="grid">
+    
+      <div class="card">
+        <div class="card-head">
+          <h2>Gated Choir</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">A spacious 9-step pattern that pans gently between left, right and center for a breathing, choir-like swell.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 1"><div class="step pos-center" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 1"><div class="step pos-right" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">9 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>4-2 the Floor</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Four short, punchy center gates on every quarter note for a steady pumping foundation.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">4 steps · length adj 5</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Euro Trance Gate</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Two quick 16th-note stutters followed by a held offbeat hit, all centered — the classic trance gate stab.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:8px" title="state: center, length: 5, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:8px" title="state: center, length: 5, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 24, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:23px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">4 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Ping Pong</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Eight steps bouncing strictly between left and right for a wide stereo gating effect.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">8 steps · length adj 4</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Offbeat Ghost</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">The gate opens only on the upbeats, alternating left and right, leaving every downbeat silent for a skipping feel.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">8 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Tresillo</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">The classic Afro-Cuban 3+3+2 clave rhythm panned left-center-right, first hit gently nudged.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 1"><div class="step pos-left" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">8 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Five Alive</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">A 5-step polyrhythm that drifts out of sync with a 4/4 grid, panning left-center-right-center-left.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 1"><div class="step pos-center" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">5 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Seven Nation</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">A 7-step polyrhythmic pattern that sweeps across the stereo field before resetting.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 1"><div class="step pos-center" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">7 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Triplet Gate</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Six equal steps grouped in twos, alternating left and right pairs for a triplet, compound-time feel.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">6 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Euclidean 11</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Five hits spread mathematically as evenly as possible across 11 steps, cycling left-right-center for a hypnotic, off-kilter pulse.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">11 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Broken Ten</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">A syncopated 10-step pattern alternating left/right with nudged ghost hits for a broken-beat, Dilla-esque groove.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 1"><div class="step pos-left" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 1"><div class="step pos-left" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">10 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Swing Gate</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">An 8-step left/right pattern with shuffle and nudge applied for a lazy, swung gate groove.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 1"><div class="step pos-right" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 1"><div class="step pos-right" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">8 steps · length adj 3 · shuffle 35</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Stereo Sweep</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">16 steps that wash left then right in pairs, sweeping the stereo image back and forth.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">16 steps · length adj 5</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Slow Drone</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Just two steps — the gate stays open for half the bar then closes, ideal for slow pads.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">2 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Dense Drop</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Builds from sparse to dense across 16 steps, alternating left and right before resolving to center, ramping up energy into the next section.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">16 steps · length adj 8</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Alright</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">A 16-step center-gate pattern with a long held hit near the end for extra emphasis.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:17px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 32, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:17px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">16 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Glue</h2>
+          <span class="badge gate">GATE</span>
+        </div>
+        <p class="desc">Starts centered, then opens into a left/right alternation — a versatile pattern for gluing transitions together.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: right, length: 16, nudge: 0"><div class="step pos-right" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: left, length: 16, nudge: 0"><div class="step pos-left" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">16 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Duck Duck</h2>
+          <span class="badge duck">DUCK</span>
+        </div>
+        <p class="desc">An irregular 3-hit duck pattern across 16 steps for a loose, human sidechain feel.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 1"><div class="step pos-center" style="background:#5ec8f2">▸</div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">16 steps · length adj 6</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Gerechtigkeit</h2>
+          <span class="badge duck">DUCK</span>
+        </div>
+        <p class="desc">A single duck per bar — the simplest possible sidechain pump.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">4 steps</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Sidechain Classi</h2>
+          <span class="badge duck">DUCK</span>
+        </div>
+        <p class="desc">Ducks on every quarter note — the textbook 4-on-the-floor sidechain pump.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">16 steps · length adj 8</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Heartbeat</h2>
+          <span class="badge duck">DUCK</span>
+        </div>
+        <p class="desc">Two quick ducks, twice per pattern, mimicking a lub-dub heartbeat rhythm.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div>
+        </div>
+        <div class="meta">8 steps · length adj 4</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Offbeat Pump</h2>
+          <span class="badge duck">DUCK</span>
+        </div>
+        <p class="desc">Ducks only on the upbeats for a reversed, tension-building pump.</p>
+        <div class="steps">
+          <div class="midline"></div>
+          <div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div><div class="step-cell" style="width:34px" title="state: empty, length: 16, nudge: 0"><div class="step empty"></div></div><div class="step-cell" style="width:34px" title="state: center, length: 16, nudge: 0"><div class="step pos-center" style="background:#5ec8f2"></div></div>
+        </div>
+        <div class="meta">8 steps · length adj 6</div>
+      </div>
+  </div>
+</body>
+</html>

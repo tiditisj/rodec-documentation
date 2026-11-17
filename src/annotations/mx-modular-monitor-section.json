@@ -1,0 +1,193 @@
+{
+  "path": "/rodec-mx-modular/control-section/monitor-section",
+  "title": "Monitor section.",
+  "title_em": "Outputs and headphones.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-mx-modular--control-section--monitor-section-01.png",
+      "alt": "MX Modular monitor section",
+      "items": [
+        {
+          "name": "Master fader",
+          "label": "MASTER",
+          "at": [
+            218,
+            189
+          ],
+          "rect": [
+            214,
+            8,
+            268,
+            372
+          ],
+          "text": "The red fader sets the volume of the <strong>Main Outputs</strong>, also shown on the Main VU Meters.",
+          "ref": {
+            "strong": "Red Fader: Master Out Volume"
+          }
+        },
+        {
+          "name": "Monitor level",
+          "label": "MONITOR",
+          "at": [
+            124,
+            303
+          ],
+          "rect": [
+            112,
+            286,
+            192,
+            372
+          ],
+          "text": "Volume of the separate <strong>monitor outputs</strong>, independent of the main output.",
+          "ref": {
+            "strong": "Rotary Knob: Monitor Output Control"
+          }
+        },
+        {
+          "name": "Headphone socket",
+          "label": "HEADPHONES",
+          "at": [
+            30,
+            302
+          ],
+          "rect": [
+            26,
+            292,
+            96,
+            372
+          ],
+          "text": "TRS socket for your headphones.",
+          "ref": {
+            "strong": "Headphone Section"
+          }
+        },
+        {
+          "name": "Headphone mix",
+          "label": "MIX",
+          "at": [
+            12,
+            145
+          ],
+          "rect": [
+            22,
+            104,
+            98,
+            178
+          ],
+          "text": "Balances between the <strong>PFL bus</strong> and the <strong>Master bus</strong> in the headphones.",
+          "ref": {
+            "strong": "Headphone Section"
+          }
+        },
+        {
+          "name": "Headphone level",
+          "label": "LEVEL",
+          "at": [
+            12,
+            237
+          ],
+          "rect": [
+            22,
+            196,
+            98,
+            270
+          ],
+          "text": "Overall headphone volume.",
+          "ref": {
+            "strong": "Headphone Section"
+          }
+        },
+        {
+          "name": "External in",
+          "label": "EXT IN",
+          "at": [
+            12,
+            54
+          ],
+          "rect": [
+            22,
+            14,
+            98,
+            88
+          ],
+          "text": "Mixes the <strong>stereo external input</strong> from the back panel into the Master bus.",
+          "ref": {
+            "strong": "External In Control"
+          }
+        },
+        {
+          "name": "Extra slot on",
+          "label": "INS EXTRA",
+          "at": [
+            182,
+            33
+          ],
+          "rect": [
+            132,
+            14,
+            171,
+            52
+          ],
+          "text": "Activates the additional <strong>500 series stereo extra slot</strong>.",
+          "ref": {
+            "strong": "Additional Buttons"
+          }
+        },
+        {
+          "name": "Extra slot: master or bus 1",
+          "label": "MSTR / BUS 1",
+          "at": [
+            182,
+            73
+          ],
+          "rect": [
+            132,
+            54,
+            171,
+            92
+          ],
+          "text": "Unlit: the extra slot is inserted into the <strong>Master channel</strong>. Lit: into <strong>BUS 1</strong>.",
+          "ref": {
+            "strong": "Additional Buttons"
+          }
+        },
+        {
+          "name": "Master insert",
+          "label": "MSTR INS EXT",
+          "at": [
+            182,
+            142
+          ],
+          "rect": [
+            132,
+            120,
+            171,
+            163
+          ],
+          "text": "Enables an external <strong>master insert</strong> on the TRS sockets on the back panel.",
+          "ref": {
+            "strong": "Additional Buttons"
+          }
+        },
+        {
+          "name": "Mono",
+          "label": "MONO",
+          "at": [
+            182,
+            234
+          ],
+          "rect": [
+            132,
+            210,
+            171,
+            256
+          ],
+          "text": "Sums the full mix to <strong>mono</strong>, for a quick compatibility check.",
+          "ref": {
+            "strong": "Additional Buttons"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "path": "/rodec-m-110-sidestepper",
+  "title": "M-110 SideStepper.",
+  "title_em": "Dynamics and rhythmic sequencer.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-m-110-sidestepper-01.jpg",
+      "alt": "Rodec M-110 SideStepper front panel",
+      "items": [
+        {
+          "name": "Display",
+          "at": [
+            515,
+            278
+          ],
+          "rect": [
+            544,
+            205,
+            1477,
+            351
+          ],
+          "text": "Shows the active <strong>pattern name</strong> on the Home Screen, and the edit and settings screens.",
+          "ref": {
+            "strong": "Selecting Patterns:"
+          }
+        },
+        {
+          "name": "Encoder",
+          "at": [
+            716,
+            526
+          ],
+          "rect": [
+            460,
+            417,
+            687,
+            643
+          ],
+          "text": "Rotate to scroll through patterns or menu options; push to enter editing and to toggle between Step and Pattern Edit Mode.",
+          "ref": {
+            "id": "h.6mw36x82ol0p"
+          }
+        },
+        {
+          "name": "Soft keys",
+          "at": [
+            1491,
+            439
+          ],
+          "rect": [
+            789,
+            395,
+            1455,
+            475
+          ],
+          "text": "Each button sits beneath the function shown above it on the screen.",
+          "ref": {
+            "strong": "Soft Key Options:"
+          }
+        },
+        {
+          "name": "Threshold",
+          "label": "THR",
+          "at": [
+            373,
+            863
+          ],
+          "rect": [
+            424,
+            760,
+            731,
+            1096
+          ],
+          "text": "Sets the level at which the circuit engages: the gate opens or the ducker attenuates.",
+          "ref": {
+            "strong": "Threshold:"
+          }
+        },
+        {
+          "name": "Depth",
+          "label": "DEPTH",
+          "at": [
+            847,
+            736
+          ],
+          "rect": [
+            870,
+            760,
+            1177,
+            1096
+          ],
+          "text": "Maximum gain reduction, from subtle movement to total silence.",
+          "ref": {
+            "strong": "Depth:"
+          }
+        },
+        {
+          "name": "Mix",
+          "label": "MIX",
+          "at": [
+            1659,
+            877
+          ],
+          "rect": [
+            1316,
+            760,
+            1623,
+            1096
+          ],
+          "text": "Blends the dry audio with the sidechain trigger signal, so the Gate Tone pulse or external sidechain can be layered into the output.",
+          "ref": {
+            "strong": "Mix:"
+          }
+        },
+        {
+          "name": "Attack",
+          "label": "ATT",
+          "at": [
+            373,
+            1257
+          ],
+          "rect": [
+            424,
+            1148,
+            731,
+            1477
+          ],
+          "text": "Speed of the initial envelope, from snappy transients to slow swells.",
+          "ref": {
+            "strong": "Attack:"
+          }
+        },
+        {
+          "name": "Decay",
+          "label": "DECAY",
+          "at": [
+            847,
+            1122
+          ],
+          "rect": [
+            870,
+            1148,
+            1177,
+            1477
+          ],
+          "text": "Release time of the envelope after the trigger stops.",
+          "ref": {
+            "strong": "Decay:"
+          }
+        },
+        {
+          "name": "Sidechain filter",
+          "label": "FILT",
+          "at": [
+            1659,
+            1213
+          ],
+          "rect": [
+            1316,
+            1111,
+            1623,
+            1477
+          ],
+          "text": "Band-pass filter (<strong>18Hz–22kHz</strong>) for the sidechain signal, so it reacts only to specific frequencies.",
+          "ref": {
+            "strong": "Filter:"
+          }
+        },
+        {
+          "name": "Sidechain or internal",
+          "label": "SC / INT",
+          "at": [
+            740,
+            1104
+          ],
+          "rect": [
+            731,
+            841,
+            855,
+            1053
+          ],
+          "text": "Toggles between external sidechain/sequencer response and internal audio-driven response.",
+          "ref": {
+            "strong": "SC / INT:"
+          }
+        },
+        {
+          "name": "Trigger source",
+          "label": "AUDIO / SEQ",
+          "at": [
+            1265,
+            1104
+          ],
+          "rect": [
+            1170,
+            841,
+            1323,
+            1053
+          ],
+          "text": "Selects the trigger: the Sidechain Audio Input or the internal Step Sequencer.",
+          "ref": {
+            "strong": "AUDIO / SEQ:"
+          }
+        },
+        {
+          "name": "Duck or gate",
+          "label": "DUCK / GATE",
+          "at": [
+            797,
+            1480
+          ],
+          "rect": [
+            724,
+            1228,
+            863,
+            1440
+          ],
+          "text": "Switches the VCA between gain reduction (<strong>ducking</strong>) and signal opening (<strong>gating</strong>).",
+          "ref": {
+            "strong": "DUCK / GATE:"
+          }
+        },
+        {
+          "name": "Filter on/off",
+          "label": "FLT ON / FLT OFF",
+          "at": [
+            1265,
+            1484
+          ],
+          "rect": [
+            1162,
+            1228,
+            1338,
+            1440
+          ],
+          "text": "Engages or bypasses the sidechain band-pass filter.",
+          "ref": {
+            "strong": "FILT ON / OFF:"
+          }
+        }
+      ]
+    },
+    {
+      "image": "assets/images/rodec-m-110-sidestepper-01.png",
+      "alt": "SideStepper Home Screen",
+      "heading": "Home screen",
+      "items": [
+        {
+          "name": "Pattern name",
+          "at": [
+            350,
+            62
+          ],
+          "rect": [
+            376,
+            22,
+            1317,
+            109
+          ],
+          "text": "The active pattern; rotate the encoder to scroll through saved patterns, which switch in at the start of the next measure.",
+          "ref": {
+            "strong": "Selecting Patterns:"
+          }
+        },
+        {
+          "name": "Edit",
+          "label": "EDIT",
+          "at": [
+            1773,
+            232
+          ],
+          "rect": [
+            1809,
+            203,
+            1975,
+            260
+          ],
+          "text": "Enters the pattern/step editing interface.",
+          "ref": {
+            "strong": "Edit:"
+          }
+        },
+        {
+          "name": "Mute",
+          "label": "MUTE",
+          "at": [
+            1324,
+            232
+          ],
+          "rect": [
+            1360,
+            203,
+            1541,
+            260
+          ],
+          "text": "Instantly mutes the sequencer output, so no pulses trigger the analog sidechain.",
+          "ref": {
+            "strong": "Mute:"
+          }
+        },
+        {
+          "name": "Menu",
+          "label": "MENU",
+          "at": [
+            434,
+            232
+          ],
+          "rect": [
+            470,
+            203,
+            673,
+            260
+          ],
+          "text": "Opens the system settings.",
+          "ref": {
+            "strong": "Menu:"
+          }
+        }
+      ]
+    },
+    {
+      "image": "assets/images/rodec-m-110-sidestepper-02.png",
+      "alt": "SideStepper Step Edit screen",
+      "heading": "Step edit mode",
+      "items": [
+        {
+          "name": "Step state",
+          "label": "ON/OFF",
+          "at": [
+            396,
+            230
+          ],
+          "rect": [
+            424,
+            201,
+            712,
+            259
+          ],
+          "text": "Activates or deactivates the pulse of the selected step; in Stereo Mode it cycles L+R, L, R and OFF.",
+          "ref": {
+            "strong": "ON / OFF (State):"
+          }
+        },
+        {
+          "name": "Step length",
+          "label": "LENGTH",
+          "at": [
+            849,
+            230
+          ],
+          "rect": [
+            878,
+            201,
+            1144,
+            259
+          ],
+          "text": "Pulse duration of the selected step.",
+          "ref": {
+            "strong": "Length:"
+          }
+        },
+        {
+          "name": "Nudge",
+          "label": "NUDGE",
+          "at": [
+            1302,
+            230
+          ],
+          "rect": [
+            1331,
+            201,
+            1568,
+            259
+          ],
+          "text": "Fine-tunes the start timing (micro-timing) of the step.",
+          "ref": {
+            "strong": "Nudge:"
+          }
+        },
+        {
+          "name": "Back",
+          "label": "BACK",
+          "at": [
+            1770,
+            230
+          ],
+          "rect": [
+            1799,
+            201,
+            1986,
+            259
+          ],
+          "text": "Leaves edit mode; if the pattern was modified you are asked to <strong>Overwrite</strong> or <strong>Save New</strong>.",
+          "ref": {
+            "strong": "Exiting Edit Mode:"
+          }
+        }
+      ]
+    },
+    {
+      "image": "assets/images/rodec-m-110-sidestepper-03.png",
+      "alt": "SideStepper Pattern Edit screen",
+      "heading": "Pattern edit mode",
+      "items": [
+        {
+          "name": "Pattern length",
+          "label": "LENGTH",
+          "at": [
+            412,
+            232
+          ],
+          "rect": [
+            441,
+            203,
+            702,
+            260
+          ],
+          "text": "Scales the step lengths across the entire pattern.",
+          "ref": {
+            "strong": "B. Pattern Edit Mode"
+          }
+        },
+        {
+          "name": "Steps",
+          "label": "STEPS",
+          "at": [
+            886,
+            232
+          ],
+          "rect": [
+            915,
+            203,
+            1117,
+            260
+          ],
+          "text": "Active length of the pattern, <strong>1 to 16 steps</strong>.",
+          "ref": {
+            "strong": "Steps:"
+          }
+        },
+        {
+          "name": "Shuffle",
+          "label": "SHUFFLE",
+          "at": [
+            1274,
+            232
+          ],
+          "rect": [
+            1302,
+            203,
+            1592,
+            260
+          ],
+          "text": "Swing/timing balance from <strong>-46 to +46</strong> (0 = tight).",
+          "ref": {
+            "strong": "Shuffle:"
+          }
+        }
+      ]
+    }
+  ]
+}

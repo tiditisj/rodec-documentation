@@ -1,0 +1,43 @@
+{
+  "path": "/rodec-mx-modular/control-section/input-9-16-and-usb-master",
+  "title": "Input 9-16 and digital master.",
+  "title_em": "Stereo pairs and USB.",
+  "panels": [
+    {
+      "image": "assets/images/rodec-mx-modular--control-section-02.png",
+      "alt": "MX Modular input 9-16 and digital master section",
+      "items": [
+        {"name": "Stereo pair on", "label": "ON", "at": [7, 79], "rect": [19, 38, 370, 119],
+         "text": "Each stereo pair (9/10, 11/12, 13/14, 15/16) has an <strong>On Button</strong> that activates or mutes its routing into the master bus.",
+         "ref": {"strong": "On Button"}},
+        {"name": "Stereo pair level", "label": "LEVEL", "at": [7, 245], "rect": [22, 198, 366, 283],
+         "text": "Adjusts the volume of each stereo pair before it is summed into the master bus.",
+         "ref": {"strong": "Volume Knob"}},
+        {"name": "AUX 1 to USB", "label": "AUX 1 TO USB · SEND / RETURN", "at": [7, 170], "rect": [20, 128, 100, 190],
+         "text": "Button 1 routes <strong>AUX 1</strong> to USB inputs 9/10; button 2 picks the dry send or the processed return.",
+         "ref": {"strong": "Channels 9–10: AUX 1"}},
+        {"name": "AUX 2 to USB", "label": "AUX 2 TO USB · SEND / RETURN", "at": [107, 170], "rect": [111, 128, 191, 190],
+         "text": "Button 1 routes <strong>AUX 2</strong> to USB inputs 11/12; button 2 picks the dry send or the processed return.",
+         "ref": {"strong": "Channels 11–12: AUX 2"}},
+        {"name": "BUS 1 to USB", "label": "BUS 1 TO USB · SEND / RETURN", "at": [198, 170], "rect": [202, 128, 282, 190],
+         "text": "Button 1 routes <strong>BUS 1</strong> to USB inputs 13/14; button 2 picks the dry send or the processed return.",
+         "ref": {"strong": "Channels 13–14: BUS 1"}},
+        {"name": "BUS 2 to USB", "label": "BUS 2 TO USB · SEND / RETURN", "at": [289, 170], "rect": [293, 128, 371, 190],
+         "text": "Button 1 routes <strong>BUS 2</strong> to USB inputs 15/16; button 2 picks the dry send or the processed return.",
+         "ref": {"strong": "Channels 15–16: BUS 2"}},
+        {"name": "Digital master on", "label": "MASTER ON", "at": [475, 79], "rect": [382, 38, 462, 119],
+         "text": "With its knob, mixes the <strong>Stereo Master L and R</strong> from the USB interface into the analog summing bus.",
+         "ref": {"strong": "Master Button and knob"}},
+        {"name": "Digital master level", "label": "LEVEL", "at": [475, 245], "rect": [384, 198, 462, 283],
+         "text": "Mixes the USB digital master return with the analog summing bus.",
+         "ref": {"strong": "Master Button and knob"}},
+        {"name": "Input source 9-16", "label": "9-16 AG / 9-16 USB", "at": [380, 170], "rect": [383, 128, 422, 190],
+         "text": "Chooses whether channels 9–16 come from the <strong>analog inputs</strong> on the back panel or from <strong>USB channels 9–16</strong>.",
+         "ref": {"strong": "Button 1: Input Source Selection for Channels 9–16"}},
+        {"name": "USB return solo", "label": "USB RET SOLO", "at": [475, 170], "rect": [424, 128, 463, 190],
+         "text": "Routes only the USB digital master return to the summing bus; other channels are muted, AUX and BUS sends stay active.",
+         "ref": {"strong": "Button 2: USB RET SOLO"}}
+      ]
+    }
+  ]
+}
