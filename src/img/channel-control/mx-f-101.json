@@ -260,7 +260,7 @@
   "leds-on": "all LEDs lit with glow; mask per LED with leds[] (cx, cy, r)",
   "buttons-lit": "MOM lit green; PFL, BUS 1, BUS 2, MASTER lit amber-yellow; mask per button with buttons[] (cx, cy, r)",
   "on-down, solo-down": "keycap pressed 1.5 mm, unlit",
-  "on-lit, solo-lit": "keycap up, letters lit (ON green, SOLO orange); caps stay black / white, letters light grey when off",
+  "on-lit, solo-lit": "keycap up, letters lit (ON green, SOLO blue); caps stay black / white, letters light grey when off",
   "on-down-lit, solo-down-lit": "keycap pressed and lit",
   "on-*, solo-*, switch-*": "opaque rectangular patches (keycaps.*.patch, xfader_switch.patch) that replace that area of base"
  }

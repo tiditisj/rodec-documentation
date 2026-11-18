@@ -336,8 +336,14 @@
     els.capHit.setAttribute("aria-valuenow", state.fader);
 
     const r = routes();
+    // "set": the channel is routed there (button lit, send turned up);
+    // "on": audio is actually flowing there right now
+    const set = {
+      master: state.master, bus1: state.bus1, bus2: state.bus2, pfl: state.pfl,
+      aux1: knobPct("aux1") > 0.02, aux2: knobPct("aux2") > 0.02
+    };
     $("#route").innerHTML = DESTS.map(([k, label]) =>
-      `<span class="cc-chip${r[k] > 0.005 ? " on" : ""}" style="--amt:${r[k].toFixed(2)}"><span class="led"></span>${label}</span>`).join("");
+      `<span class="cc-chip${set[k] ? " set" : ""}${r[k] > 0.005 ? " on" : ""}" style="--amt:${r[k].toFixed(2)}"><span class="led"></span>${label}</span>`).join("");
     $("#readout").innerHTML =
       `<span><b>${P.stereo ? "BAL" : "PAN"}</b> ${panText()}</span>` +
       `<span><b>AUX 1</b> ${Math.round(knobPct("aux1") * 100)}%</span>` +
