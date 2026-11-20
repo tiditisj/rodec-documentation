@@ -24,6 +24,62 @@ HOME_PATHS = ("/", "/documentation-home")
 
 # Menu entries that are kept as pages (paths keep working) but not shown in
 # the menu of the new site.
+# Videos per page: (YouTube id, title, source, year). The posters are local
+# (src/img/video/<id>.webp); YouTube itself loads only after a click.
+VIDEOS = {
+    "/documentation-home": ("Rodec on video.", "Every product, live.",
+        "From the Rodec booth at Superbooth 2025: the MX Modular, Rodec ONE, MiniStyler and SideStepper.",
+        [("xepQzF7aX9o", "Rodec Booth Walkthrough & Recap @ Superbooth 2025", "Rodec", "2025")]),
+    "/rodec-mx-modular": ("See the MX Modular", "in use.",
+        "A workshop on the console at SchneidersLaden in Berlin, and a full walkthrough of an MX Modular setup with elysia outboard on the 500 series slots and AUX sends.",
+        [("7aJbd0IuKZA", "Rodec MX-Modular & ONE: workshop & presentation at SchneidersLaden Berlin", "SchneidersLaden", "2025"),
+         ("VFiPI-L075E", "Ultimate Modular Console Setup: MX Modular + elysia outboard walkthrough", "Rodec", "2025")]),
+    "/rodec-mx-modular/introduction": ("The MX Modular,", "on video.",
+        "A walkthrough of the console, and highlights of the MX Modular in a live set.",
+        [("3Xvg97Xpu4M", "Rodec MX Modular Preview & Walkthrough", "Rodec", "2024"),
+         ("-z2FzG7VYX4", "MX Modular in Action: Live Performance Highlights", "Rodec", "2024")]),
+    "/rodec-mx-modular/fx-module": ("Hear it", "in a jam.",
+        "The MX Modular with elysia outboard on the sends, played live at Rodec Studios.",
+        [("tIpWCTRm_C8", "Live from Rodec Studios: MX Modular x elysia Performance Jam", "Rodec", "2025")]),
+    "/rodec-one": ("The Rodec ONE,", "premiered.",
+        "The Rodec ONE and the Rodec & Sherman MiniStyler presented at Superbooth 2025.",
+        [("Q3thtf5aTQU", "Rodec & Sherman MiniStyler / Rodec ONE Premiere, Superbooth 2025", "Rodec", "2025"),
+         ("7aJbd0IuKZA", "Rodec MX-Modular & ONE: workshop & presentation at SchneidersLaden Berlin", "SchneidersLaden", "2025")]),
+    "/rodec-sherman-ministyler": ("The MiniStyler,", "premiered.",
+        "The Rodec & Sherman MiniStyler presented at Superbooth 2025.",
+        [("Q3thtf5aTQU", "Rodec & Sherman MiniStyler / Rodec ONE Premiere, Superbooth 2025", "Rodec", "2025")]),
+    "/rodec-m-110-sidestepper": ("The SideStepper,", "in full.",
+        "A 16-step sequencer driving an analog VCA, for rhythmic gating, ducking and chopping in stereo.",
+        [("FkwJL-yNa4U", "The Ultimate Analog Chopping Machine: Rodec SideStepper Full Demo", "Rodec", "2026")]),
+    "/rodec-m-101": ("Behind the", "phono preamp.",
+        "The story and the sound of the Bunk 01 phono / line preamp.",
+        [("D5x61FnOCxU", "Rodec MX 180: The Spirit Behind the Bunk 01 Phono/Line Preamp", "Rodec", "2025"),
+         ("mL6Q-VPeXSo", "Rodec Bunk 01", "Rodec", "2023")]),
+}
+
+
+def video_section(path):
+    if path not in VIDEOS:
+        return ""
+    title, em, text, vids = VIDEOS[path]
+    figs = []
+    for vid, vt, src, year in vids:
+        figs.append(
+            f'<figure class="vid"><button class="yt" data-yt="{vid}" data-title="{esc(vt)}" '
+            f'aria-label="Play video: {esc(vt)}"><img src="/assets/video/{vid}.webp" alt="" '
+            f'loading="lazy" width="1280" height="720"><span class="yt-play" aria-hidden="true"></span></button>'
+            f'<figcaption><span class="vt">{esc(vt)}</span><span class="vm">{esc(src)} · {year} · '
+            f'<a href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">YouTube</a></span>'
+            f'</figcaption></figure>')
+    return f"""<section class="vids">
+  <div class="vids-in">
+    <div class="vids-head"><div><div class="rdc-label light"><span class="rule"></span>Watch it</div>
+    <h2 class="rdc-title">{esc(title)} <em>{esc(em)}</em></h2></div><p>{esc(text)}</p></div>
+    <div class="vids-grid{' one' if len(figs) == 1 else ''}">{''.join(figs)}</div>
+  </div>
+</section>"""
+
+
 HIDE_FROM_MENU = {"/untitled-page", "/rodec-one/appendix-a-dimensions", "/rodec-one/appendix-b-performance"}
 
 ARROW = '<span class="arr" aria-hidden="true">&rarr;</span>'
@@ -297,6 +353,8 @@ def crumbs(path):
 # --------------------------------------------------------------------------- layout
 
 def layout(path, title, main, current_nav, description="", head="", scripts=""):
+    if 'class="yt"' in main:
+        scripts += '<script src="/assets/pages/video.js" defer></script>'
     canonical = f"https://documentation.rodec.com{path}"
     nav = render_nav(current_nav)
     return f"""<!doctype html>
@@ -484,7 +542,8 @@ def build_page(path):
 {pager(path)}
 </article>
 {toc(body)}
-</div>"""
+</div>
+{video_section(path)}"""
     plain = re.sub(r"<[^>]+>", "", title_html)
     head = "".join(f'<link rel="stylesheet" href="/assets/pages/{c}.css">' for c in extra_css)
     return layout(path, html.unescape(plain), main, path, head=head)
@@ -518,6 +577,7 @@ def build_home(path):
   <h2 class="rdc-title small">Choose <em>your product.</em></h2></div></div>
   <div class="prod-grid">{"".join(cards)}</div>
 </section>
+{video_section("/documentation-home")}
 <section class="disclaimer prose">{disclaimer}</section>"""
     return layout(path, "Documentation Home", f'<div class="home">{main}</div>', "/documentation-home",
                   "Manuals, specifications and guides for Rodec mixing consoles and 100 series modules.")
@@ -798,6 +858,7 @@ def build_annotated(path, cfg):
 </section>
 {blocks_before}
 {''.join(panels_html)}
+{video_section(path)}
 {blocks}
 <div class="page an-text">
 <article class="doc">{f'<div class="prose">{body}</div>' if has_text else ''}{children_grid(path, thumbs, cfg.get("card_texts"))}{pager(path)}</article>
@@ -830,13 +891,13 @@ def main():
     (OUT / "assets" / "css").mkdir(parents=True)
     shutil.copy(SRC / "rodec-docs.css", OUT / "assets" / "css" / "rodec-docs.css")
     shutil.copytree(SRC / "img", OUT / "assets" / "brand",
-                    ignore=shutil.ignore_patterns("channel-control", "renders", "panels-sharp", "100-series", "breakout"))
+                    ignore=shutil.ignore_patterns("channel-control", "renders", "panels-sharp", "100-series", "breakout", "video"))
     (OUT / "assets" / "pages").mkdir(parents=True)
     for f in (SRC / "pages").glob("*.*"):
         if f.suffix in (".css", ".js"):
             shutil.copy(f, OUT / "assets" / "pages" / f.name)
     shutil.copytree(SRC / "img" / "renders", OUT / "assets" / "renders")
-    for d in ("100-series", "breakout"):   # images of documents converted by tools/convert_gdoc.py
+    for d in ("100-series", "breakout", "video"):   # converted documents, video posters
         if (SRC / "img" / d).exists():
             shutil.copytree(SRC / "img" / d, OUT / "assets" / d)
     (OUT / ".nojekyll").write_text("")
