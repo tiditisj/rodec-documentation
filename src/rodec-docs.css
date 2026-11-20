@@ -655,7 +655,7 @@ figure[data-embed-type="google-document"] figcaption {
 }
 
 /* Videos: click to play, YouTube loads only after the click (src/pages/video.js) */
-.vids { background: var(--rdc-ink); color: #fff; padding: 4rem var(--gutter, 1.5rem); }
+.vids { background: var(--rdc-ink); color: #fff; padding: 4rem var(--gutter, 1.5rem); border-bottom: 1px solid rgba(255,255,255,.1); }
 .vids-in { max-width: 76rem; }
 .vids-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem 3rem; align-items: end; margin-bottom: 2rem; }
 .vids .rdc-title { color: #fff; margin: .8rem 0 0; }

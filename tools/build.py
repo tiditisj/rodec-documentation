@@ -577,8 +577,8 @@ def build_home(path):
   <h2 class="rdc-title small">Choose <em>your product.</em></h2></div></div>
   <div class="prod-grid">{"".join(cards)}</div>
 </section>
-{video_section("/documentation-home")}
-<section class="disclaimer prose">{disclaimer}</section>"""
+<section class="disclaimer prose">{disclaimer}</section>
+{video_section("/documentation-home")}"""
     return layout(path, "Documentation Home", f'<div class="home">{main}</div>', "/documentation-home",
                   "Manuals, specifications and guides for Rodec mixing consoles and 100 series modules.")
 
@@ -858,12 +858,12 @@ def build_annotated(path, cfg):
 </section>
 {blocks_before}
 {''.join(panels_html)}
-{video_section(path)}
 {blocks}
 <div class="page an-text">
 <article class="doc">{f'<div class="prose">{body}</div>' if has_text else ''}{children_grid(path, thumbs, cfg.get("card_texts"))}{pager(path)}</article>
 {toc(body) if has_text else ''}
 </div>
+{video_section(path)}
 </div>"""
     head = '<link rel="stylesheet" href="/assets/pages/annotated.css">'
     scripts = '<script src="/assets/pages/annotated.js" defer></script>'
