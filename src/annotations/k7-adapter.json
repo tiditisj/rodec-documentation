@@ -14,54 +14,53 @@
   ],
   "panels": [
     {
-      "image": "assets/images/rodec-k7-100-to-500-series-adapter-02.jpg",
+      "image": "src/img/panels-sharp/rodec-k7-adapter-inside-green.webp",
       "heading": "Inside the adapter",
-      "alt": "The K7 adapter board between its two 500 series slot positions",
+      "alt": "The adapter board inside its galvanised steel frame, seen from the front",
       "items": [
         {
           "name": "To the first module",
-          "label": "TO FIRST MINI MOD",
+          "label": "TO FIRST",
           "at": [
-            760,
-            430
+            790,
+            352
           ],
           "rect": [
-            560,
-            392,
-            740,
-            472
+            500,
+            345,
+            745,
+            430
           ],
           "text": "Ribbon cable to the first 100 series module. The audio from the rack arrives here unbalanced."
         },
         {
           "name": "Return from the last module",
-          "label": "RETURN FROM LAST",
+          "label": "FROM LAST",
           "at": [
-            215,
-            430
+            210,
+            352
           ],
           "rect": [
-            245,
-            392,
-            470,
-            472
+            255,
+            345,
+            500,
+            430
           ],
           "text": "Ribbon cable back from the last module in the chain. The adapter balances it again for the rack."
         },
         {
-          "name": "Stereo slot",
-          "label": "LEFT SLOT · RIGHT SLOT",
+          "name": "Breakout connector",
           "at": [
-            215,
-            1192
+            880,
+            868
           ],
           "rect": [
-            240,
-            1170,
-            660,
-            1218
+            722,
+            765,
+            822,
+            968
           ],
-          "text": "The adapter takes two positions of the 500 series rack: one stereo slot."
+          "text": "Connects the adapter to the breakout module with a ribbon cable, for CV 1, CV 2, sidechain and MIDI. MKII only."
         }
       ]
     }
