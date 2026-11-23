@@ -169,6 +169,12 @@
 .fr-mods b { margin-top: .7rem; font-weight: 500; }
 .fr-mods span:not(.i) { font-size: .82rem; font-weight: 300; color: var(--rdc-muted); }
 .fr-note { margin: 2rem 0 0; font-size: .95rem; }
+.fr-specs-wrap { overflow-x: auto; max-width: 60rem; }
+.fr-specs { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.fr-specs th, .fr-specs td { text-align: left; vertical-align: top; padding: .75rem 1rem .75rem 0; border-bottom: 1px solid var(--rdc-line); }
+.fr-specs thead th { font-family: var(--rdc-mono); font-size: .66rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--rdc-muted); border-bottom: 1px solid var(--rdc-ink); }
+.fr-specs tbody th { font-weight: 500; width: 13rem; }
+.fr-specs td { font-weight: 300; }
 .fr-cta { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; padding: 3.5rem var(--gutter); background: var(--rdc-ink); color: #fff; }
 .fr-cta .rdc-title.small { margin: 0; font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
 @media (max-width: 991.98px) {
