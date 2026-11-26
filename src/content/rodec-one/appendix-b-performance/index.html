@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Appendix B: Performance</title>
+</head>
+<body>
+<main data-path="/rodec-one/appendix-b-performance" data-source="rodec-scope/reports/Rodec One - USB audio path performance.md">
+<section>
+<h2 id="audio-performance">Audio performance</h2>
+<p>Default test conditions (unless otherwise stated):</p>
+<ul>
+<li>Reference frequency: 1 kHz</li>
+<li>Reference level: 0 dBu, where 0 dBu = 0.775 V into any load</li>
+<li>Alignment level: 0 dBFS = +20 dBu</li>
+<li>Sample rate: 48 kHz</li>
+<li>All unweighted measurements are specified as 22 Hz to 22 kHz band limited RMS and are expressed in units of dBu</li>
+<li>The onset of clipping (for headroom measurements) is taken as 1 % THD+N</li>
+<li>All controls set flat, out or at unity gain as appropriate; all other channels muted</li>
+</ul>
+<p>Unless otherwise quoted all figures are typical values, measured on a production unit.</p>
+</section>
+<section>
+<h2 id="usb-audio-path">USB audio path (DAC, mixer, ADC)</h2>
+<p>Signal played over USB, through the DAC and the mixer's analogue stages at unity gain, and recorded over USB through the ADC.</p>
+<table>
+<thead>
+<tr><th>Measurement</th><th>Conditions</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Alignment level</strong></td><td>0 dBFS</td><td>+20 dBu</td></tr>
+<tr><td><strong>Gain</strong></td><td>USB in to USB out, unity</td><td>-1.0 dB</td></tr>
+<tr><td><strong>Channel balance</strong></td><td>L to R, 1 kHz</td><td>&lt; 0.01 dB</td></tr>
+<tr><td rowspan="2"><strong>Frequency response</strong></td><td>20 Hz to 20 kHz</td><td>+0.05 / -0.05 dB</td></tr>
+<tr><td>-3 dB points</td><td>&lt; 10 Hz, &gt; 21.5 kHz *</td></tr>
+<tr><td rowspan="3"><strong>THD+Noise</strong></td><td>+4 dBu @ 1 kHz (filter 22 Hz to 22 kHz)</td><td>0.0033 % (-89.6 dB)</td></tr>
+<tr><td>+4 dBu @ 1 kHz, A-weighted</td><td>0.0025 % (-92 dB)</td></tr>
+<tr><td>+18 dBu @ 1 kHz (filter 22 Hz to 22 kHz)</td><td>0.0008 % (-102 dB)</td></tr>
+<tr><td><strong>THD (H2 to H10)</strong></td><td>+18 dBu @ 1 kHz</td><td>&lt; 0.0003 % (-110 dB)</td></tr>
+<tr><td rowspan="2"><strong>Noise</strong></td><td>No signal, 22 Hz to 22 kHz</td><td>-86.9 dBu</td></tr>
+<tr><td>No signal, A-weighted</td><td>-89.3 dBu(A)</td></tr>
+<tr><td rowspan="2"><strong>Signal to noise ratio</strong></td><td>re +20 dBu (0 dBFS), 22 Hz to 22 kHz</td><td>106.9 dB</td></tr>
+<tr><td>re +20 dBu (0 dBFS), A-weighted</td><td>109.3 dB(A)</td></tr>
+<tr><td><strong>Dynamic range</strong></td><td>A-weighted</td><td>&gt; 108 dB</td></tr>
+<tr><td><strong>Headroom</strong></td><td>above +4 dBu, before 1 % THD+N</td><td>&gt; 16 dB (limited by 0 dBFS)</td></tr>
+</tbody>
+</table>
+<p>* The upper -3 dB point is set by the 48 kHz sample rate, not by the mixer.</p>
+<p>The -1.0 dB gain is by design: the USB return is summed with the analogue input in the mixer, and the summing stage takes 1 dB off.</p>
+<p>The analogue stages do not clip before the converters reach full scale, so maximum level and dynamic range are set by 0 dBFS.</p>
+</section>
+</main>
+</body>
+</html>
