@@ -80,7 +80,7 @@ def video_section(path):
 </section>"""
 
 
-HIDE_FROM_MENU = {"/untitled-page", "/rodec-one/appendix-a-dimensions", "/rodec-one/appendix-b-performance"}
+HIDE_FROM_MENU = {"/untitled-page", "/rodec-one/appendix-a-dimensions"}
 
 ARROW = '<span class="arr" aria-hidden="true">&rarr;</span>'
 EXT = '<span class="ext" aria-hidden="true">&#8599;</span>'
